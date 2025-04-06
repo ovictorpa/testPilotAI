@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>LLM Test Evaluator - Input Handler</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body class="bg-gray-100 py-10 px-6">
+    <div class="max-w-4xl mx-auto bg-white p-8 shadow-lg rounded-xl">
+        <h1 class="text-3xl font-bold mb-6 text-center">🧠 Test Pilot AI</h1>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="mb-4 p-4 rounded {{ 'bg-green-100 text-green-800' if category == 'success' else 'bg-red-100 text-red-800' }}">
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+
+        <form method="POST" class="space-y-4">
+            <label class="block font-semibold text-lg">Cole aqui o código de produção:</label>
+            <textarea name="code" rows="10" required
+                      class="w-full p-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500">{{ code }}</textarea>
+            <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded">
+                Validar e Prosseguir
+            </button>
+        </form>
+
+        {% if valid is not none %}
+            <div class="mt-8">
+                <h2 class="text-xl font-semibold mb-2">📄 Preview do Código:</h2>
+                <pre class="bg-gray-100 p-4 rounded text-sm overflow-auto">{{ code }}</pre>
+            </div>
+        {% endif %}
+
+        {% if valid %}
+            <div class="mt-6 text-center">
+                <form action="/generate-tests" method="get">
+                    <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded">
+                        🧪 Gerar Testes com LLM
+                    </button>
+                </form>
+            </div>
+{% endif %}
+
+    </div>
+</body>
+</html>
