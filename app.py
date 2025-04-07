@@ -1,8 +1,9 @@
-from flask import Flask, render_template, request, flash, send_from_directory
+from flask import Flask, render_template, request, flash, send_from_directory, redirect
 from prompts.generator import load_code, generate_prompts
 from llms.interact import query_gpt
 from llms.generate_tests import generate_tests_from_all_llms
 from dotenv import load_dotenv
+from evaluator.runner import run_all_tests
 import ast
 import os
 import json
@@ -31,13 +32,8 @@ def input_handler():
     if request.method == 'POST':
         code = request.form['code']
         try:
-            # Validação do código Python
             ast.parse(code)
-
-            # Criar diretório se não existir
             os.makedirs('prompts', exist_ok=True)
-
-            # Salvar o código no módulo prompts
             with open('prompts/code.py', 'w', encoding='utf-8') as f:
                 f.write(code)
 
@@ -64,9 +60,10 @@ def generate_prompts_route():
 def generate_tests_route():
     try:
         tests = generate_tests_from_all_llms()
-        return render_template("tests.html", tests=tests)
+        run_all_tests()
+        return redirect('/dashboard')
     except Exception as e:
-        return f"Erro ao gerar testes: {e}"
+        return f"Erro ao gerar ou avaliar testes: {e}"
 
 
 @app.route('/dashboard')

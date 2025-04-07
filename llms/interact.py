@@ -19,9 +19,6 @@ def query_gpt(prompt: str, model="gpt-4o"):
     return response.choices[0].message.content.strip()
 
 def query_ollama(prompt: str, model: str):
-    """
-    Consulta o modelo LLaMA via Ollama e retorna o teste gerado.
-    """
     try:
         result = subprocess.run(
             ["ollama", "run", model, prompt],

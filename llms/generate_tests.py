@@ -13,7 +13,7 @@ def generate_tests_from_all_llms():
 
     llms = {
         # "GPT-4": lambda prompt: query_gpt(prompt, model="gpt-4"),  # se ativar futuramente
-        "LLaMA3": lambda prompt: query_ollama(prompt, model='llama3'),
+        #"LLaMA3": lambda prompt: query_ollama(prompt, model='llama3'),
         "CodeLLaMA": lambda prompt: query_ollama(prompt, model='codellama'),
         "Deepseek": lambda prompt: query_ollama(prompt, model='deepseek-coder')
     }

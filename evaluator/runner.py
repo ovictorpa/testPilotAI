@@ -21,29 +21,45 @@ def extract_code_blocks(text):
 
 def run_test_code_with_coverage(code_str, filename):
     filepath = os.path.join(TEMP_DIR, filename)
-    with open(filepath, 'w', encoding='utf-8') as f:
-        f.write(code_str)
 
     try:
+        with open(filepath, 'w', encoding='utf-8') as f:
+            f.write(code_str)
+
+        env = os.environ.copy()
+        env['PYTHONPATH'] = os.path.abspath('.')
+
+        subprocess.run(["coverage", "erase"], env=env)
         result = subprocess.run(
-            ['coverage', 'run', '--source=.', filepath],
+            ['coverage', 'run', '--source=prompts', filepath],
             capture_output=True,
             text=True,
-            timeout=10
+            timeout=10,
+            cwd='.',
+            env=env
         )
-        subprocess.run(['coverage', 'report'], cwd=TEMP_DIR, capture_output=True)
-        coverage_output = subprocess.run(
-            ['coverage', 'report', '-m'],
-            cwd=TEMP_DIR,
-            capture_output=True,
-            text=True
-        )
-        passed = result.returncode == 0
-        return passed, result.stdout, result.stderr, coverage_output.stdout
+
+        if result.returncode != 0:
+            return False, result.stdout, result.stderr, "-"
+
+        subprocess.run(['coverage', 'xml'], capture_output=True, text=True, cwd='.', env=env)
+
+        coverage_percent = "-"
+        if os.path.exists("coverage.xml"):
+            import xml.etree.ElementTree as ET
+            tree = ET.parse("coverage.xml")
+            root = tree.getroot()
+            line_rate = root.attrib.get('line-rate')
+            if line_rate:
+                coverage_percent = f"{round(float(line_rate) * 100)}%"
+
+        return True, result.stdout, result.stderr, coverage_percent
+
     except subprocess.TimeoutExpired:
-        return False, "", "Timeout", ""
+        return False, "", "Timeout", "-"
     except Exception as e:
-        return False, "", str(e), ""
+        return False, "", str(e), "-"
+
 
 def run_flake8_linter(code_str):
     with tempfile.NamedTemporaryFile(suffix='.py', delete=False, mode='w', encoding='utf-8') as tmp:
@@ -114,7 +130,7 @@ def run_all_tests():
             code = code_blocks[0]
             filename = f"{model}_{prompt_type}.py"
 
-            passed, stdout, stderr, coverage = run_test_code_with_coverage(code, filename)
+            passed, stdout, stderr, coverage_percent = run_test_code_with_coverage(code, filename)
             lint_passed, lint_output = run_flake8_linter(code)
             smells = analyze_test_smells(code)
             assert_types = extract_assert_types(code)
@@ -126,7 +142,7 @@ def run_all_tests():
                 score += 0.5
             if lint_passed:
                 score += 0.25
-            if "100%" in coverage:
+            if "100%" in coverage_percent:
                 score += 0.25
             if len(set(assert_types)) >= 3:
                 score += 0.25
@@ -145,7 +161,7 @@ def run_all_tests():
 
             results[model][prompt_type] = {
                 "status": "passed" if passed else "failed",
-                "coverage": coverage.strip(),
+                "coverage": coverage_percent,
                 "lint_passed": lint_passed,
                 "lint_output": lint_output,
                 "assert_types": list(set(assert_types)),

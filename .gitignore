@@ -6,3 +6,4 @@ test_outputs/
 .coverage
 .idea
 __pycache__
+coverage.xml

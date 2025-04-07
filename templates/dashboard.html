@@ -66,7 +66,7 @@
                     <tr>
                         <td>{{ model }}</td>
                         <td>{{ prompt_type }}</td>
-                        <td>{{ '✅' if result.runnable else '❌' }}</td>
+                        <td>{{ '✅' if result.status == 'passed' else '❌' }}</td>
                         <td><span class="badge bg-{{ 'success' if result.score >= 1.0 else 'warning' }} badge-score">{{ result.score }}</span></td>
                         <td>{{ result.coverage | default('-') }}</td>
                         <td>{{ '✔️' if result.lint_passed else '❌' }}</td>

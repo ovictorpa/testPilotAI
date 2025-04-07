@@ -1,20 +1,23 @@
-from typing import List
+import math
+from typing import Optional
 
-def separate_paren_groups(paren_string: str) -> List[str]:
-    result = []
-    current_string = []
-    current_depth = 0
+def is_prime(p: int) -> bool:
 
-    for c in paren_string:
-        if c == '(':
-            current_depth += 1
-            current_string.append(c)
-        elif c == ')':
-            current_depth -= 1
-            current_string.append(c)
+    if p < 2:
+        return False
+    for k in range(2, int(math.sqrt(p)) + 1):
+        if p % k == 0:
+            return False
+    return True
 
-        if current_depth == 0 and current_string:
-            result.append(''.join(current_string))
-            current_string.clear()
+def prime_fib(n: int) -> Optional[int]:
 
-    return result
+    f = [0, 1] 
+    prime_fib_count = 0
+    
+    while True:
+        f.append(f[-1] + f[-2])
+        if is_prime(f[-1]):
+            prime_fib_count += 1
+            if prime_fib_count == n:
+                return f[-1]

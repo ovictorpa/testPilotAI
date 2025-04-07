@@ -28,10 +28,8 @@ def generate_prompts(code: str):
         ),
     }
 
-    # Caminho para salvar os prompts
     save_path = os.path.join("prompts", "generated_prompts.json")
 
-    # Salva os prompts em JSON
     with open(save_path, "w") as f:
         json.dump(prompts, f, indent=4)
 
