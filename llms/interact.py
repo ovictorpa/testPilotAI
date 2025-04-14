@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 import requests
 import os
 import subprocess
+import json
 
 load_dotenv()
 
@@ -29,3 +30,29 @@ def query_ollama(prompt: str, model: str):
         return result.stdout.strip()
     except subprocess.CalledProcessError as e:
         return f"Erro ao consultar LLaMA: {e.stderr.strip()}"
+
+def query_fireworks(prompt: str):
+    import requests
+    import json
+    url = "https://api.fireworks.ai/inference/v1/chat/completions"
+    payload = {
+        "model": "accounts/fireworks/models/deepseek-v3",
+        "max_tokens": 16384,
+        "top_p": 1,
+        "top_k": 40,
+        "presence_penalty": 0,
+        "frequency_penalty": 0,
+        "temperature": 0.6,
+        "messages": [
+            {
+                "role": "user",
+                "content": prompt
+            }
+        ]
+    }
+    headers = {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "Authorization": "Bearer fw_3ZHSEasNGggmSXfwKYrb28KW"
+    }
+    requests.request("POST", url, headers=headers, data=json.dumps(payload))

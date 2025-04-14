@@ -1,0 +1,287 @@
+{
+    "WizardLM": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.55,
+        "stdout": "Couldn't run 'C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py' as Python code: SyntaxError: expected ':' (WizardLM_zero-shot.py, line 19)\n",
+        "stderr": "C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\venv\\Lib\\site-packages\\coverage\\control.py:915: CoverageWarning: No data was collected. (no-data-collected)\n  self._warn(\"No data was collected.\", slug=\"no-data-collected\")\n",
+        "test_smells": {
+          "syntax_error": 1
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertListEqual",
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.62,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 5, in <module>\n    from your_module import all_prefixes  # Replace 'your_module' with the name of the module where the function is defined\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'your_module'\n",
+        "test_smells": {
+          "magic_number": 1
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.55,
+        "stdout": "",
+        "stderr": "FFFFF.F......FF\n======================================================================\nFAIL: test_ascii_letters_and_numbers (__main__.TestAllPrefixes.test_ascii_letters_and_numbers)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 17, in test_ascii_letters_and_numbers\n    self.assertEqual(all_prefixes('a1!'), ['a', 'a1', 'a1!', 'a1! '])\nAssertionError: Lists differ: ['a', 'a1', 'a1!'] != ['a', 'a1', 'a1!', 'a1! ']\n\nSecond list contains 1 additional elements.\nFirst extra element 3:\n'a1! '\n\n- ['a', 'a1', 'a1!']\n+ ['a', 'a1', 'a1!', 'a1! ']\n?                  ++++++++\n\n\n======================================================================\nFAIL: test_case_insensitivity (__main__.TestAllPrefixes.test_case_insensitivity)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 47, in test_case_insensitivity\n    self.assertEqual(all_prefixes('ABC'), [\nAssertionError: Lists differ: ['A', 'AB', 'ABC'] != ['ABC', 'ABCa', 'ABCb', 'ABCc', 'aBC', 'bBC', 'cBC', 'abcB', 'abCB', 'abc']\n\nFirst differing element 0:\n'A'\n'ABC'\n\nSecond list contains 7 additional elements.\nFirst extra element 3:\n'ABCc'\n\n- ['A', 'AB', 'ABC']\n+ ['ABC', 'ABCa', 'ABCb', 'ABCc', 'aBC', 'bBC', 'cBC', 'abcB', 'abCB', 'abc']\n\n======================================================================\nFAIL: test_empty_string (__main__.TestAllPrefixes.test_empty_string)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 23, in test_empty_string\n    self.assertEqual(all_prefixes(''), [''])\nAssertionError: Lists differ: [] != ['']\n\nSecond list contains 1 additional elements.\nFirst extra element 0:\n''\n\n- []\n+ ['']\n\n======================================================================\nFAIL: test_leading_whitespace (__main__.TestAllPrefixes.test_leading_whitespace)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 32, in test_leading_whitespace\n    self.assertEqual(all_prefixes('  abc'), ['  ', '  ab', '  abc', 'abc'])\nAssertionError: Lists differ: [' ', '  ', '  a', '  ab', '  abc'] != ['  ', '  ab', '  abc', 'abc']\n\nFirst differing element 0:\n' '\n'  '\n\nFirst list contains 1 additional elements.\nFirst extra element 4:\n'  abc'\n\n- [' ', '  ', '  a', '  ab', '  abc']\n+ ['  ', '  ab', '  abc', 'abc']\n\n======================================================================\nFAIL: test_mixed_case_string (__main__.TestAllPrefixes.test_mixed_case_string)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 38, in test_mixed_case_string\n    self.assertEqual(all_prefixes('FooBar'), ['F', ' Fo', ' Foob', ' FooBar', 'FooBa', 'FooBar'])\nAssertionError: Lists differ: ['F', 'Fo', 'Foo', 'FooB', 'FooBa', 'FooBar'] != ['F', ' Fo', ' Foob', ' FooBar', 'FooBa', 'FooBar']\n\nFirst differing element 1:\n'Fo'\n' Fo'\n\n- ['F', 'Fo', 'Foo', 'FooB', 'FooBa', 'FooBar']\n+ ['F', ' Fo', ' Foob', ' FooBar', 'FooBa', 'FooBar']\n?        +      +   +    +    ++\n\n\n======================================================================\nFAIL: test_no_prefix_for_empty_result (__main__.TestAllPrefixes.test_no_prefix_for_empty_result)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 41, in test_no_prefix_for_empty_result\n    self.assertEqual(all_prefixes('')[:0], [''])\nAssertionError: Lists differ: [] != ['']\n\nSecond list contains 1 additional elements.\nFirst extra element 0:\n''\n\n- []\n+ ['']\n\n======================================================================\nFAIL: test_trailing_whitespace (__main__.TestAllPrefixes.test_trailing_whitespace)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 35, in test_trailing_whitespace\n    self.assertEqual(all_prefixes('abc '), ['abc ', 'abc', 'ab', 'a'])\nAssertionError: Lists differ: ['a', 'ab', 'abc', 'abc '] != ['abc ', 'abc', 'ab', 'a']\n\nFirst differing element 0:\n'a'\n'abc '\n\n- ['a', 'ab', 'abc', 'abc ']\n+ ['abc ', 'abc', 'ab', 'a']\n\n======================================================================\nFAIL: test_whitespace_only_string (__main__.TestAllPrefixes.test_whitespace_only_string)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 26, in test_whitespace_only_string\n    self.assertEqual(all_prefixes('   '), ['', ' ', '  ', '   '])\nAssertionError: Lists differ: [' ', '  ', '   '] != ['', ' ', '  ', '   ']\n\nFirst differing element 0:\n' '\n''\n\nSecond list contains 1 additional elements.\nFirst extra element 3:\n'   '\n\n- [' ', '  ', '   ']\n?   -    -\n\n+ ['', ' ', '  ', '   ']\n?            ++++++\n\n\n----------------------------------------------------------------------\nRan 15 tests in 0.006s\n\nFAILED (failures=8)\n",
+        "test_smells": {
+          "magic_number": 1
+        }
+      }
+    },
+    "CodeLLaMA": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertIsInstance"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.82,
+        "stdout": "",
+        "stderr": "E...\n======================================================================\nERROR: test_empty_list_for_non_strings (__main__.TestAllPrefixes.test_empty_list_for_non_strings)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeLLaMA_zero-shot.py\", line 17, in test_empty_list_for_non_strings\n    self.assertIsInstance(all_prefixes(1), List)\n                          ^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 25, in all_prefixes\n    for i in range(len(string)):\n                   ^^^^^^^^^^^\nTypeError: object of type 'int' has no len()\n\n----------------------------------------------------------------------\nRan 4 tests in 0.001s\n\nFAILED (errors=1)\n",
+        "test_smells": {}
+      },
+      "few-shot": {
+        "status": "passed",
+        "coverage": "11%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 3.0,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {}
+      },
+      "cot": {
+        "status": "passed",
+        "coverage": "11%",
+        "assert_types": [
+          "assertRaises",
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.67,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "assertion_roulette": 2,
+          "magic_number": 1
+        }
+      }
+    },
+    "WizardCoder": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.75,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_zero-shot.py\", line 3, in <module>\n    import pytest\nModuleNotFoundError: No module named 'pytest'\n",
+        "test_smells": {}
+      },
+      "few-shot": {
+        "status": "passed",
+        "coverage": "11%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 3.0,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {}
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertRaises",
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.62,
+        "stdout": "Couldn't run 'C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_cot.py' as Python code: SyntaxError: '(' was never closed (WizardCoder_cot.py, line 16)\n",
+        "stderr": "C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\venv\\Lib\\site-packages\\coverage\\control.py:915: CoverageWarning: No data was collected. (no-data-collected)\n  self._warn(\"No data was collected.\", slug=\"no-data-collected\")\n",
+        "test_smells": {
+          "syntax_error": 1
+        }
+      }
+    },
+    "LLaMA3": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.75,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_zero-shot.py\", line 4, in <module>\n    from your_module import all_prefixes  # replace 'your_module' with the actual name of the module where the function is defined\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'your_module'\n",
+        "test_smells": {}
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.55,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_few-shot.py\", line 4, in <module>\n    from your_module import all_prefixes  # replace 'your_module' with the actual name of the module where the function is defined\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'your_module'\n",
+        "test_smells": {
+          "magic_number": 1
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertRaises",
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.42,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 4, in <module>\n    from your_module import all_prefixes  # replace 'your_module' with actual module name\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'your_module'\n",
+        "test_smells": {
+          "assertion_roulette": 2,
+          "magic_number": 1
+        }
+      }
+    },
+    "Gemma": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.75,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_zero-shot.py\", line 5, in <module>\n    from all_prefixes import all_prefixes\nModuleNotFoundError: No module named 'all_prefixes'\n",
+        "test_smells": {}
+      },
+      "few-shot": {
+        "status": "passed",
+        "coverage": "11%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 3.0,
+        "stdout": "",
+        "stderr": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.001s\n\nOK\n",
+        "test_smells": {}
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.55,
+        "stdout": "Couldn't run 'C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py' as Python code: SyntaxError: invalid syntax. Perhaps you forgot a comma? (Gemma_cot.py, line 18)\n",
+        "stderr": "C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\venv\\Lib\\site-packages\\coverage\\control.py:915: CoverageWarning: No data was collected. (no-data-collected)\n  self._warn(\"No data was collected.\", slug=\"no-data-collected\")\n",
+        "test_smells": {
+          "syntax_error": 1
+        }
+      }
+    },
+    "CodeGemma": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.75,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_zero-shot.py\", line 5, in <module>\n    from all_prefixes import all_prefixes\nModuleNotFoundError: No module named 'all_prefixes'\n",
+        "test_smells": {}
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.75,
+        "stdout": "",
+        "stderr": "....F\n======================================================================\nFAIL: test_string_with_special_characters (__main__.TestAllPrefixes.test_string_with_special_characters)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_few-shot.py\", line 17, in test_string_with_special_characters\n    self.assertEqual(all_prefixes(\"!@#$%^&*\"), [\"!\", \"!@\", \"!@#$\", \"!@#$%^\", \"!@#$%^&\", \"!@#$%^&*\"])\nAssertionError: Lists differ: ['!', '!@', '!@#', '!@#$', '!@#$%', '!@#$%^', '!@#$%^&', '!@#$%^&*'] != ['!', '!@', '!@#$', '!@#$%^', '!@#$%^&', '!@#$%^&*']\n\nFirst differing element 2:\n'!@#'\n'!@#$'\n\nFirst list contains 2 additional elements.\nFirst extra element 6:\n'!@#$%^&'\n\n- ['!', '!@', '!@#', '!@#$', '!@#$%', '!@#$%^', '!@#$%^&', '!@#$%^&*']\n?            -------        ---------\n\n+ ['!', '!@', '!@#$', '!@#$%^', '!@#$%^&', '!@#$%^&*']\n\n----------------------------------------------------------------------\nRan 5 tests in 0.002s\n\nFAILED (failures=1)\n",
+        "test_smells": {}
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.75,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_cot.py\", line 5, in <module>\n    from all_prefixes import all_prefixes\nModuleNotFoundError: No module named 'all_prefixes'\n",
+        "test_smells": {}
+      }
+    }
+  }

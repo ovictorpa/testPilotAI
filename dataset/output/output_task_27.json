@@ -1,0 +1,259 @@
+{
+    "WizardLM": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.75,
+        "stdout": "",
+        "stderr": "..FF..FF...\n======================================================================\nFAIL: test_mixed_spaces_and_tabs (__main__.TestRemoveMultipleSpaces.test_mixed_spaces_and_tabs)\nMixed spaces and tabs should be reduced to single spaces.\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 48, in test_mixed_spaces_and_tabs\n    self.assertEqual(remove_multiple_spaces(text), expected)\nAssertionError: 'This\\tis a\\n\\tline with\\t multiple\\tspaces.' != 'This is a line with multiple spaces.'\n- This\tis a\n- \tline with\t multiple\tspaces.\n? ^         -         ^\n+ This is a line with multiple spaces.\n? ^^^^^^^^^^                  ^\n\n\n======================================================================\nFAIL: test_multiple_spaces_in_middle (__main__.TestRemoveMultipleSpaces.test_multiple_spaces_in_middle)\nMultiple spaces in the middle of the text should be reduced to a single space.\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 26, in test_multiple_spaces_in_middle\n    self.assertEqual(remove_multiple_spaces(\"Hell o  w orld\"), \"Hello world\")\nAssertionError: 'Hell o w orld' != 'Hello world'\n- Hell o w orld\n?     -   -\n+ Hello world\n\n\n======================================================================\nFAIL: test_non_breaking_spaces (__main__.TestRemoveMultipleSpaces.test_non_breaking_spaces)\nNon-breaking spaces (U+00A0) should be considered as single spaces.\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 60, in test_non_breaking_spaces\n    self.assertEqual(remove_multiple_spaces(text), expected)\nAssertionError: 'Helloï¿½ Hello' != 'Helloï¿½Hello'\n- Helloï¿½ Hello\n?         -\n+ Helloï¿½Hello\n\n\n======================================================================\nFAIL: test_only_single_space (__main__.TestRemoveMultipleSpaces.test_only_single_space)\nText with only single spaces should remain unchanged.\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 30, in test_only_single_space\n    self.assertEqual(remove_multiple_spaces(\"Hello   World   \"), \"Hello   World   \")\nAssertionError: 'Hello World ' != 'Hello   World   '\n- Hello World \n+ Hello   World   \n?       ++      ++\n\n\n----------------------------------------------------------------------\nRan 11 tests in 0.004s\n\nFAILED (failures=4)\n",
+        "test_smells": {}
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.75,
+        "stdout": "",
+        "stderr": ".F.FFFF.FFF.F\n======================================================================\nFAIL: test_leading_trailing_spaces (__main__.TestRemoveMultipleSpaces.test_leading_trailing_spaces)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 17, in test_leading_trailing_spaces\n    self.assertEqual(remove_multiple_spaces(\"  Hello World  \"), \"Hello World\")\nAssertionError: ' Hello World ' != 'Hello World'\n-  Hello World \n? -           -\n+ Hello World\n\n\n======================================================================\nFAIL: test_newlines (__main__.TestRemoveMultipleSpaces.test_newlines)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 27, in test_newlines\n    self.assertEqual(remove_multiple_spaces(\"\\nHello\\nWorld\"), \"Hello World\")\nAssertionError: ' Hello World' != 'Hello World'\n-  Hello World\n? -\n+ Hello World\n\n\n======================================================================\nFAIL: test_non_breaking_space (__main__.TestRemoveMultipleSpaces.test_non_breaking_space)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 33, in test_non_breaking_space\n    self.assertEqual(remove_multiple_spaces(\"Hello World\\u00A0\"), \"Hello World\")\nAssertionError: 'Hello World ' != 'Hello World'\n- Hello World \n?            -\n+ Hello World\n\n\n======================================================================\nFAIL: test_preserve_single_space_in_word (__main__.TestRemoveMultipleSpaces.test_preserve_single_space_in_word)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 20, in test_preserve_single_space_in_word\n    self.assertEqual(remove_multiple_spaces(\"This is a test with   two spaces here.\"),\nAssertionError: 'This is a test with two spaces here.' != 'This is a test with  two spaces here.'\n- This is a test with two spaces here.\n+ This is a test with  two spaces here.\n?                     +\n\n\n======================================================================\nFAIL: test_remove_multiple_consecutive_spaces (__main__.TestRemoveMultipleSpaces.test_remove_multiple_consecutive_spaces)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 14, in test_remove_multiple_consecutive_spaces\n    self.assertEqual(remove_multiple_spaces(\"Hello  !     World\"), \"Hello! World\")\nAssertionError: 'Hello ! World' != 'Hello! World'\n- Hello ! World\n?      -\n+ Hello! World\n\n\n======================================================================\nFAIL: test_tab_spaces (__main__.TestRemoveMultipleSpaces.test_tab_spaces)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 30, in test_tab_spaces\n    self.assertEqual(remove_multiple_spaces(\"\\tHello\\tWorld\"), \"Hello World\")\nAssertionError: ' Hello World' != 'Hello World'\n-  Hello World\n? -\n+ Hello World\n\n\n======================================================================\nFAIL: test_with_empty_lines (__main__.TestRemoveMultipleSpaces.test_with_empty_lines)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 46, in test_with_empty_lines\n    self.assertEqual(remove_multiple_spaces(\"\\n\\nHello World\\n\\n\"), \"Hello World\")\nAssertionError: ' Hello World ' != 'Hello World'\n-  Hello World \n? -           -\n+ Hello World\n\n\n======================================================================\nFAIL: test_with_non_printable_characters (__main__.TestRemoveMultipleSpaces.test_with_non_printable_characters)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 43, in test_with_non_printable_characters\n    self.assertEqual(remove_multiple_spaces(\"Hello\\x01World\"), \"HelloWorld\")\nAssertionError: 'Hello\\x01World' != 'HelloWorld'\n- Hello\u0001World\n?      -\n+ HelloWorld\n\n\n======================================================================\nFAIL: test_with_special_characters (__main__.TestRemoveMultipleSpaces.test_with_special_characters)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 36, in test_with_special_characters\n    self.assertEqual(remove_multiple_spaces(\"Hello!World???!\"), \"Hello!World??!\")\nAssertionError: 'Hello!World???!' != 'Hello!World??!'\n- Hello!World???!\n?              -\n+ Hello!World??!\n\n\n----------------------------------------------------------------------\nRan 13 tests in 0.005s\n\nFAILED (failures=9)\n",
+        "test_smells": {}
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.75,
+        "stdout": "",
+        "stderr": ".F..F....F.F\n======================================================================\nFAIL: test_leading_trailing_spaces (__main__.TestRemoveMultipleSpaces.test_leading_trailing_spaces)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 14, in test_leading_trailing_spaces\n    self.assertEqual(remove_multiple_spaces(\"   This   is   a test   \"), \"This is a test\")\nAssertionError: ' This is a test ' != 'This is a test'\n-  This is a test \n? -              -\n+ This is a test\n\n\n======================================================================\nFAIL: test_narrow_wide_spaces (__main__.TestRemoveMultipleSpaces.test_narrow_wide_spaces)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 38, in test_narrow_wide_spaces\n    self.assertEqual(remove_multiple_spaces(text_with_narrow_spaces), \"Use multiple spaces\")\nAssertionError: 'Use\\ufeffmultiple\\u3000spaces' != 'Use multiple spaces'\n- Use\\ufeffmultiple\\u3000spaces\n?    ^        ^\n+ Use multiple spaces\n?    ^        ^\n\n\n======================================================================\nFAIL: test_regex_pattern_limitations (__main__.TestRemoveMultipleSpaces.test_regex_pattern_limitations)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 46, in test_regex_pattern_limitations\n    self.assertEqual(remove_multiple_spaces(text), \"This-is a test\")\nAssertionError: 'This---is a test' != 'This-is a test'\n- This---is a test\n?      --\n+ This-is a test\n\n\n======================================================================\nFAIL: test_unicode_spaces (__main__.TestRemoveMultipleSpaces.test_unicode_spaces)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 34, in test_unicode_spaces\n    self.assertEqual(remove_multiple_spaces(text_with_whitespace), \"This\tis a test.\")\nAssertionError: '\\xa0This\\u3000is a test.' != 'This\\tis a test.'\n-  This\\u3000is a test.\n? -    ^\n+ This\tis a test.\n?     ^\n\n\n----------------------------------------------------------------------\nRan 12 tests in 0.005s\n\nFAILED (failures=4)\n",
+        "test_smells": {}
+      }
+    },
+    "CodeLLaMA": {
+      "zero-shot": {
+        "status": "passed",
+        "coverage": "13%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": 2.5,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {}
+      },
+      "few-shot": {
+        "status": "no_code_found",
+        "score": 0.0
+      },
+      "cot": {
+        "status": "no_code_found",
+        "score": 0.0
+      }
+    },
+    "WizardCoder": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.55,
+        "stdout": "Couldn't run 'C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_zero-shot.py' as Python code: SyntaxError: unterminated string literal (detected at line 18) (WizardCoder_zero-shot.py, line 18)\n",
+        "stderr": "C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\venv\\Lib\\site-packages\\coverage\\control.py:915: CoverageWarning: No data was collected. (no-data-collected)\n  self._warn(\"No data was collected.\", slug=\"no-data-collected\")\n",
+        "test_smells": {
+          "syntax_error": 1
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.62,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_few-shot.py\", line 5, in <module>\n    from remove_multiple_spaces import remove_multiple_spaces\nModuleNotFoundError: No module named 'remove_multiple_spaces'\n",
+        "test_smells": {
+          "assertion_roulette": 2
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.75,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_cot.py\", line 4, in <module>\n    from remove_multiple_spaces import remove_multiple_spaces\nModuleNotFoundError: No module named 'remove_multiple_spaces'\n",
+        "test_smells": {}
+      }
+    },
+    "LLaMA3": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.42,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_zero-shot.py\", line 5, in <module>\n    from your_module import remove_multiple_spaces\nModuleNotFoundError: No module named 'your_module'\n",
+        "test_smells": {
+          "assertion_roulette": 1,
+          "magic_number": 1
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.75,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_few-shot.py\", line 4, in <module>\n    from your_module import remove_multiple_spaces  # Replace 'your_module' with the actual name of your module\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'your_module'\n",
+        "test_smells": {}
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.42,
+        "stdout": "",
+        "stderr": ".F..F\n======================================================================\nFAIL: test_multiple_spaces_separated_by_other_chars (__main__.TestRemoveMultipleSpaces.test_multiple_spaces_separated_by_other_chars)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 21, in test_multiple_spaces_separated_by_other_chars\n    self.assertEqual(remove_multiple_spaces('  hello,  world!  '), 'hello, world!')\nAssertionError: ' hello, world! ' != 'hello, world!'\n-  hello, world! \n? -             -\n+ hello, world!\n\n\n======================================================================\nFAIL: test_valid_input (__main__.TestRemoveMultipleSpaces.test_valid_input)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 18, in test_valid_input\n    self.assertEqual(remove_multiple_spaces('  hello world  '), 'hello world')\nAssertionError: ' hello world ' != 'hello world'\n-  hello world \n? -           -\n+ hello world\n\n\n----------------------------------------------------------------------\nRan 5 tests in 0.003s\n\nFAILED (failures=2)\n",
+        "test_smells": {
+          "assertion_roulette": 1,
+          "magic_number": 1
+        }
+      }
+    },
+    "Gemma": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.75,
+        "stdout": "",
+        "stderr": ".F..F\n======================================================================\nFAIL: test_leading_trailing_spaces (__main__.TestRemoveMultipleSpaces.test_leading_trailing_spaces)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_zero-shot.py\", line 17, in test_leading_trailing_spaces\n    self.assertEqual(remove_multiple_spaces(\"  Hello world  \"), \"Hello world\")\nAssertionError: ' Hello world ' != 'Hello world'\n-  Hello world \n? -           -\n+ Hello world\n\n\n======================================================================\nFAIL: test_special_characters (__main__.TestRemoveMultipleSpaces.test_special_characters)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_zero-shot.py\", line 20, in test_special_characters\n    self.assertEqual(remove_multiple_spaces(\"Hello world!   \"), \"Hello world!\")\nAssertionError: 'Hello world! ' != 'Hello world!'\n- Hello world! \n?             -\n+ Hello world!\n\n\n----------------------------------------------------------------------\nRan 5 tests in 0.020s\n\nFAILED (failures=2)\n",
+        "test_smells": {}
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.75,
+        "stdout": "",
+        "stderr": "F.F..\n======================================================================\nFAIL: test_complex_spaces (__main__.TestRemoveMultipleSpaces.test_complex_spaces)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_few-shot.py\", line 23, in test_complex_spaces\n    self.assertEqual(remove_multiple_spaces(\"Hello    world     \"), \"Hello world\")\nAssertionError: 'Hello world ' != 'Hello world'\n- Hello world \n?            -\n+ Hello world\n\n\n======================================================================\nFAIL: test_leading_trailing_spaces (__main__.TestRemoveMultipleSpaces.test_leading_trailing_spaces)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_few-shot.py\", line 20, in test_leading_trailing_spaces\n    self.assertEqual(remove_multiple_spaces(\"  Hello world  \"), \"Hello world\")\nAssertionError: ' Hello world ' != 'Hello world'\n-  Hello world \n? -           -\n+ Hello world\n\n\n----------------------------------------------------------------------\nRan 5 tests in 0.002s\n\nFAILED (failures=2)\n",
+        "test_smells": {}
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.75,
+        "stdout": "",
+        "stderr": "..F.FF\n======================================================================\nFAIL: test_multiple_spaces_in_row (__main__.TestRemoveMultipleSpaces.test_multiple_spaces_in_row)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 14, in test_multiple_spaces_in_row\n    self.assertEqual(remove_multiple_spaces('   hello   '), 'hello')\nAssertionError: ' hello ' != 'hello'\n-  hello \n? -     -\n+ hello\n\n\n======================================================================\nFAIL: test_spaces_at_beginning_or_end (__main__.TestRemoveMultipleSpaces.test_spaces_at_beginning_or_end)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 17, in test_spaces_at_beginning_or_end\n    self.assertEqual(remove_multiple_spaces(' hello   '), 'hello')\nAssertionError: ' hello ' != 'hello'\n-  hello \n? -     -\n+ hello\n\n\n======================================================================\nFAIL: test_text_with_leading_and_trailing_spaces (__main__.TestRemoveMultipleSpaces.test_text_with_leading_and_trailing_spaces)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 26, in test_text_with_leading_and_trailing_spaces\n    self.assertEqual(remove_multiple_spaces(text), 'This sentence has multiple spaces.')\nAssertionError: ' This sentence has multiple spaces. ' != 'This sentence has multiple spaces.'\n-  This sentence has multiple spaces. \n? -                                  -\n+ This sentence has multiple spaces.\n\n\n----------------------------------------------------------------------\nRan 6 tests in 0.003s\n\nFAILED (failures=3)\n",
+        "test_smells": {}
+      }
+    },
+    "CodeGemma": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": false,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.5,
+        "stdout": "",
+        "stderr": "F..\n======================================================================\nFAIL: test_leading_trailing_spaces (__main__.TestRemoveMultipleSpaces.test_leading_trailing_spaces)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_zero-shot.py\", line 24, in test_leading_trailing_spaces\n    self.assertEqual(result, expected)\nAssertionError: ' This is a string with leading and trailing spaces. ' != 'This is a string with leading and trailing spaces.'\n-  This is a string with leading and trailing spaces. \n? -                                                  -\n+ This is a string with leading and trailing spaces.\n\n\n----------------------------------------------------------------------\nRan 3 tests in 0.002s\n\nFAILED (failures=1)\n",
+        "test_smells": {}
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.75,
+        "stdout": "",
+        "stderr": ".F..\n======================================================================\nFAIL: test_leading_trailing_spaces (__main__.TestRemoveMultipleSpaces.test_leading_trailing_spaces)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_few-shot.py\", line 21, in test_leading_trailing_spaces\n    self.assertEqual(remove_multiple_spaces(\"  hello  world  \"), \"hello world\")\nAssertionError: ' hello world ' != 'hello world'\n-  hello world \n? -           -\n+ hello world\n\n\n----------------------------------------------------------------------\nRan 4 tests in 0.002s\n\nFAILED (failures=1)\n",
+        "test_smells": {}
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.75,
+        "stdout": "",
+        "stderr": ".FFF..\n======================================================================\nFAIL: test_multiple_leading_spaces (__main__.TestRemoveMultipleSpaces.test_multiple_leading_spaces)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_cot.py\", line 26, in test_multiple_leading_spaces\n    self.assertEqual(remove_multiple_spaces(text1), expected_output)\nAssertionError: ' This is a string with multiple spaces.' != 'This is a string with multiple spaces.'\n-  This is a string with multiple spaces.\n? -\n+ This is a string with multiple spaces.\n\n\n======================================================================\nFAIL: test_multiple_leading_trailing_spaces (__main__.TestRemoveMultipleSpaces.test_multiple_leading_trailing_spaces)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_cot.py\", line 36, in test_multiple_leading_trailing_spaces\n    self.assertEqual(remove_multiple_spaces(text1), expected_output)\nAssertionError: ' This is a string with multiple spaces. ' != 'This is a string with multiple spaces.'\n-  This is a string with multiple spaces. \n? -                                      -\n+ This is a string with multiple spaces.\n\n\n======================================================================\nFAIL: test_multiple_trailing_spaces (__main__.TestRemoveMultipleSpaces.test_multiple_trailing_spaces)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_cot.py\", line 31, in test_multiple_trailing_spaces\n    self.assertEqual(remove_multiple_spaces(text1), expected_output)\nAssertionError: 'This is a string with multiple spaces. ' != 'This is a string with multiple spaces.'\n- This is a string with multiple spaces. \n?                                       -\n+ This is a string with multiple spaces.\n\n\n----------------------------------------------------------------------\nRan 6 tests in 0.004s\n\nFAILED (failures=3)\n",
+        "test_smells": {}
+      }
+    }
+  }

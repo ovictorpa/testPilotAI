@@ -1,0 +1,5 @@
+{
+    "zero-shot": "Write unit tests in Python for the following function.\n\nimport re\n\ndef remove_multiple_spaces(text1):\n\n  return (re.sub(' +',' ',text1))",
+    "few-shot": "Write unit tests in Python for the following function. Here are some examples:\nExample of basic unit test:\ndef add(a, b): return a + b\n\nTest:\nimport unittest\nclass TestAdd(unittest.TestCase):\n    def test_add(self):\n        self.assertEqual(add(1, 2), 3)\n\nNow for the function:\nimport re\n\ndef remove_multiple_spaces(text1):\n\n  return (re.sub(' +',' ',text1))",
+    "cot": "Write unit tests in Python for the following function. First, think step-by-step about the possible edge cases, scenarios, assertions and logic involved. Then write complete tests using unittest.\n\nFunction:\nimport re\n\ndef remove_multiple_spaces(text1):\n\n  return (re.sub(' +',' ',text1))"
+}

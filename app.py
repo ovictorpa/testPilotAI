@@ -9,7 +9,11 @@ import os
 import json
 import subprocess
 import glob
+import threading
+from flask import jsonify
+from datetime import datetime
 
+generation_status = {"done": False}
 app = Flask(__name__)
 app.secret_key = 'segredo-super-seguro'
 
@@ -25,6 +29,45 @@ def get_latest_file(path_pattern):
     if not files:
         return None
     return files[0]
+
+def background_generate_tests():
+    global generation_status
+    try:
+        generate_tests_from_all_llms()
+        with open("generation_output.json", "w", encoding="utf-8") as f:
+            json.dump(tests, f)
+        generation_status["done"] = True
+    except Exception as e:
+        generation_status["error"] = str(e)
+        generation_status["done"] = True
+
+@app.route('/start-generate-tests')
+def start_generate_tests():
+    global generation_status
+    generation_status = {
+        "done": False,
+        "start_time": datetime.now().strftime("%Y%m%d_%H%M%S")
+    }
+    threading.Thread(target=background_generate_tests).start()
+    return render_template("loading.html")
+
+@app.route('/check-status')
+def check_status():
+    from datetime import datetime
+
+    start_time = generation_status.get("start_time")
+    if not start_time:
+        return jsonify({"done": False})
+
+    # busca arquivos mais recentes que a geração
+    latest_file = get_latest_file(os.path.join(RESULTS_DIR, 'evaluation_*.json'))
+    if latest_file:
+        filename = os.path.basename(latest_file)
+        timestamp_str = filename.replace("evaluation_", "").replace(".json", "")
+        if timestamp_str > start_time:
+            return jsonify({"done": True})
+
+    return jsonify({"done": False})
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -59,11 +102,12 @@ def generate_prompts_route():
 @app.route('/generate-tests')
 def generate_tests_route():
     try:
-        tests = generate_tests_from_all_llms()
-        run_all_tests()
-        return redirect('/dashboard')
+        with open("generation_output.json", "r", encoding="utf-8") as f:
+            tests = json.load(f)
+        return render_template("tests.html", tests=tests)
     except Exception as e:
-        return f"Erro ao gerar ou avaliar testes: {e}"
+        return f"Erro ao carregar testes gerados: {e}"
+
 
 
 @app.route('/dashboard')

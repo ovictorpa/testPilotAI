@@ -13,7 +13,7 @@ def generate_prompts(code: str):
         "zero-shot": f"{base_instruction}\n\n{code}",
         "few-shot": (
             f"{base_instruction} Here are some examples:\n"
-            "Example:\n"
+            "Example of basic unit test:\n"
             "def add(a, b): return a + b\n\n"
             "Test:\n"
             "import unittest\n"
@@ -23,7 +23,7 @@ def generate_prompts(code: str):
             f"Now for the function:\n{code}"
         ),
         "cot": (
-            f"{base_instruction} First, think step-by-step about the possible edge cases and logic involved. "
+            f"{base_instruction} First, think step-by-step about the possible edge cases, scenarios, assertions and logic involved. "
             f"Then write complete tests using unittest.\n\nFunction:\n{code}"
         ),
     }

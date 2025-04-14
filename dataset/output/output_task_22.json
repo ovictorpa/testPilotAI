@@ -1,0 +1,310 @@
+{
+    "WizardLM": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertIn",
+          "assertIsInstance"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.5,
+        "stdout": "",
+        "stderr": ".F..F...E.F\n======================================================================\nERROR: test_with_mixed_types (__main__.TestFreqCountFunction.test_with_mixed_types)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 33, in test_with_mixed_types\n    self.assertEqual(freq_count(['apple', 42, (1, 2), {'key': 'value'}]), Counter({'apple': 1, 42: 1, (1, 2): 1, {'key': 'value'}: 1}))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 7, in freq_count\n    return collections.Counter(list1)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 607, in __init__\n    self.update(iterable, **kwds)\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 699, in update\n    _count_elements(self, iterable)\nTypeError: unhashable type: 'dict'\n\n======================================================================\nFAIL: test_case_insensitive (__main__.TestFreqCountFunction.test_case_insensitive)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 20, in test_case_insensitive\n    self.assertEqual(freq_count(['apple', 'Banana', 'APPLE']), Counter({'apple': 3}))\nAssertionError: Counter({'apple': 1, 'Banana': 1, 'APPLE': 1}) != Counter({'apple': 3})\n\n======================================================================\nFAIL: test_performance (__main__.TestFreqCountFunction.test_performance)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 38, in test_performance\n    self.assertEqual(len(counter), 2)\nAssertionError: 1000 != 2\n\n======================================================================\nFAIL: test_with_unicode_strings (__main__.TestFreqCountFunction.test_with_unicode_strings)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 43, in test_with_unicode_strings\n    self.assertEqual(freq_count(['hello', 'hÃ©llo', 'world']), Counter({'hello': 2, 'hÃ©llo': 1, 'world': 1}))\nAssertionError: Counter({'hello': 1, 'hÃ©llo': 1, 'world': 1}) != Counter({'hello': 2, 'hÃ©llo': 1, 'world': 1})\n\n----------------------------------------------------------------------\nRan 11 tests in 0.010s\n\nFAILED (failures=3, errors=1)\n",
+        "test_smells": {
+          "redundant_assertion": 1,
+          "magic_number": 19
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertIn"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.62,
+        "stdout": "",
+        "stderr": ".F...EF..EF\n======================================================================\nERROR: test_with_complex_list (__main__.TestFreqCount.test_with_complex_list)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 44, in test_with_complex_list\n    freq = freq_count(complex_list)\n           ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 7, in freq_count\n    return collections.Counter(lst)\n           ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 607, in __init__\n    self.update(iterable, **kwds)\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 699, in update\n    _count_elements(self, iterable)\nTypeError: unhashable type: 'dict'\n\n======================================================================\nERROR: test_with_mixed_types (__main__.TestFreqCount.test_with_mixed_types)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 49, in test_with_mixed_types\n    freq = freq_count(mixed_list)\n           ^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 7, in freq_count\n    return collections.Counter(lst)\n           ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 607, in __init__\n    self.update(iterable, **kwds)\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 699, in update\n    _count_elements(self, iterable)\nTypeError: unhashable type: 'dict'\n\n======================================================================\nFAIL: test_case_insensitive (__main__.TestFreqCount.test_case_insensitive)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 26, in test_case_insensitive\n    self.assertEqual(freq_count(['Cat', 'cat', 'DOG']), Counter({'Cat': 1, 'cat': 2, 'DOG': 1}))\nAssertionError: Counter({'Cat': 1, 'cat': 1, 'DOG': 1}) != Counter({'cat': 2, 'Cat': 1, 'DOG': 1})\n\n======================================================================\nFAIL: test_with_custom_objects (__main__.TestFreqCount.test_with_custom_objects)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 37, in test_with_custom_objects\n    self.assertEqual(freq[MyObject], 2)\nAssertionError: 0 != 2\n\n======================================================================\nFAIL: test_with_none (__main__.TestFreqCount.test_with_none)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 29, in test_with_none\n    self.assertIn('None', freq_count([None, None, 1]))\nAssertionError: 'None' not found in Counter({None: 2, 1: 1})\n\n----------------------------------------------------------------------\nRan 11 tests in 0.004s\n\nFAILED (failures=3, errors=2)\n",
+        "test_smells": {
+          "magic_number": 21
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertGreaterEqual",
+          "assertTrue",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.65,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 5, in <module>\n    from your_script import freq_count  # Assuming freq_count is defined in 'your_script.py'\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'your_script'\n",
+        "test_smells": {
+          "assertion_roulette": 2,
+          "magic_number": 33
+        }
+      }
+    },
+    "CodeLLaMA": {
+      "zero-shot": {
+        "status": "passed",
+        "coverage": "25%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.8,
+        "stdout": "",
+        "stderr": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.000s\n\nOK\n",
+        "test_smells": {
+          "magic_number": 7
+        }
+      },
+      "few-shot": {
+        "status": "passed",
+        "coverage": "12%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.8,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "magic_number": 7
+        }
+      },
+      "cot": {
+        "status": "no_code_found",
+        "score": 0.0
+      }
+    },
+    "WizardCoder": {
+      "zero-shot": {
+        "status": "passed",
+        "coverage": "12%",
+        "assert_types": [
+          "assertEqual",
+          "assertDictEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.87,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "magic_number": 51
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.42,
+        "stdout": "",
+        "stderr": ".F.F.\n======================================================================\nFAIL: test_empty_dict (__main__.TestFreqCount.test_empty_dict)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_few-shot.py\", line 23, in test_empty_dict\n    self.assertEqual(freq_count([1,2]), {})\nAssertionError: Counter({1: 1, 2: 1}) != {}\n\n======================================================================\nFAIL: test_invalid_inputs (__main__.TestFreqCount.test_invalid_inputs)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_few-shot.py\", line 17, in test_invalid_inputs\n    with self.assertRaises(TypeError):\nAssertionError: TypeError not raised\n\n----------------------------------------------------------------------\nRan 5 tests in 0.002s\n\nFAILED (failures=2)\n",
+        "test_smells": {
+          "assertion_roulette": 2,
+          "magic_number": 17
+        }
+      },
+      "cot": {
+        "status": "passed",
+        "coverage": "12%",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.67,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "magic_number": 2,
+          "assertion_roulette": 1
+        }
+      }
+    },
+    "LLaMA3": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.42,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_zero-shot.py\", line 4, in <module>\n    from your_module import freq_count  # replace 'your_module' with the actual name of the module where the function is defined\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'your_module'\n",
+        "test_smells": {
+          "assertion_roulette": 2,
+          "magic_number": 25
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.42,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_few-shot.py\", line 4, in <module>\n    from your_module import freq_count  # Import the module where freq_count is defined\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'your_module'\n",
+        "test_smells": {
+          "assertion_roulette": 2,
+          "magic_number": 15
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.42,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 5, in <module>\n    from your_module import freq_count  # Replace 'your_module' with the actual module name\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'your_module'\n",
+        "test_smells": {
+          "assertion_roulette": 3,
+          "magic_number": 17
+        }
+      }
+    },
+    "Gemma": {
+      "zero-shot": {
+        "status": "passed",
+        "coverage": "12%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.8,
+        "stdout": "",
+        "stderr": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.001s\n\nOK\n",
+        "test_smells": {
+          "magic_number": 7
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.55,
+        "stdout": "",
+        "stderr": "...F\n======================================================================\nFAIL: test_string (__main__.TestFreqCount.test_string)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_few-shot.py\", line 23, in test_string\n    self.assertEqual(freq_count('aaabbcc'), Counter({'a': 3, 'b': 3, 'c': 2}))\nAssertionError: Counter({'a': 3, 'b': 2, 'c': 2}) != Counter({'a': 3, 'b': 3, 'c': 2})\n\n----------------------------------------------------------------------\nRan 4 tests in 0.001s\n\nFAILED (failures=1)\n",
+        "test_smells": {
+          "magic_number": 8
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.62,
+        "stdout": "Couldn't run 'C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py' as Python code: SyntaxError: invalid syntax (Gemma_cot.py, line 23)\n",
+        "stderr": "C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\venv\\Lib\\site-packages\\coverage\\control.py:915: CoverageWarning: No data was collected. (no-data-collected)\n  self._warn(\"No data was collected.\", slug=\"no-data-collected\")\n",
+        "test_smells": {
+          "syntax_error": 1
+        }
+      }
+    },
+    "CodeGemma": {
+      "zero-shot": {
+        "status": "passed",
+        "coverage": "12%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.8,
+        "stdout": "",
+        "stderr": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.001s\n\nOK\n",
+        "test_smells": {
+          "magic_number": 7
+        }
+      },
+      "few-shot": {
+        "status": "passed",
+        "coverage": "12%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.8,
+        "stdout": "",
+        "stderr": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.000s\n\nOK\n",
+        "test_smells": {
+          "magic_number": 8
+        }
+      },
+      "cot": {
+        "status": "passed",
+        "coverage": "12%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.8,
+        "stdout": "",
+        "stderr": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.000s\n\nOK\n",
+        "test_smells": {
+          "magic_number": 15
+        }
+      }
+    }
+  }

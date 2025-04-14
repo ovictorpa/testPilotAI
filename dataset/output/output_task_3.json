@@ -1,0 +1,308 @@
+{
+    "WizardLM": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertTrue",
+          "assertFalse"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.42,
+        "stdout": "",
+        "stderr": ".F..F...........\n======================================================================\nFAIL: test_alternating_characters (__main__.TestIsHappy.test_alternating_characters)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 33, in test_alternating_characters\n    self.assertTrue(is_happy(\"xyx\"))  # Alternating characters should be happy\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: False is not true\n\n======================================================================\nFAIL: test_leading_trailing_spaces (__main__.TestIsHappy.test_leading_trailing_spaces)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 51, in test_leading_trailing_spaces\n    self.assertTrue(is_happy(\" abc  \"))  # Leading and trailing spaces with distinct characters in between\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: False is not true\n\n----------------------------------------------------------------------\nRan 16 tests in 0.003s\n\nFAILED (failures=2)\n",
+        "test_smells": {
+          "magic_number": 4,
+          "assertion_roulette": 16
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertTrue",
+          "assertFalse"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.42,
+        "stdout": "",
+        "stderr": "..........F.F....\n======================================================================\nFAIL: test_repeating_sequence (__main__.TestIsHappy.test_repeating_sequence)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 29, in test_repeating_sequence\n    self.assertFalse(is_happy(\"abcd\"))  # Repeating sequence should not be happy\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: True is not false\n\n======================================================================\nFAIL: test_special_characters (__main__.TestIsHappy.test_special_characters)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 49, in test_special_characters\n    self.assertFalse(is_happy(\"a!b@c#d$e%f&g*h\"))  # Special characters should not be happy\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: True is not false\n\n----------------------------------------------------------------------\nRan 17 tests in 0.002s\n\nFAILED (failures=2)\n",
+        "test_smells": {
+          "magic_number": 4,
+          "assertion_roulette": 17
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertTrue",
+          "assertRaises",
+          "assertFalse"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.7,
+        "stdout": "",
+        "stderr": "......F....\n======================================================================\nFAIL: test_non_alphabetical_string (__main__.TestIsHappyFunction.test_non_alphabetical_string)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 35, in test_non_alphabetical_string\n    with self.assertRaises(TypeError):\nAssertionError: TypeError not raised\n\n----------------------------------------------------------------------\nRan 11 tests in 0.002s\n\nFAILED (failures=1)\n",
+        "test_smells": {
+          "assertion_roulette": 16
+        }
+      }
+    },
+    "CodeLLaMA": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertTrue",
+          "assertFalse"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.62,
+        "stdout": "",
+        "stderr": ".FF....\n======================================================================\nFAIL: test_five_letter_string (__main__.TestIsHappy.test_five_letter_string)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeLLaMA_zero-shot.py\", line 23, in test_five_letter_string\n    self.assertTrue(is_happy('aabbc'))\nAssertionError: False is not true\n\n======================================================================\nFAIL: test_four_letter_string (__main__.TestIsHappy.test_four_letter_string)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeLLaMA_zero-shot.py\", line 20, in test_four_letter_string\n    self.assertFalse(is_happy('abcd'))\nAssertionError: True is not false\n\n----------------------------------------------------------------------\nRan 7 tests in 0.003s\n\nFAILED (failures=2)\n",
+        "test_smells": {
+          "assertion_roulette": 7
+        }
+      },
+      "few-shot": {
+        "status": "no_code_found",
+        "score": 0.0
+      },
+      "cot": {
+        "status": "passed",
+        "coverage": "5%",
+        "assert_types": [
+          "assertTrue",
+          "assertFalse"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.67,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "assertion_roulette": 8,
+          "magic_number": 11
+        }
+      }
+    },
+    "WizardCoder": {
+      "zero-shot": {
+        "status": "passed",
+        "coverage": "5%",
+        "assert_types": [
+          "assertTrue",
+          "assertFalse"
+        ],
+        "edge_case_found": false,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.62,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "assertion_roulette": 7
+        }
+      },
+      "few-shot": {
+        "status": "passed",
+        "coverage": "5%",
+        "assert_types": [],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.8,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "magic_number": 4
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.55,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_cot.py\", line 4, in <module>\n    from is_happy import is_happy\nModuleNotFoundError: No module named 'is_happy'\n",
+        "test_smells": {
+          "redundant_assertion": 7
+        }
+      }
+    },
+    "LLaMA3": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertTrue",
+          "assertFalse"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.42,
+        "stdout": "",
+        "stderr": "F....\n======================================================================\nFAIL: test_edge_case (__main__.TestIsHappyFunction.test_edge_case)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_zero-shot.py\", line 25, in test_edge_case\n    self.assertTrue(is_happy(\"a\" * 3))\nAssertionError: False is not true\n\n----------------------------------------------------------------------\nRan 5 tests in 0.002s\n\nFAILED (failures=1)\n",
+        "test_smells": {
+          "assertion_roulette": 10,
+          "magic_number": 1
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertTrue",
+          "assertFalse"
+        ],
+        "edge_case_found": false,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.37,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_few-shot.py\", line 4, in <module>\n    from your_module import is_happy  # replace 'your_module' with the actual name of your module\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'your_module'\n",
+        "test_smells": {
+          "assertion_roulette": 9
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertTrue",
+          "assertRaises",
+          "assertFalse"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.7,
+        "stdout": "",
+        "stderr": "FFF...\n======================================================================\nFAIL: test_empty_string (__main__.TestIsHappyFunction.test_empty_string)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 24, in test_empty_string\n    with self.assertRaises(ValueError):\nAssertionError: ValueError not raised\n\n======================================================================\nFAIL: test_length_less_than_three (__main__.TestIsHappyFunction.test_length_less_than_three)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 20, in test_length_less_than_three\n    with self.assertRaises(ValueError):\nAssertionError: ValueError not raised\n\n======================================================================\nFAIL: test_longer_than_three_characters (__main__.TestIsHappyFunction.test_longer_than_three_characters)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 29, in test_longer_than_three_characters\n    with self.assertRaises(ValueError):\nAssertionError: ValueError not raised\n\n----------------------------------------------------------------------\nRan 6 tests in 0.002s\n\nFAILED (failures=3)\n",
+        "test_smells": {
+          "assertion_roulette": 9
+        }
+      }
+    },
+    "Gemma": {
+      "zero-shot": {
+        "status": "passed",
+        "coverage": "37%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 3.05,
+        "stdout": "",
+        "stderr": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.000s\n\nOK\n",
+        "test_smells": {
+          "redundant_assertion": 8
+        }
+      },
+      "few-shot": {
+        "status": "passed",
+        "coverage": "37%",
+        "assert_types": [
+          "assertTrue",
+          "assertFalse"
+        ],
+        "edge_case_found": false,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.87,
+        "stdout": "",
+        "stderr": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.001s\n\nOK\n",
+        "test_smells": {
+          "assertion_roulette": 7
+        }
+      },
+      "cot": {
+        "status": "passed",
+        "coverage": "37%",
+        "assert_types": [
+          "assertTrue",
+          "assertFalse"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 3.12,
+        "stdout": "",
+        "stderr": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.000s\n\nOK\n",
+        "test_smells": {
+          "assertion_roulette": 6
+        }
+      }
+    },
+    "CodeGemma": {
+      "zero-shot": {
+        "status": "passed",
+        "coverage": "37%",
+        "assert_types": [
+          "assertTrue",
+          "assertFalse"
+        ],
+        "edge_case_found": false,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.87,
+        "stdout": "",
+        "stderr": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.001s\n\nOK\n",
+        "test_smells": {
+          "assertion_roulette": 6
+        }
+      },
+      "few-shot": {
+        "status": "passed",
+        "coverage": "37%",
+        "assert_types": [
+          "assertTrue",
+          "assertFalse"
+        ],
+        "edge_case_found": false,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.87,
+        "stdout": "",
+        "stderr": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.000s\n\nOK\n",
+        "test_smells": {
+          "assertion_roulette": 6
+        }
+      },
+      "cot": {
+        "status": "passed",
+        "coverage": "37%",
+        "assert_types": [
+          "assertTrue",
+          "assertFalse"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 3.12,
+        "stdout": "",
+        "stderr": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.000s\n\nOK\n",
+        "test_smells": {
+          "assertion_roulette": 9
+        }
+      }
+    }
+  }

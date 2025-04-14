@@ -1,0 +1,306 @@
+{
+    "WizardCoder": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.62,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_zero-shot.py\", line 4, in <module>\n    from intersperse import intersperse\nModuleNotFoundError: No module named 'intersperse'\n",
+        "test_smells": {
+          "magic_number": 37
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.62,
+        "stdout": "Couldn't run 'C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_few-shot.py' as Python code: SyntaxError: '(' was never closed (WizardCoder_few-shot.py, line 39)\n",
+        "stderr": "C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\venv\\Lib\\site-packages\\coverage\\control.py:915: CoverageWarning: No data was collected. (no-data-collected)\n  self._warn(\"No data was collected.\", slug=\"no-data-collected\")\n",
+        "test_smells": {
+          "syntax_error": 1
+        }
+      },
+      "cot": {
+        "status": "passed",
+        "coverage": "9%",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.67,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "assertion_roulette": 3,
+          "magic_number": 24
+        }
+      }
+    },
+    "CodeLLaMA": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.55,
+        "stdout": "",
+        "stderr": "FF....\n======================================================================\nFAIL: test_delimiter_at_end (__main__.TestIntersperse.test_delimiter_at_end)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeLLaMA_zero-shot.py\", line 23, in test_delimiter_at_end\n    self.assertEqual(intersperse([1, 2, 3, 4], 4), [1, 4, 2, 4, 3, 4])\nAssertionError: Lists differ: [1, 4, 2, 4, 3, 4, 4] != [1, 4, 2, 4, 3, 4]\n\nFirst list contains 1 additional elements.\nFirst extra element 6:\n4\n\n- [1, 4, 2, 4, 3, 4, 4]\n?                 ---\n\n+ [1, 4, 2, 4, 3, 4]\n\n======================================================================\nFAIL: test_delimiter_at_start (__main__.TestIntersperse.test_delimiter_at_start)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeLLaMA_zero-shot.py\", line 20, in test_delimiter_at_start\n    self.assertEqual(intersperse([4, 1, 2, 3], 4), [4, 1, 4, 2, 4, 3])\nAssertionError: Lists differ: [4, 4, 1, 4, 2, 4, 3] != [4, 1, 4, 2, 4, 3]\n\nFirst differing element 1:\n4\n1\n\nFirst list contains 1 additional elements.\nFirst extra element 6:\n3\n\n- [4, 4, 1, 4, 2, 4, 3]\n+ [4, 1, 4, 2, 4, 3]\n\n----------------------------------------------------------------------\nRan 6 tests in 0.004s\n\nFAILED (failures=2)\n",
+        "test_smells": {
+          "magic_number": 31
+        }
+      },
+      "few-shot": {
+        "status": "no_code_found",
+        "score": 0.0
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.42,
+        "stdout": "",
+        "stderr": "F.F.FF...\n======================================================================\nFAIL: test_delimiter_is_a_string (__main__.TestIntersperse.test_delimiter_is_a_string)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeLLaMA_cot.py\", line 26, in test_delimiter_is_a_string\n    with self.assertRaises(TypeError):\nAssertionError: TypeError not raised\n\n======================================================================\nFAIL: test_delimiter_is_not_provided (__main__.TestIntersperse.test_delimiter_is_not_provided)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeLLaMA_cot.py\", line 19, in test_delimiter_is_not_provided\n    with self.assertRaises(TypeError):\nAssertionError: TypeError not raised\n\n======================================================================\nFAIL: test_input_list_contains_duplicates (__main__.TestIntersperse.test_input_list_contains_duplicates)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeLLaMA_cot.py\", line 30, in test_input_list_contains_duplicates\n    self.assertEqual(intersperse([1, 2, 3, 3, 4], 4), [1, 4, 2, 4, 3, 4])\nAssertionError: Lists differ: [1, 4, 2, 4, 3, 4, 3, 4, 4] != [1, 4, 2, 4, 3, 4]\n\nFirst list contains 3 additional elements.\nFirst extra element 6:\n3\n\n- [1, 4, 2, 4, 3, 4, 3, 4, 4]\n?                 ---------\n\n+ [1, 4, 2, 4, 3, 4]\n\n======================================================================\nFAIL: test_input_list_contains_negative_numbers (__main__.TestIntersperse.test_input_list_contains_negative_numbers)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeLLaMA_cot.py\", line 33, in test_input_list_contains_negative_numbers\n    self.assertEqual(intersperse([-1, -2, -3, -4], 4), [-1, 4, -2, 4, -3, -4])\nAssertionError: Lists differ: [-1, 4, -2, 4, -3, 4, -4] != [-1, 4, -2, 4, -3, -4]\n\nFirst differing element 5:\n4\n-4\n\nFirst list contains 1 additional elements.\nFirst extra element 6:\n-4\n\n- [-1, 4, -2, 4, -3, 4, -4]\n?                    ---\n\n+ [-1, 4, -2, 4, -3, -4]\n\n----------------------------------------------------------------------\nRan 9 tests in 0.003s\n\nFAILED (failures=4)\n",
+        "test_smells": {
+          "assertion_roulette": 2,
+          "magic_number": 43
+        }
+      }
+    },
+    "WizardLM": {
+      "zero-shot": {
+        "status": "passed",
+        "coverage": "9%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.8,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "magic_number": 42
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.42,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 6, in <module>\n    from your_module import intersperse  # Replace 'your_module' with the actual module name where the function is defined\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'your_module'\n",
+        "test_smells": {
+          "assertion_roulette": 1,
+          "magic_number": 45
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertIsNone",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.5,
+        "stdout": "",
+        "stderr": "F.....F.FFFF\n======================================================================\nFAIL: test_delimiter_is_an_element (__main__.TestIntersperseFunction.test_delimiter_is_an_element)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 19, in test_delimiter_is_an_element\n    self.assertEqual(intersperse([7, 8, 7], 7), [7, 8, 7])\nAssertionError: Lists differ: [7, 7, 8, 7, 7] != [7, 8, 7]\n\nFirst differing element 1:\n7\n8\n\nFirst list contains 2 additional elements.\nFirst extra element 3:\n7\n\n- [7, 7, 8, 7, 7]\n?     ---   ---\n\n+ [7, 8, 7]\n\n======================================================================\nFAIL: test_multiple_elements (__main__.TestIntersperseFunction.test_multiple_elements)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 16, in test_multiple_elements\n    self.assertEqual(intersperse([5, -1, 6], '-'), ['5', '-', '-1', '-', '6'])\nAssertionError: Lists differ: [5, '-', -1, '-', 6] != ['5', '-', '-1', '-', '6']\n\nFirst differing element 0:\n5\n'5'\n\n- [5, '-', -1, '-', 6]\n+ ['5', '-', '-1', '-', '6']\n?  + +       +  +       + +\n\n\n======================================================================\nFAIL: test_non_hashable_types (__main__.TestIntersperseFunction.test_non_hashable_types)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 29, in test_non_hashable_types\n    with self.assertRaises(TypeError):\nAssertionError: TypeError not raised\n\n======================================================================\nFAIL: test_non_integer_delimiter (__main__.TestIntersperseFunction.test_non_integer_delimiter)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 40, in test_non_integer_delimiter\n    self.assertEqual(intersperse(['word', 'hello'], '#'), ['word', '#', 'hello', '#'])\nAssertionError: Lists differ: ['word', '#', 'hello'] != ['word', '#', 'hello', '#']\n\nSecond list contains 1 additional elements.\nFirst extra element 3:\n'#'\n\n- ['word', '#', 'hello']\n+ ['word', '#', 'hello', '#']\n?                      +++++\n\n\n======================================================================\nFAIL: test_none_delimiter (__main__.TestIntersperseFunction.test_none_delimiter)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 47, in test_none_delimiter\n    self.assertIsNone(intersperse([], None))\nAssertionError: [] is not None\n\n======================================================================\nFAIL: test_single_element (__main__.TestIntersperseFunction.test_single_element)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 11, in test_single_element\n    self.assertEqual(intersperse([1], 0), [1, 0])\nAssertionError: Lists differ: [1] != [1, 0]\n\nSecond list contains 1 additional elements.\nFirst extra element 1:\n0\n\n- [1]\n+ [1, 0]\n\n----------------------------------------------------------------------\nRan 12 tests in 0.004s\n\nFAILED (failures=6)\n",
+        "test_smells": {
+          "assertion_roulette": 2,
+          "magic_number": 42
+        }
+      }
+    },
+    "LLaMA3": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.42,
+        "stdout": "",
+        "stderr": ".FFF..\n======================================================================\nFAIL: test_invalid_input_type (__main__.TestIntersperse.test_invalid_input_type)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_zero-shot.py\", line 33, in test_invalid_input_type\n    with self.assertRaises(TypeError):\nAssertionError: TypeError not raised\n\n======================================================================\nFAIL: test_invalid_input_type_delimiter (__main__.TestIntersperse.test_invalid_input_type_delimiter)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_zero-shot.py\", line 37, in test_invalid_input_type_delimiter\n    with self.assertRaises(TypeError):\nAssertionError: TypeError not raised\n\n======================================================================\nFAIL: test_longer_list (__main__.TestIntersperse.test_longer_list)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_zero-shot.py\", line 30, in test_longer_list\n    self.assertEqual(intersperse([1, 2, 3, 4, 5], 4), [1, 4, 2, 4, 4, 5])\nAssertionError: Lists differ: [1, 4, 2, 4, 3, 4, 4, 4, 5] != [1, 4, 2, 4, 4, 5]\n\nFirst differing element 4:\n3\n4\n\nFirst list contains 3 additional elements.\nFirst extra element 6:\n4\n\n- [1, 4, 2, 4, 3, 4, 4, 4, 5]\n?              ---   ------\n\n+ [1, 4, 2, 4, 4, 5]\n\n----------------------------------------------------------------------\nRan 6 tests in 0.003s\n\nFAILED (failures=3)\n",
+        "test_smells": {
+          "assertion_roulette": 2,
+          "magic_number": 19
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.55,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_few-shot.py\", line 4, in <module>\n    from your_module import intersperse  # replace 'your_module' with the actual name of the module where the function is defined\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'your_module'\n",
+        "test_smells": {
+          "magic_number": 19
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.55,
+        "stdout": "",
+        "stderr": "..FFFF\n======================================================================\nFAIL: test_longer_list (__main__.TestIntersperseFunction.test_longer_list)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 21, in test_longer_list\n    self.assertEqual(intersperse([1, 2, 3, 4, 5], 4), [1, 4, 2, 4, 4, 5, 4])\nAssertionError: Lists differ: [1, 4, 2, 4, 3, 4, 4, 4, 5] != [1, 4, 2, 4, 4, 5, 4]\n\nFirst differing element 4:\n3\n4\n\nFirst list contains 2 additional elements.\nFirst extra element 7:\n4\n\n- [1, 4, 2, 4, 3, 4, 4, 4, 5]\n?              ---    ------\n\n+ [1, 4, 2, 4, 4, 5, 4]\n?                 +++\n\n\n======================================================================\nFAIL: test_longer_list_with_delimiter (__main__.TestIntersperseFunction.test_longer_list_with_delimiter)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 25, in test_longer_list_with_delimiter\n    self.assertEqual(intersperse([10, 20, 30, 40, 50], 5), [10, 5, 20, 5, 30, 5, 4, 40, 5, 50, 5])\nAssertionError: Lists differ: [10, 5, 20, 5, 30, 5, 40, 5, 50] != [10, 5, 20, 5, 30, 5, 4, 40, 5, 50, 5]\n\nFirst differing element 6:\n40\n4\n\nSecond list contains 2 additional elements.\nFirst extra element 9:\n50\n\n- [10, 5, 20, 5, 30, 5, 40, 5, 50]\n+ [10, 5, 20, 5, 30, 5, 4, 40, 5, 50, 5]\n?                      +++          +++\n\n\n======================================================================\nFAIL: test_single_element (__main__.TestIntersperseFunction.test_single_element)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 13, in test_single_element\n    self.assertEqual(intersperse([1], 4), [1, 4])\nAssertionError: Lists differ: [1] != [1, 4]\n\nSecond list contains 1 additional elements.\nFirst extra element 1:\n4\n\n- [1]\n+ [1, 4]\n\n======================================================================\nFAIL: test_two_elements (__main__.TestIntersperseFunction.test_two_elements)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 17, in test_two_elements\n    self.assertEqual(intersperse([1, 2], 4), [1, 4, 2, 4])\nAssertionError: Lists differ: [1, 4, 2] != [1, 4, 2, 4]\n\nSecond list contains 1 additional elements.\nFirst extra element 3:\n4\n\n- [1, 4, 2]\n+ [1, 4, 2, 4]\n?         +++\n\n\n----------------------------------------------------------------------\nRan 6 tests in 0.004s\n\nFAILED (failures=4)\n",
+        "test_smells": {
+          "magic_number": 37
+        }
+      }
+    },
+    "Gemma": {
+      "zero-shot": {
+        "status": "passed",
+        "coverage": "45%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 3.05,
+        "stdout": "",
+        "stderr": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.000s\n\nOK\n",
+        "test_smells": {
+          "magic_number": 16
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.42,
+        "stdout": "",
+        "stderr": ".FF.\n======================================================================\nFAIL: test_delimiter_as_negative_one (__main__.TestInterpose.test_delimiter_as_negative_one)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_few-shot.py\", line 29, in test_delimiter_as_negative_one\n    with self.assertRaises(ValueError):\nAssertionError: ValueError not raised\n\n======================================================================\nFAIL: test_delimiter_as_zero (__main__.TestInterpose.test_delimiter_as_zero)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_few-shot.py\", line 26, in test_delimiter_as_zero\n    self.assertEqual(intersperse([1, 2, 3], 0), [1, 2, 3])\nAssertionError: Lists differ: [1, 0, 2, 0, 3] != [1, 2, 3]\n\nFirst differing element 1:\n0\n2\n\nFirst list contains 2 additional elements.\nFirst extra element 3:\n0\n\n- [1, 0, 2, 0, 3]\n?     ---   ---\n\n+ [1, 2, 3]\n\n----------------------------------------------------------------------\nRan 4 tests in 0.002s\n\nFAILED (failures=2)\n",
+        "test_smells": {
+          "assertion_roulette": 1,
+          "magic_number": 14
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.62,
+        "stdout": "",
+        "stderr": "F....\n======================================================================\nFAIL: test_delimiter_is_zero (__main__.TestInterperse.test_delimiter_is_zero)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 21, in test_delimiter_is_zero\n    self.assertRaises(ValueError, lambda: intersperse([1, 2], 0))\nAssertionError: ValueError not raised by <lambda>\n\n----------------------------------------------------------------------\nRan 5 tests in 0.002s\n\nFAILED (failures=1)\n",
+        "test_smells": {
+          "magic_number": 14
+        }
+      }
+    },
+    "CodeGemma": {
+      "zero-shot": {
+        "status": "passed",
+        "coverage": "45%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 3.05,
+        "stdout": "",
+        "stderr": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.000s\n\nOK\n",
+        "test_smells": {
+          "magic_number": 17
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.55,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_few-shot.py\", line 5, in <module>\n    from intersperse import intersperse\nModuleNotFoundError: No module named 'intersperse'\n",
+        "test_smells": {
+          "magic_number": 15
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.55,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_cot.py\", line 5, in <module>\n    from intersperse import intersperse\nModuleNotFoundError: No module named 'intersperse'\n",
+        "test_smells": {
+          "magic_number": 22
+        }
+      }
+    }
+  }

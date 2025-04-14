@@ -1,0 +1,291 @@
+{
+    "WizardLM": {
+      "zero-shot": {
+        "status": "passed",
+        "coverage": "12%",
+        "assert_types": [],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 2,
+        "score": 2.55,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {}
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 2,
+        "total_functions": 2,
+        "score": -0.05,
+        "stdout": "",
+        "stderr": "EEEEEEEE\n======================================================================\nERROR: test_max_height_balanced_tree (__main__.TestMaxHeight.test_max_height_balanced_tree)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 27, in setUp\n    self.mixed_heights_tree.left = Node(2, left=Node(3), right=Node(4))\n                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: Node.__init__() got an unexpected keyword argument 'left'\n\n======================================================================\nERROR: test_max_height_empty_tree (__main__.TestMaxHeight.test_max_height_empty_tree)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 27, in setUp\n    self.mixed_heights_tree.left = Node(2, left=Node(3), right=Node(4))\n                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: Node.__init__() got an unexpected keyword argument 'left'\n\n======================================================================\nERROR: test_max_height_large_tree (__main__.TestMaxHeight.test_max_height_large_tree)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 27, in setUp\n    self.mixed_heights_tree.left = Node(2, left=Node(3), right=Node(4))\n                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: Node.__init__() got an unexpected keyword argument 'left'\n\n======================================================================\nERROR: test_max_height_mixed_heights_tree (__main__.TestMaxHeight.test_max_height_mixed_heights_tree)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 27, in setUp\n    self.mixed_heights_tree.left = Node(2, left=Node(3), right=Node(4))\n                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: Node.__init__() got an unexpected keyword argument 'left'\n\n======================================================================\nERROR: test_max_height_single_node (__main__.TestMaxHeight.test_max_height_single_node)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 27, in setUp\n    self.mixed_heights_tree.left = Node(2, left=Node(3), right=Node(4))\n                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: Node.__init__() got an unexpected keyword argument 'left'\n\n======================================================================\nERROR: test_max_height_subtree (__main__.TestMaxHeight.test_max_height_subtree)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 27, in setUp\n    self.mixed_heights_tree.left = Node(2, left=Node(3), right=Node(4))\n                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: Node.__init__() got an unexpected keyword argument 'left'\n\n======================================================================\nERROR: test_max_height_unbalanced_left_heavy_tree (__main__.TestMaxHeight.test_max_height_unbalanced_left_heavy_tree)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 27, in setUp\n    self.mixed_heights_tree.left = Node(2, left=Node(3), right=Node(4))\n                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: Node.__init__() got an unexpected keyword argument 'left'\n\n======================================================================\nERROR: test_max_height_unbalanced_right_heavy_tree (__main__.TestMaxHeight.test_max_height_unbalanced_right_heavy_tree)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 27, in setUp\n    self.mixed_heights_tree.left = Node(2, left=Node(3), right=Node(4))\n                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: Node.__init__() got an unexpected keyword argument 'left'\n\n----------------------------------------------------------------------\nRan 8 tests in 0.015s\n\nFAILED (errors=8)\n",
+        "test_smells": {
+          "redundant_assertion": 4,
+          "magic_number": 32
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 2,
+        "score": -0.1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 4, in <module>\n    from your_module import Node, max_height  # Replace 'your_module' with the actual module name\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'your_module'\n",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 36
+        }
+      }
+    },
+    "WizardCoder": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 2,
+        "score": -0.1,
+        "stdout": "",
+        "stderr": "F\n======================================================================\nFAIL: test_max_height (__main__.TestMaxHeight.test_max_height)\nTests the max_height function with various inputs.\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_zero-shot.py\", line 12, in test_max_height\n    self.assertEqual(0, max_height(root))\nAssertionError: 0 != 1\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (failures=1)\n",
+        "test_smells": {
+          "redundant_assertion": 3,
+          "magic_number": 2
+        }
+      },
+      "few-shot": {
+        "status": "no_code_found",
+        "score": 0.0
+      },
+      "cot": {
+        "status": "no_code_found",
+        "score": 0.0
+      }
+    },
+    "LLaMA3": {
+      "zero-shot": {
+        "status": "passed",
+        "coverage": "52%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 2,
+        "score": 2.65,
+        "stdout": "",
+        "stderr": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.001s\n\nOK\n",
+        "test_smells": {
+          "redundant_assertion": 1,
+          "magic_number": 21
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 2,
+        "score": -0.1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_few-shot.py\", line 4, in <module>\n    from binary_tree import Node, max_height  # Assuming the function is in a file named binary_tree.py\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'binary_tree'\n",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 9
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertRaises",
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 2,
+        "total_functions": 2,
+        "score": -0.18,
+        "stdout": "",
+        "stderr": ".FFF.FF\n======================================================================\nFAIL: test_empty_tree (__main__.TestMaxHeightFunction.test_empty_tree)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 29, in test_empty_tree\n    self.assertEqual(max_height(node), 0)\nAssertionError: 1 != 0\n\n======================================================================\nFAIL: test_invalid_input (__main__.TestMaxHeightFunction.test_invalid_input)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 71, in test_invalid_input\n    with self.assertRaises(TypeError):\nAssertionError: TypeError not raised\n\n======================================================================\nFAIL: test_nested_binary_tree (__main__.TestMaxHeightFunction.test_nested_binary_tree)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 67, in test_nested_binary_tree\n    self.assertEqual(max_height(root), 3)\nAssertionError: 4 != 3\n\n======================================================================\nFAIL: test_unbalanced_binary_tree_left_skewed (__main__.TestMaxHeightFunction.test_unbalanced_binary_tree_left_skewed)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 50, in test_unbalanced_binary_tree_left_skewed\n    self.assertEqual(max_height(root), 2)\nAssertionError: 3 != 2\n\n======================================================================\nFAIL: test_unbalanced_binary_tree_right_skewed (__main__.TestMaxHeightFunction.test_unbalanced_binary_tree_right_skewed)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 57, in test_unbalanced_binary_tree_right_skewed\n    self.assertEqual(max_height(root), 2)\nAssertionError: 3 != 2\n\n----------------------------------------------------------------------\nRan 7 tests in 0.002s\n\nFAILED (failures=5)\n",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 23,
+          "assertion_roulette": 1
+        }
+      }
+    },
+    "CodeLLaMA": {
+      "zero-shot": {
+        "status": "passed",
+        "coverage": "52%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 2,
+        "score": 2.65,
+        "stdout": "",
+        "stderr": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.001s\n\nOK\n",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 7
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 2,
+        "score": -0.1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeLLaMA_few-shot.py\", line 4, in <module>\n    from node import Node\nModuleNotFoundError: No module named 'node'\n",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 7
+        }
+      },
+      "cot": {
+        "status": "passed",
+        "coverage": "12%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 2,
+        "total_functions": 2,
+        "score": 2.2,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "redundant_assertion": 3,
+          "magic_number": 2
+        }
+      }
+    },
+    "Gemma": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 2,
+        "score": -0.1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_zero-shot.py\", line 5, in <module>\n    from solution import Node\nModuleNotFoundError: No module named 'solution'\n",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 6
+        }
+      },
+      "few-shot": {
+        "status": "passed",
+        "coverage": "12%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 2,
+        "score": 2.15,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "redundant_assertion": 3,
+          "magic_number": 8
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 2,
+        "total_functions": 2,
+        "score": -0.05,
+        "stdout": "",
+        "stderr": "F.FF.\n======================================================================\nFAIL: test_balanced_tree (__main__.TestMaxHeight.test_balanced_tree)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 62, in test_balanced_tree\n    self.assertEqual(max_height(node), 1)\nAssertionError: 2 != 1\n\n======================================================================\nFAIL: test_left_subtree_greater (__main__.TestMaxHeight.test_left_subtree_greater)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 50, in test_left_subtree_greater\n    self.assertEqual(max_height(node), 2)\nAssertionError: 3 != 2\n\n======================================================================\nFAIL: test_right_subtree_greater (__main__.TestMaxHeight.test_right_subtree_greater)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 56, in test_right_subtree_greater\n    self.assertEqual(max_height(node), 2)\nAssertionError: 3 != 2\n\n----------------------------------------------------------------------\nRan 5 tests in 0.002s\n\nFAILED (failures=3)\n",
+        "test_smells": {
+          "redundant_assertion": 3,
+          "magic_number": 8
+        }
+      }
+    },
+    "CodeGemma": {
+      "zero-shot": {
+        "status": "passed",
+        "coverage": "52%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 2,
+        "score": 2.65,
+        "stdout": "",
+        "stderr": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.000s\n\nOK\n",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 8
+        }
+      },
+      "few-shot": {
+        "status": "passed",
+        "coverage": "52%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 2,
+        "score": 2.65,
+        "stdout": "",
+        "stderr": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.000s\n\nOK\n",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 8
+        }
+      },
+      "cot": {
+        "status": "passed",
+        "coverage": "52%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 2,
+        "score": 2.65,
+        "stdout": "",
+        "stderr": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.001s\n\nOK\n",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 13
+        }
+      }
+    }
+  }

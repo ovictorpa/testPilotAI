@@ -1,0 +1,258 @@
+{
+    "CodeLLaMA": {
+      "zero-shot": {
+        "status": "passed",
+        "coverage": "5%",
+        "assert_types": [],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": 2.3,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "magic_number": 2
+        }
+      },
+      "few-shot": {
+        "status": "no_code_found",
+        "score": 0.0
+      },
+      "cot": {
+        "status": "passed",
+        "coverage": "5%",
+        "assert_types": [],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": 2.5,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {}
+      }
+    },
+    "LLaMA3": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.22,
+        "stdout": "Couldn't run 'C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_zero-shot.py' as Python code: IndentationError: expected an indented block after function definition on line 7 (LLaMA3_zero-shot.py, line 10)\n",
+        "stderr": "C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\venv\\Lib\\site-packages\\coverage\\control.py:915: CoverageWarning: No data was collected. (no-data-collected)\n  self._warn(\"No data was collected.\", slug=\"no-data-collected\")\n",
+        "test_smells": {
+          "syntax_error": 1
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.35,
+        "stdout": "",
+        "stderr": ".FF..\n======================================================================\nFAIL: test_remove_all_occurrences_of_character_from_middle (__main__.TestRemoveOcc.test_remove_all_occurrences_of_character_from_middle)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_few-shot.py\", line 49, in test_remove_all_occurrences_of_character_from_middle\n    self.assertEqual(remove_Occ(\"abcbcaab\", \"b\"), \"abc\")\nAssertionError: 'acbcaa' != 'abc'\n- acbcaa\n+ abc\n\n\n======================================================================\nFAIL: test_remove_all_occurrences_of_character_from_start (__main__.TestRemoveOcc.test_remove_all_occurrences_of_character_from_start)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_few-shot.py\", line 43, in test_remove_all_occurrences_of_character_from_start\n    self.assertEqual(remove_Occ(\"aabbc\", \"a\"), \"bcc\")\nAssertionError: 'bbc' != 'bcc'\n- bbc\n? -\n+ bcc\n?   +\n\n\n----------------------------------------------------------------------\nRan 5 tests in 0.003s\n\nFAILED (failures=2)\n",
+        "test_smells": {}
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.35,
+        "stdout": "",
+        "stderr": "F.FFF.F.F\n======================================================================\nFAIL: test_duplicate_characters (__main__.TestRemoveOccFunction.test_duplicate_characters)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 23, in test_duplicate_characters\n    self.assertEqual(remove_Occ(\"aaab\",\"a\"), \"\")\nAssertionError: 'ab' != ''\n- ab\n\n\n======================================================================\nFAIL: test_leading_space (__main__.TestRemoveOccFunction.test_leading_space)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 26, in test_leading_space\n    self.assertEqual(remove_Occ(\" a ab a \",\"a\"), \" ab \")\nAssertionError: '  ab  ' != ' ab '\n-   ab  \n? -    -\n+  ab \n\n\n======================================================================\nFAIL: test_multiple_characters_removed_from_beginning (__main__.TestRemoveOccFunction.test_multiple_characters_removed_from_beginning)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 14, in test_multiple_characters_removed_from_beginning\n    self.assertEqual(remove_Occ(\"abca\",\"b\"), \"ac\")\nAssertionError: 'aca' != 'ac'\n- aca\n?   -\n+ ac\n\n\n======================================================================\nFAIL: test_multiple_characters_removed_from_both_ends (__main__.TestRemoveOccFunction.test_multiple_characters_removed_from_both_ends)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 20, in test_multiple_characters_removed_from_both_ends\n    self.assertEqual(remove_Occ(\"abca\",\"b\"), \"c\")\nAssertionError: 'aca' != 'c'\n- aca\n+ c\n\n\n======================================================================\nFAIL: test_no_characters_to_remove (__main__.TestRemoveOccFunction.test_no_characters_to_remove)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 32, in test_no_characters_to_remove\n    self.assertEqual(remove_Occ(\"abca\",\"c\"), \"abca\")\nAssertionError: 'aba' != 'abca'\n- aba\n+ abca\n?   +\n\n\n======================================================================\nFAIL: test_trailing_space (__main__.TestRemoveOccFunction.test_trailing_space)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 29, in test_trailing_space\n    self.assertEqual(remove_Occ(\"abc\",\"b\"), \"bc\")\nAssertionError: 'ac' != 'bc'\n- ac\n+ bc\n\n\n----------------------------------------------------------------------\nRan 9 tests in 0.004s\n\nFAILED (failures=6)\n",
+        "test_smells": {}
+      }
+    },
+    "CodeGemma": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.35,
+        "stdout": "",
+        "stderr": ".F...\n======================================================================\nFAIL: test_remove_multiple_characters (__main__.TestRemoveOcc.test_remove_multiple_characters)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_zero-shot.py\", line 11, in test_remove_multiple_characters\n    self.assertEqual(remove_Occ(\"Mississippi\", \"i\"), \"Mssppss\")\nAssertionError: 'Mssissipp' != 'Mssppss'\n- Mssissipp\n+ Mssppss\n\n\n----------------------------------------------------------------------\nRan 5 tests in 0.002s\n\nFAILED (failures=1)\n",
+        "test_smells": {}
+      },
+      "few-shot": {
+        "status": "passed",
+        "coverage": "45%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.85,
+        "stdout": "",
+        "stderr": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.001s\n\nOK\n",
+        "test_smells": {}
+      },
+      "cot": {
+        "status": "passed",
+        "coverage": "45%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.85,
+        "stdout": "",
+        "stderr": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.000s\n\nOK\n",
+        "test_smells": {}
+      }
+    },
+    "Gemma": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.35,
+        "stdout": "",
+        "stderr": "....F\n======================================================================\nFAIL: test_string_with_multiple_chars (__main__.TestRemoveOcc.test_string_with_multiple_chars)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_zero-shot.py\", line 20, in test_string_with_multiple_chars\n    self.assertEqual(remove_Occ('abcaab', 'b'), 'caab')\nAssertionError: 'acaa' != 'caab'\n- acaa\n? -\n+ caab\n?    +\n\n\n----------------------------------------------------------------------\nRan 5 tests in 0.002s\n\nFAILED (failures=1)\n",
+        "test_smells": {}
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.35,
+        "stdout": "",
+        "stderr": "..FF\n======================================================================\nFAIL: test_multiple_chars (__main__.TestRemoveOcc.test_multiple_chars)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_few-shot.py\", line 14, in test_multiple_chars\n    self.assertEqual(remove_Occ('abcabcdeeeefg', 'c'), 'abdeeefg')\nAssertionError: 'ababdeeeefg' != 'abdeeefg'\n- ababdeeeefg\n? --      -\n+ abdeeefg\n\n\n======================================================================\nFAIL: test_single_char (__main__.TestRemoveOcc.test_single_char)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_few-shot.py\", line 11, in test_single_char\n    self.assertEqual(remove_Occ('aaabbcc', 'b'), 'aacc')\nAssertionError: 'aaacc' != 'aacc'\n- aaacc\n? -\n+ aacc\n\n\n----------------------------------------------------------------------\nRan 4 tests in 0.002s\n\nFAILED (failures=2)\n",
+        "test_smells": {}
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.35,
+        "stdout": "",
+        "stderr": "...F.\n======================================================================\nFAIL: test_multiple_occ_front (__main__.TestRemoveOcc.test_multiple_occ_front)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 14, in test_multiple_occ_front\n    self.assertEqual(remove_Occ('aaabbcc', 'b'), 'cc')\nAssertionError: 'aaacc' != 'cc'\n- aaacc\n+ cc\n\n\n----------------------------------------------------------------------\nRan 5 tests in 0.002s\n\nFAILED (failures=1)\n",
+        "test_smells": {}
+      }
+    },
+    "WizardCoder": {
+      "zero-shot": {
+        "status": "passed",
+        "coverage": "5%",
+        "assert_types": [],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.6,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {}
+      },
+      "few-shot": {
+        "status": "passed",
+        "coverage": "5%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": 2.5,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {}
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": false,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_cot.py\", line 4, in <module>\n    from remove_Occ import remove_Occ\nModuleNotFoundError: No module named 'remove_Occ'\n",
+        "test_smells": {}
+      }
+    },
+    "WizardLM": {
+      "zero-shot": {
+        "status": "passed",
+        "coverage": "5%",
+        "assert_types": [],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.6,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {}
+      },
+      "few-shot": {
+        "status": "passed",
+        "coverage": "5%",
+        "assert_types": [
+          "assertEqual",
+          "assertNotEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.67,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {}
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.02,
+        "stdout": "",
+        "stderr": "F.FFFF.F\n======================================================================\nFAIL: test_all_character_string (__main__.TestRemoveOcc.test_all_character_string)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 30, in test_all_character_string\n    self.assertEqual(remove_Occ(\"aaabbcc\", 'a'), \"\")\nAssertionError: 'abbcc' != ''\n- abbcc\n\n\n======================================================================\nFAIL: test_large_strings (__main__.TestRemoveOcc.test_large_strings)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 42, in test_large_strings\n    self.assertEqual(remove_Occ(large_str, 'a'), \"\")\nAssertionError: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa[9953 chars]aaaa' != ''\nDiff is 10002 characters long. Set self.maxDiff to None to see it.\n\n======================================================================\nFAIL: test_mixed_cases (__main__.TestRemoveOcc.test_mixed_cases)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 33, in test_mixed_cases\n    self.assertEqual(remove_Occ(\"Hello World\", 'l'), \"Heo Wrd\")\nAssertionError: 'Helo Word' != 'Heo Wrd'\n- Helo Word\n?   -   -\n+ Heo Wrd\n\n\n======================================================================\nFAIL: test_multiple_occurrences (__main__.TestRemoveOcc.test_multiple_occurrences)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 24, in test_multiple_occurrences\n    self.assertEqual(remove_Occ(\"abracadabra\", 'a'), \"brcbr\")\nAssertionError: 'bracadabr' != 'brcbr'\n- bracadabr\n?   - ---\n+ brcbr\n\n\n======================================================================\nFAIL: test_no_occurrence (__main__.TestRemoveOcc.test_no_occurrence)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 27, in test_no_occurrence\n    self.assertEqual(remove_Occ(\"world\", 'o'), \"world\")\nAssertionError: 'wrld' != 'world'\n- wrld\n+ world\n?  +\n\n\n======================================================================\nFAIL: test_single_occurrence (__main__.TestRemoveOcc.test_single_occurrence)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 21, in test_single_occurrence\n    self.assertEqual(remove_Occ(\"hello\", 'o'), \"helo\")\nAssertionError: 'hell' != 'helo'\n- hell\n?    ^\n+ helo\n?    ^\n\n\n----------------------------------------------------------------------\nRan 8 tests in 0.003s\n\nFAILED (failures=6)\n",
+        "test_smells": {
+          "assertion_roulette": 1,
+          "magic_number": 2
+        }
+      }
+    }
+  }

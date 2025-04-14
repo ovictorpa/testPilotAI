@@ -1,0 +1,304 @@
+{
+    "CodeLLaMA": {
+      "zero-shot": {
+        "status": "passed",
+        "coverage": "13%",
+        "assert_types": [],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": 2.3,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "magic_number": 3
+        }
+      },
+      "few-shot": {
+        "status": "no_code_found",
+        "score": 0.0
+      },
+      "cot": {
+        "status": "no_code_found",
+        "score": 0.0
+      }
+    },
+    "LLaMA3": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertRaises",
+          "assertTrue",
+          "assertFalse",
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": -0.05,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_zero-shot.py\", line 4, in <module>\n    from your_module import check_Equality, count_Substring_With_Equal_Ends\nModuleNotFoundError: No module named 'your_module'\n",
+        "test_smells": {
+          "assertion_roulette": 3,
+          "redundant_assertion": 3,
+          "magic_number": 1
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertTrue",
+          "assertFalse",
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": 0.2,
+        "stdout": "Couldn't run 'C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_few-shot.py' as Python code: SyntaxError: invalid syntax. Perhaps you forgot a comma? (LLaMA3_few-shot.py, line 23)\n",
+        "stderr": "C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\venv\\Lib\\site-packages\\coverage\\control.py:915: CoverageWarning: No data was collected. (no-data-collected)\n  self._warn(\"No data was collected.\", slug=\"no-data-collected\")\n",
+        "test_smells": {
+          "syntax_error": 1
+        }
+      },
+      "cot": {
+        "status": "passed",
+        "coverage": "13%",
+        "assert_types": [],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": 2.5,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {}
+      }
+    },
+    "Gemma": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": -0.15,
+        "stdout": "",
+        "stderr": "EEEE\n======================================================================\nERROR: test_empty_string (__main__.TestCountSubstringWithEqualEnds.test_empty_string)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_zero-shot.py\", line 8, in test_empty_string\n    self.assertEqual(count_Substring_With_Equal_Ends(\"\"), 0)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nNameError: name 'count_Substring_With_Equal_Ends' is not defined. Did you mean: 'TestCountSubstringWithEqualEnds'?\n\n======================================================================\nERROR: test_single_character_string (__main__.TestCountSubstringWithEqualEnds.test_single_character_string)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_zero-shot.py\", line 11, in test_single_character_string\n    self.assertEqual(count_Substring_With_Equal_Ends(\"a\"), 1)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nNameError: name 'count_Substring_With_Equal_Ends' is not defined. Did you mean: 'TestCountSubstringWithEqualEnds'?\n\n======================================================================\nERROR: test_string_with_equal_ends (__main__.TestCountSubstringWithEqualEnds.test_string_with_equal_ends)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_zero-shot.py\", line 14, in test_string_with_equal_ends\n    self.assertEqual(count_Substring_With_Equal_Ends(\"ababa\"), 4)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nNameError: name 'count_Substring_With_Equal_Ends' is not defined. Did you mean: 'TestCountSubstringWithEqualEnds'?\n\n======================================================================\nERROR: test_string_with_unequal_ends (__main__.TestCountSubstringWithEqualEnds.test_string_with_unequal_ends)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_zero-shot.py\", line 17, in test_string_with_unequal_ends\n    self.assertEqual(count_Substring_With_Equal_Ends(\"abcde\"), 0)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nNameError: name 'count_Substring_With_Equal_Ends' is not defined. Did you mean: 'TestCountSubstringWithEqualEnds'?\n\n----------------------------------------------------------------------\nRan 4 tests in 0.007s\n\nFAILED (errors=4)\n",
+        "test_smells": {
+          "redundant_assertion": 3,
+          "magic_number": 1
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": -0.15,
+        "stdout": "",
+        "stderr": "EEEEE\n======================================================================\nERROR: test_empty_string (__main__.TestCountSubstringWithEqualEnds.test_empty_string)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_few-shot.py\", line 8, in test_empty_string\n    self.assertEqual(count_Substring_With_Equal_Ends(\"\"), 0)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nNameError: name 'count_Substring_With_Equal_Ends' is not defined. Did you mean: 'TestCountSubstringWithEqualEnds'?\n\n======================================================================\nERROR: test_equal_ends_of_length_two (__main__.TestCountSubstringWithEqualEnds.test_equal_ends_of_length_two)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_few-shot.py\", line 14, in test_equal_ends_of_length_two\n    self.assertEqual(count_Substring_With_Equal_Ends(\"aa\"), 2)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nNameError: name 'count_Substring_With_Equal_Ends' is not defined. Did you mean: 'TestCountSubstringWithEqualEnds'?\n\n======================================================================\nERROR: test_long_string (__main__.TestCountSubstringWithEqualEnds.test_long_string)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_few-shot.py\", line 20, in test_long_string\n    self.assertEqual(count_Substring_With_Equal_Ends(\"aaabbccaa\"), 3)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nNameError: name 'count_Substring_With_Equal_Ends' is not defined. Did you mean: 'TestCountSubstringWithEqualEnds'?\n\n======================================================================\nERROR: test_single_character (__main__.TestCountSubstringWithEqualEnds.test_single_character)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_few-shot.py\", line 11, in test_single_character\n    self.assertEqual(count_Substring_With_Equal_Ends(\"a\"), 1)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nNameError: name 'count_Substring_With_Equal_Ends' is not defined. Did you mean: 'TestCountSubstringWithEqualEnds'?\n\n======================================================================\nERROR: test_unequal_ends (__main__.TestCountSubstringWithEqualEnds.test_unequal_ends)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_few-shot.py\", line 17, in test_unequal_ends\n    self.assertEqual(count_Substring_With_Equal_Ends(\"abcde\"), 0)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nNameError: name 'count_Substring_With_Equal_Ends' is not defined. Did you mean: 'TestCountSubstringWithEqualEnds'?\n\n----------------------------------------------------------------------\nRan 5 tests in 0.010s\n\nFAILED (errors=5)\n",
+        "test_smells": {
+          "redundant_assertion": 3,
+          "magic_number": 2
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": -0.15,
+        "stdout": "",
+        "stderr": "EEEEE\n======================================================================\nERROR: test_empty_string (__main__.TestCountSubstringWithEqualEnds.test_empty_string)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 8, in test_empty_string\n    self.assertEqual(count_Substring_With_Equal_Ends(''), 0)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nNameError: name 'count_Substring_With_Equal_Ends' is not defined. Did you mean: 'TestCountSubstringWithEqualEnds'?\n\n======================================================================\nERROR: test_large_string (__main__.TestCountSubstringWithEqualEnds.test_large_string)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 20, in test_large_string\n    self.assertEqual(count_Substring_With_Equal_Ends('abcabcdeffedcba'), 12)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nNameError: name 'count_Substring_With_Equal_Ends' is not defined. Did you mean: 'TestCountSubstringWithEqualEnds'?\n\n======================================================================\nERROR: test_single_character_string (__main__.TestCountSubstringWithEqualEnds.test_single_character_string)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 11, in test_single_character_string\n    self.assertEqual(count_Substring_With_Equal_Ends('a'), 1)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nNameError: name 'count_Substring_With_Equal_Ends' is not defined. Did you mean: 'TestCountSubstringWithEqualEnds'?\n\n======================================================================\nERROR: test_string_with_different_characters (__main__.TestCountSubstringWithEqualEnds.test_string_with_different_characters)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 17, in test_string_with_different_characters\n    self.assertEqual(count_Substring_With_Equal_Ends('abcdefa'), 0)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nNameError: name 'count_Substring_With_Equal_Ends' is not defined. Did you mean: 'TestCountSubstringWithEqualEnds'?\n\n======================================================================\nERROR: test_string_with_only_equal_characters (__main__.TestCountSubstringWithEqualEnds.test_string_with_only_equal_characters)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 14, in test_string_with_only_equal_characters\n    self.assertEqual(count_Substring_With_Equal_Ends('aaabbbccdddeeeefff'), 10)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nNameError: name 'count_Substring_With_Equal_Ends' is not defined. Did you mean: 'TestCountSubstringWithEqualEnds'?\n\n----------------------------------------------------------------------\nRan 5 tests in 0.009s\n\nFAILED (errors=5)\n",
+        "test_smells": {
+          "redundant_assertion": 3,
+          "magic_number": 2
+        }
+      }
+    },
+    "CodeGemma": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": -0.15,
+        "stdout": "",
+        "stderr": "EEEEE\n======================================================================\nERROR: test_empty_string (__main__.TestCountSubstringWithEqualEnds.test_empty_string)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_zero-shot.py\", line 8, in test_empty_string\n    self.assertEqual(count_Substring_With_Equal_Ends(\"\"), 0)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nNameError: name 'count_Substring_With_Equal_Ends' is not defined. Did you mean: 'TestCountSubstringWithEqualEnds'?\n\n======================================================================\nERROR: test_palindrome_string (__main__.TestCountSubstringWithEqualEnds.test_palindrome_string)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_zero-shot.py\", line 14, in test_palindrome_string\n    self.assertEqual(count_Substring_With_Equal_Ends(\"abba\"), 6)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nNameError: name 'count_Substring_With_Equal_Ends' is not defined. Did you mean: 'TestCountSubstringWithEqualEnds'?\n\n======================================================================\nERROR: test_single_character_string (__main__.TestCountSubstringWithEqualEnds.test_single_character_string)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_zero-shot.py\", line 11, in test_single_character_string\n    self.assertEqual(count_Substring_With_Equal_Ends(\"a\"), 1)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nNameError: name 'count_Substring_With_Equal_Ends' is not defined. Did you mean: 'TestCountSubstringWithEqualEnds'?\n\n======================================================================\nERROR: test_string_with_different_ends (__main__.TestCountSubstringWithEqualEnds.test_string_with_different_ends)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_zero-shot.py\", line 17, in test_string_with_different_ends\n    self.assertEqual(count_Substring_With_Equal_Ends(\"abcd\"), 0)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nNameError: name 'count_Substring_With_Equal_Ends' is not defined. Did you mean: 'TestCountSubstringWithEqualEnds'?\n\n======================================================================\nERROR: test_string_with_equal_ends_at_different_positions (__main__.TestCountSubstringWithEqualEnds.test_string_with_equal_ends_at_different_positions)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_zero-shot.py\", line 20, in test_string_with_equal_ends_at_different_positions\n    self.assertEqual(count_Substring_With_Equal_Ends(\"abaa\"), 3)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nNameError: name 'count_Substring_With_Equal_Ends' is not defined. Did you mean: 'TestCountSubstringWithEqualEnds'?\n\n----------------------------------------------------------------------\nRan 5 tests in 0.018s\n\nFAILED (errors=5)\n",
+        "test_smells": {
+          "redundant_assertion": 3,
+          "magic_number": 2
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": -0.15,
+        "stdout": "",
+        "stderr": "..FF\n======================================================================\nFAIL: test_count_substring_with_equal_ends_string_with_equal_ends (__main__.TestCountSubstringWithEqualEnds.test_count_substring_with_equal_ends_string_with_equal_ends)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_few-shot.py\", line 33, in test_count_substring_with_equal_ends_string_with_equal_ends\n    self.assertEqual(count_Substring_With_Equal_Ends(\"abba\"), 4)\nAssertionError: 6 != 4\n\n======================================================================\nFAIL: test_count_substring_with_equal_ends_string_without_equal_ends (__main__.TestCountSubstringWithEqualEnds.test_count_substring_with_equal_ends_string_without_equal_ends)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_few-shot.py\", line 36, in test_count_substring_with_equal_ends_string_without_equal_ends\n    self.assertEqual(count_Substring_With_Equal_Ends(\"ababa\"), 2)\nAssertionError: 9 != 2\n\n----------------------------------------------------------------------\nRan 4 tests in 0.001s\n\nFAILED (failures=2)\n",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 2
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": -0.15,
+        "stdout": "",
+        "stderr": "EEEEE\n======================================================================\nERROR: test_empty_string (__main__.TestCountSubstringWithEqualEnds.test_empty_string)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_cot.py\", line 8, in test_empty_string\n    self.assertEqual(count_Substring_With_Equal_Ends(\"\"), 0)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nNameError: name 'count_Substring_With_Equal_Ends' is not defined. Did you mean: 'TestCountSubstringWithEqualEnds'?\n\n======================================================================\nERROR: test_even_length_string (__main__.TestCountSubstringWithEqualEnds.test_even_length_string)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_cot.py\", line 14, in test_even_length_string\n    self.assertEqual(count_Substring_With_Equal_Ends(\"abba\"), 4)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nNameError: name 'count_Substring_With_Equal_Ends' is not defined. Did you mean: 'TestCountSubstringWithEqualEnds'?\n\n======================================================================\nERROR: test_non_equal_ends (__main__.TestCountSubstringWithEqualEnds.test_non_equal_ends)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_cot.py\", line 20, in test_non_equal_ends\n    self.assertEqual(count_Substring_With_Equal_Ends(\"hello\"), 0)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nNameError: name 'count_Substring_With_Equal_Ends' is not defined. Did you mean: 'TestCountSubstringWithEqualEnds'?\n\n======================================================================\nERROR: test_odd_length_string (__main__.TestCountSubstringWithEqualEnds.test_odd_length_string)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_cot.py\", line 17, in test_odd_length_string\n    self.assertEqual(count_Substring_With_Equal_Ends(\"abcba\"), 5)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nNameError: name 'count_Substring_With_Equal_Ends' is not defined. Did you mean: 'TestCountSubstringWithEqualEnds'?\n\n======================================================================\nERROR: test_single_character_string (__main__.TestCountSubstringWithEqualEnds.test_single_character_string)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_cot.py\", line 11, in test_single_character_string\n    self.assertEqual(count_Substring_With_Equal_Ends(\"a\"), 1)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nNameError: name 'count_Substring_With_Equal_Ends' is not defined. Did you mean: 'TestCountSubstringWithEqualEnds'?\n\n----------------------------------------------------------------------\nRan 5 tests in 0.009s\n\nFAILED (errors=5)\n",
+        "test_smells": {
+          "redundant_assertion": 3,
+          "magic_number": 2
+        }
+      }
+    },
+    "WizardCoder": {
+      "zero-shot": {
+        "status": "passed",
+        "coverage": "13%",
+        "assert_types": [
+          "assertTrue",
+          "assertFalse",
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": 2.05,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "assertion_roulette": 4,
+          "redundant_assertion": 2,
+          "magic_number": 2
+        }
+      },
+      "few-shot": {
+        "status": "passed",
+        "coverage": "13%",
+        "assert_types": [
+          "assertEqual",
+          "assertTrue",
+          "assertFalse",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": 2.2,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "redundant_assertion": 1,
+          "assertion_roulette": 3,
+          "magic_number": 2
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": -0.08,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_cot.py\", line 4, in <module>\n    from check_substring import count_Substring_With_Equal_Ends, check_Equality\nModuleNotFoundError: No module named 'check_substring'\n",
+        "test_smells": {
+          "redundant_assertion": 5,
+          "magic_number": 1
+        }
+      }
+    },
+    "WizardLM": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertTrue",
+          "assertFalse",
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": -0.2,
+        "stdout": "",
+        "stderr": "FF\n======================================================================\nFAIL: test_check_Equality_with_equal_chars (__main__.TestStringMethods.test_check_Equality_with_equal_chars)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 20, in test_check_Equality_with_equal_chars\n    self.assertTrue(check_Equality(\"aabbcc\"))  # All characters are equal\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: False is not true\n\n======================================================================\nFAIL: test_count_Substring_With_Equal_Ends (__main__.TestStringMethods.test_count_Substring_With_Equal_Ends)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 27, in test_count_Substring_With_Equal_Ends\n    self.assertEqual(count_Substring_With_Equal_Ends(\"abcd\"), 3)  # All substrings end with 'd'\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 4 != 3\n\n----------------------------------------------------------------------\nRan 2 tests in 0.002s\n\nFAILED (failures=2)\n",
+        "test_smells": {
+          "assertion_roulette": 5,
+          "redundant_assertion": 2,
+          "magic_number": 6
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": -0.15,
+        "stdout": "",
+        "stderr": ".FF.FFFFFFF\n======================================================================\nFAIL: test_large_substring (__main__.TestCountSubstringWithEqualEnds.test_large_substring)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 45, in test_large_substring\n    self.assertEqual(count_Substring_With_Equal_Ends(large_str), 1000)\nAssertionError: 500500 != 1000\n\n======================================================================\nFAIL: test_no_equal_ends (__main__.TestCountSubstringWithEqualEnds.test_no_equal_ends)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 29, in test_no_equal_ends\n    self.assertEqual(count_Substring_With_Equal_Ends(\"abcdefg\"), 0)\nAssertionError: 7 != 0\n\n======================================================================\nFAIL: test_performance_with_large_substrings (__main__.TestCountSubstringWithEqualEnds.test_performance_with_large_substrings)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 54, in test_performance_with_large_substrings\n    self.assertEqual(count_Substring_With_Equal_Ends(large_substring), 499)\nAssertionError: 125250 != 499\n\n======================================================================\nFAIL: test_substring_with_equal_ends (__main__.TestCountSubstringWithEqualEnds.test_substring_with_equal_ends)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 26, in test_substring_with_equal_ends\n    self.assertEqual(count_Substring_With_Equal_Ends(\"abcdcba\"), 3)\nAssertionError: 10 != 3\n\n======================================================================\nFAIL: test_substring_with_internal_equal_ends (__main__.TestCountSubstringWithEqualEnds.test_substring_with_internal_equal_ends)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 35, in test_substring_with_internal_equal_ends\n    self.assertEqual(count_Substring_With_Equal_Ends(\"abba\"), 2)\nAssertionError: 6 != 2\n\n======================================================================\nFAIL: test_substring_with_non_printable_characters (__main__.TestCountSubstringWithEqualEnds.test_substring_with_non_printable_characters)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 41, in test_substring_with_non_printable_characters\n    self.assertEqual(count_Substring_With_Equal_Ends(\"\\x01\\x02\\x03\\x04\"), 1)\nAssertionError: 4 != 1\n\n======================================================================\nFAIL: test_substring_with_one_equal_end (__main__.TestCountSubstringWithEqualEnds.test_substring_with_one_equal_end)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 32, in test_substring_with_one_equal_end\n    self.assertEqual(count_Substring_With_Equal_Ends(\"abXc\"), 1)\nAssertionError: 4 != 1\n\n======================================================================\nFAIL: test_substring_with_spaces (__main__.TestCountSubstringWithEqualEnds.test_substring_with_spaces)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 38, in test_substring_with_spaces\n    self.assertEqual(count_Substring_With_Equal_Ends(\"hello world\"), 1)\nAssertionError: 15 != 1\n\n======================================================================\nFAIL: test_substring_with_special_characters (__main__.TestCountSubstringWithEqualEnds.test_substring_with_special_characters)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 48, in test_substring_with_special_characters\n    self.assertEqual(count_Substring_With_Equal_Ends(\"!@#$%^&*()\"), 0)\nAssertionError: 10 != 0\n\n----------------------------------------------------------------------\nRan 11 tests in 0.342s\n\nFAILED (failures=9)\n",
+        "test_smells": {
+          "redundant_assertion": 9,
+          "magic_number": 7
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertTrue",
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": -0.28,
+        "stdout": "",
+        "stderr": "Timeout",
+        "test_smells": {
+          "redundant_assertion": 12,
+          "assertion_roulette": 1,
+          "magic_number": 5
+        }
+      }
+    }
+  }

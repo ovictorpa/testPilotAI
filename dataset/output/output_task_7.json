@@ -1,0 +1,289 @@
+{
+    "WizardCoder": {
+      "zero-shot": {
+        "status": "no_code_found",
+        "score": 0.0
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertAlmostEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.35,
+        "stdout": "",
+        "stderr": "F\n======================================================================\nFAIL: test_add (__main__.TestMeanAbsoluteDeviation.test_add)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_few-shot.py\", line 9, in test_add\n    self.assertAlmostEqual(mean_absolute_deviation([1.0, 2.0, 3.0]), 1.0)\nAssertionError: 0.6666666666666666 != 1.0 within 7 places (0.33333333333333337 difference)\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (failures=1)\n",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 10
+        }
+      },
+      "cot": {
+        "status": "no_code_found",
+        "score": 0.0
+      }
+    },
+    "CodeLLaMA": {
+      "zero-shot": {
+        "status": "no_code_found",
+        "score": 0.0
+      },
+      "few-shot": {
+        "status": "no_code_found",
+        "score": 0.0
+      },
+      "cot": {
+        "status": "passed",
+        "coverage": "12%",
+        "assert_types": [
+          "assertGreaterEqual",
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.55,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "redundant_assertion": 3,
+          "assertion_roulette": 2,
+          "magic_number": 4
+        }
+      }
+    },
+    "WizardLM": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertAlmostEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.22,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 6, in <module>\n    from your_module import mean_absolute_deviation  # Replace with the actual path to your function\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'your_module'\n",
+        "test_smells": {
+          "redundant_assertion": 3,
+          "magic_number": 17,
+          "assertion_roulette": 2
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertAlmostEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.22,
+        "stdout": "",
+        "stderr": "..F.E...F\n======================================================================\nERROR: test_mean_absolute_deviation_with_no_elements (__main__.TestMeanAbsoluteDeviation.test_mean_absolute_deviation_with_no_elements)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 25, in test_mean_absolute_deviation_with_no_elements\n    mean_absolute_deviation([])\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 7, in mean_absolute_deviation\n    mean = sum(numbers) / len(numbers)\n           ~~~~~~~~~~~~~^~~~~~~~~~~~~~\nZeroDivisionError: division by zero\n\n======================================================================\nFAIL: test_mean_absolute_deviation_with_mixed_numbers (__main__.TestMeanAbsoluteDeviation.test_mean_absolute_deviation_with_mixed_numbers)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 18, in test_mean_absolute_deviation_with_mixed_numbers\n    self.assertAlmostEqual(mean_absolute_deviation([-1.5, 2.0, 3.5, -4.0]), 2.875)\nAssertionError: 2.75 != 2.875 within 7 places (0.125 difference)\n\n======================================================================\nFAIL: test_mean_absolute_deviation_with_small_numbers (__main__.TestMeanAbsoluteDeviation.test_mean_absolute_deviation_with_small_numbers)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 40, in test_mean_absolute_deviation_with_small_numbers\n    self.assertAlmostEqual(mean_absolute_deviation(small_numbers), 0.0025)\nAssertionError: 0.001 != 0.0025 within 7 places (0.0015 difference)\n\n----------------------------------------------------------------------\nRan 9 tests in 0.002s\n\nFAILED (failures=2, errors=1)\n",
+        "test_smells": {
+          "redundant_assertion": 4,
+          "magic_number": 23,
+          "assertion_roulette": 2
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertAlmostEqual",
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.3,
+        "stdout": "",
+        "stderr": ".FEEFF...F\n======================================================================\nERROR: test_empty_list (__main__.TestMeanAbsoluteDeviation.test_empty_list)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 27, in test_empty_list\n    mean_absolute_deviation([])\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 29, in mean_absolute_deviation\n    mean = sum(numbers) / len(numbers)\n           ~~~~~~~~~~~~~^~~~~~~~~~~~~~\nZeroDivisionError: division by zero\n\n======================================================================\nERROR: test_large_dataset (__main__.TestMeanAbsoluteDeviation.test_large_dataset)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 34, in test_large_dataset\n    self.assertAlmostEqual(mean_absolute_deviation(large_data), mean(abs(x - mean(large_data)) for x in large_data))\n                                                                ^^^^\nNameError: name 'mean' is not defined\n\n======================================================================\nFAIL: test_duplicate_numbers (__main__.TestMeanAbsoluteDeviation.test_duplicate_numbers)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 30, in test_duplicate_numbers\n    self.assertAlmostEqual(mean_absolute_deviation([2.0, 2.0, 3.0]), 1.0)\nAssertionError: 0.4444444444444445 != 1.0 within 7 places (0.5555555555555556 difference)\n\n======================================================================\nFAIL: test_mixed_numbers (__main__.TestMeanAbsoluteDeviation.test_mixed_numbers)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 14, in test_mixed_numbers\n    self.assertAlmostEqual(mean_absolute_deviation([-1.0, 1.0, -3.0, 5.0]), 5.0)\nAssertionError: 2.5 != 5.0 within 7 places (2.5 difference)\n\n======================================================================\nFAIL: test_negative_numbers (__main__.TestMeanAbsoluteDeviation.test_negative_numbers)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 11, in test_negative_numbers\n    self.assertAlmostEqual(mean_absolute_deviation([-1.0, -2.0, -3.0, -4.0]), 3.0)\nAssertionError: 1.0 != 3.0 within 7 places (2.0 difference)\n\n======================================================================\nFAIL: test_zero_in_list (__main__.TestMeanAbsoluteDeviation.test_zero_in_list)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 17, in test_zero_in_list\n    self.assertEqual(mean_absolute_deviation([0.0, 1.0, 2.0]), 1.5)\nAssertionError: 0.6666666666666666 != 1.5\n\n----------------------------------------------------------------------\nRan 10 tests in 0.005s\n\nFAILED (failures=4, errors=2)\n",
+        "test_smells": {
+          "redundant_assertion": 4,
+          "magic_number": 18,
+          "assertion_roulette": 2
+        }
+      }
+    },
+    "LLaMA3": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertAlmostEqual",
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.5,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_zero-shot.py\", line 4, in <module>\n    from your_module import mean_absolute_deviation  # Replace 'your_module' with the actual name of the module containing the function\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'your_module'\n",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 16
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertLessEqual",
+          "assertAlmostEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.3,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_few-shot.py\", line 4, in <module>\n    from your_module import mean_absolute_deviation  # Import the function to test\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'your_module'\n",
+        "test_smells": {
+          "redundant_assertion": 1,
+          "assertion_roulette": 1,
+          "magic_number": 9
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertAlmostEqual",
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.3,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 4, in <module>\n    from your_module import mean_absolute_deviation\nModuleNotFoundError: No module named 'your_module'\n",
+        "test_smells": {
+          "redundant_assertion": 1,
+          "assertion_roulette": 1,
+          "magic_number": 12
+        }
+      }
+    },
+    "Gemma": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.35,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_zero-shot.py\", line 5, in <module>\n    from mean_absolute_deviation import mean_absolute_deviation\nModuleNotFoundError: No module named 'mean_absolute_deviation'\n",
+        "test_smells": {
+          "redundant_assertion": 4,
+          "magic_number": 7
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertAlmostEqual",
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.62,
+        "stdout": "Couldn't run 'C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_few-shot.py' as Python code: SyntaxError: closing parenthesis ']' does not match opening parenthesis '(' (Gemma_few-shot.py, line 26)\n",
+        "stderr": "C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\venv\\Lib\\site-packages\\coverage\\control.py:915: CoverageWarning: No data was collected. (no-data-collected)\n  self._warn(\"No data was collected.\", slug=\"no-data-collected\")\n",
+        "test_smells": {
+          "syntax_error": 1
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertAlmostEqual",
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.42,
+        "stdout": "",
+        "stderr": "EF...F.\n======================================================================\nERROR: test_empty_list (__main__.TestMeanAbsoluteDeviation.test_empty_list)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 17, in test_empty_list\n    self.assertEqual(mean_absolute_deviation([]), 0.0)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 10, in mean_absolute_deviation\n    mean = sum(numbers) / len(numbers)\n           ~~~~~~~~~~~~~^~~~~~~~~~~~~~\nZeroDivisionError: division by zero\n\n======================================================================\nFAIL: test_float_precision (__main__.TestMeanAbsoluteDeviation.test_float_precision)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 35, in test_float_precision\n    self.assertAlmostEqual(mean_absolute_deviation([1.0001, 2.0002, 3.0003, 4.0004]), 1.0002, 4)\nAssertionError: 1.0001 != 1.0002 within 4 places (9.999999999998899e-05 difference)\n\n======================================================================\nFAIL: test_skewed_numbers (__main__.TestMeanAbsoluteDeviation.test_skewed_numbers)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 29, in test_skewed_numbers\n    self.assertAlmostEqual(mean_absolute_deviation([1.0, 2.0, 3.0, 10.0]), 2.5, 2)\nAssertionError: 3.0 != 2.5 within 2 places (0.5 difference)\n\n----------------------------------------------------------------------\nRan 7 tests in 0.005s\n\nFAILED (failures=2, errors=1)\n",
+        "test_smells": {
+          "redundant_assertion": 4,
+          "magic_number": 21
+        }
+      }
+    },
+    "CodeGemma": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.35,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_zero-shot.py\", line 5, in <module>\n    from mean_absolute_deviation import mean_absolute_deviation\nModuleNotFoundError: No module named 'mean_absolute_deviation'\n",
+        "test_smells": {
+          "redundant_assertion": 3,
+          "magic_number": 11
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertAlmostEqual",
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.42,
+        "stdout": "",
+        "stderr": "EF...\n======================================================================\nERROR: test_empty_list (__main__.TestMeanAbsoluteDeviation.test_empty_list)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_few-shot.py\", line 14, in test_empty_list\n    self.assertEqual(mean_absolute_deviation([]), float('nan'))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_few-shot.py\", line 8, in mean_absolute_deviation\n    mean = sum(numbers) / len(numbers)\n           ~~~~~~~~~~~~~^~~~~~~~~~~~~~\nZeroDivisionError: division by zero\n\n======================================================================\nFAIL: test_large_list (__main__.TestMeanAbsoluteDeviation.test_large_list)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_few-shot.py\", line 27, in test_large_list\n    self.assertAlmostEqual(mean_absolute_deviation(numbers), 49.5, places=2)\nAssertionError: 25.0 != 49.5 within 2 places (24.5 difference)\n\n----------------------------------------------------------------------\nRan 5 tests in 0.002s\n\nFAILED (failures=1, errors=1)\n",
+        "test_smells": {
+          "redundant_assertion": 3,
+          "magic_number": 9
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertAlmostEqual",
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.42,
+        "stdout": "",
+        "stderr": ".EF...\n======================================================================\nERROR: test_empty_list (__main__.TestMeanAbsoluteDeviation.test_empty_list)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_cot.py\", line 15, in test_empty_list\n    self.assertEqual(mean_absolute_deviation([]), float('nan'))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_cot.py\", line 9, in mean_absolute_deviation\n    mean = sum(numbers) / len(numbers)\n           ~~~~~~~~~~~~~^~~~~~~~~~~~~~\nZeroDivisionError: division by zero\n\n======================================================================\nFAIL: test_large_numbers (__main__.TestMeanAbsoluteDeviation.test_large_numbers)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_cot.py\", line 30, in test_large_numbers\n    self.assertAlmostEqual(mean_absolute_deviation([1000000, 1000001, 1000002]), 1)\nAssertionError: 0.6666666666666666 != 1 within 7 places (0.33333333333333337 difference)\n\n----------------------------------------------------------------------\nRan 6 tests in 0.002s\n\nFAILED (failures=1, errors=1)\n",
+        "test_smells": {
+          "redundant_assertion": 5,
+          "magic_number": 9
+        }
+      }
+    }
+  }

@@ -1,0 +1,308 @@
+{
+    "WizardLM": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertRaises",
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.22,
+        "stdout": "",
+        "stderr": ".FF...F..F...F.F\n======================================================================\nFAIL: test_empty_substring (__main__.TestHowManyTimes.test_empty_substring)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 48, in test_empty_substring\n    with self.assertRaises(ValueError):\nAssertionError: ValueError not raised\n\n======================================================================\nFAIL: test_multiple_instances_different_cases (__main__.TestHowManyTimes.test_multiple_instances_different_cases)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 42, in test_multiple_instances_different_cases\n    self.assertEqual(how_many_times('Hello World', 'hello'), 2)\nAssertionError: 0 != 2\n\n======================================================================\nFAIL: test_substring_case_insensitive (__main__.TestHowManyTimes.test_substring_case_insensitive)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 39, in test_substring_case_insensitive\n    self.assertEqual(how_many_times('This is a Test', 'test'), 1)\nAssertionError: 0 != 1\n\n======================================================================\nFAIL: test_substring_in_string_twice (__main__.TestHowManyTimes.test_substring_in_string_twice)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 24, in test_substring_in_string_twice\n    self.assertEqual(how_many_times('abababc', 'ab'), 2)\nAssertionError: 3 != 2\n\n======================================================================\nFAIL: test_substring_spanning_entire_string_with_overlap (__main__.TestHowManyTimes.test_substring_spanning_entire_string_with_overlap)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 61, in test_substring_spanning_entire_string_with_overlap\n    self.assertEqual(how_many_times('abcabcabcabcabc', 'abcaaaaa'), 2)\nAssertionError: 0 != 2\n\n======================================================================\nFAIL: test_substring_with_whitespace (__main__.TestHowManyTimes.test_substring_with_whitespace)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 45, in test_substring_with_whitespace\n    self.assertEqual(how_many_times('  Hello World  ', 'hello'), 1)\nAssertionError: 0 != 1\n\n----------------------------------------------------------------------\nRan 16 tests in 0.003s\n\nFAILED (failures=6)\n",
+        "test_smells": {
+          "redundant_assertion": 7,
+          "magic_number": 8,
+          "assertion_roulette": 1
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.35,
+        "stdout": "",
+        "stderr": "F.FFF.....FF.F.\n======================================================================\nFAIL: test_case_sensitivity (__main__.TestHowManyTimes.test_case_sensitivity)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 48, in test_case_sensitivity\n    self.assertEqual(how_many_times('HelloWorld', 'hello'), 1)\nAssertionError: 0 != 1\n\n======================================================================\nFAIL: test_empty_substring (__main__.TestHowManyTimes.test_empty_substring)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 42, in test_empty_substring\n    self.assertEqual(how_many_times('hello', ''), 0)\nAssertionError: 6 != 0\n\n======================================================================\nFAIL: test_performance_with_large_strings (__main__.TestHowManyTimes.test_performance_with_large_strings)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 66, in test_performance_with_large_strings\n    self.assertEqual(how_many_times(large_string, large_substring), 2)\nAssertionError: 501 != 2\n\n======================================================================\nFAIL: test_performance_with_very_large_strings (__main__.TestHowManyTimes.test_performance_with_very_large_strings)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 71, in test_performance_with_very_large_strings\n    self.assertEqual(how_many_times(very_large_string, very_large_substring), 10)\nAssertionError: 900001 != 10\n\n======================================================================\nFAIL: test_substring_in_string_three_times (__main__.TestHowManyTimes.test_substring_in_string_three_times)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 36, in test_substring_in_string_three_times\n    self.assertEqual(how_many_times('aaaa', 'aaa'), 3)\nAssertionError: 2 != 3\n\n======================================================================\nFAIL: test_substring_in_string_twice (__main__.TestHowManyTimes.test_substring_in_string_twice)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 33, in test_substring_in_string_twice\n    self.assertEqual(how_many_times('aaaa', 'aa'), 2)\nAssertionError: 3 != 2\n\n======================================================================\nFAIL: test_substring_spanning_entire_string (__main__.TestHowManyTimes.test_substring_spanning_entire_string)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 57, in test_substring_spanning_entire_string\n    self.assertEqual(how_many_times('abcdefgh', 'abcdefghi'), 1)\nAssertionError: 0 != 1\n\n----------------------------------------------------------------------\nRan 15 tests in 5.818s\n\nFAILED (failures=7)\n",
+        "test_smells": {
+          "redundant_assertion": 9,
+          "magic_number": 12
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.35,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 4, in <module>\n    from your_module import how_many_times  # Replace 'your_module' with the actual module name where the function is defined\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'your_module'\n",
+        "test_smells": {
+          "redundant_assertion": 12,
+          "magic_number": 4
+        }
+      }
+    },
+    "CodeLLaMA": {
+      "zero-shot": {
+        "status": "passed",
+        "coverage": "5%",
+        "assert_types": [],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.8,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "magic_number": 1
+        }
+      },
+      "few-shot": {
+        "status": "passed",
+        "coverage": "5%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.6,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "redundant_assertion": 1,
+          "magic_number": 2
+        }
+      },
+      "cot": {
+        "status": "passed",
+        "coverage": "5%",
+        "assert_types": [],
+        "edge_case_found": false,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": 2.25,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {}
+      }
+    },
+    "WizardCoder": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.55,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_zero-shot.py\", line 3, in <module>\n    import pytest\nModuleNotFoundError: No module named 'pytest'\n",
+        "test_smells": {
+          "magic_number": 2
+        }
+      },
+      "few-shot": {
+        "status": "passed",
+        "coverage": "5%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.6,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 4
+        }
+      },
+      "cot": {
+        "status": "passed",
+        "coverage": "5%",
+        "assert_types": [],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 3.0,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {}
+      }
+    },
+    "LLaMA3": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.35,
+        "stdout": "",
+        "stderr": ".F..F.\n======================================================================\nFAIL: test_multiple_substring_occurrences (__main__.TestHowManyTimes.test_multiple_substring_occurrences)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_zero-shot.py\", line 14, in test_multiple_substring_occurrences\n    self.assertEqual(how_many_times('aaaa', 'aa'), 2)\nAssertionError: 3 != 2\n\n======================================================================\nFAIL: test_substring_is_empty (__main__.TestHowManyTimes.test_substring_is_empty)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_zero-shot.py\", line 20, in test_substring_is_empty\n    self.assertEqual(how_many_times('hello world', ''), 0)\nAssertionError: 12 != 0\n\n----------------------------------------------------------------------\nRan 6 tests in 0.002s\n\nFAILED (failures=2)\n",
+        "test_smells": {
+          "redundant_assertion": 4,
+          "magic_number": 4
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.35,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_few-shot.py\", line 4, in <module>\n    from your_module import how_many_times\nModuleNotFoundError: No module named 'your_module'\n",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 4
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.35,
+        "stdout": "",
+        "stderr": "F.F.FFF\n======================================================================\nFAIL: test_all_overlapping_occurrences (__main__.TestHowManyTimes.test_all_overlapping_occurrences)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 30, in test_all_overlapping_occurrences\n    self.assertEqual(how_many_times('aaaaaa', 'aa'), 6)\nAssertionError: 5 != 6\n\n======================================================================\nFAIL: test_long_string (__main__.TestHowManyTimes.test_long_string)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 19, in test_long_string\n    self.assertEqual(how_many_times('abcdabcdabcdabcd', 'ab'), 12)\nAssertionError: 4 != 12\n\n======================================================================\nFAIL: test_non_overlapping_substring (__main__.TestHowManyTimes.test_non_overlapping_substring)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 12, in test_non_overlapping_substring\n    self.assertEqual(how_many_times('abcdefg', 'abc'), 2)\nAssertionError: 1 != 2\n\n======================================================================\nFAIL: test_overlapping_substring (__main__.TestHowManyTimes.test_overlapping_substring)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 16, in test_overlapping_substring\n    self.assertEqual(how_many_times('aaaaaa', 'aa'), 6)\nAssertionError: 5 != 6\n\n======================================================================\nFAIL: test_substring_at_start_or_end (__main__.TestHowManyTimes.test_substring_at_start_or_end)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 26, in test_substring_at_start_or_end\n    self.assertEqual(how_many_times('abcd123e', 'a'), 2)\nAssertionError: 1 != 2\n\n----------------------------------------------------------------------\nRan 7 tests in 0.003s\n\nFAILED (failures=5)\n",
+        "test_smells": {
+          "redundant_assertion": 4,
+          "magic_number": 7
+        }
+      }
+    },
+    "Gemma": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertRaises",
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.22,
+        "stdout": "",
+        "stderr": "F..F.\n======================================================================\nFAIL: test_empty_string_empty_substring (__main__.TestHowManyTimes.test_empty_string_empty_substring)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_zero-shot.py\", line 8, in test_empty_string_empty_substring\n    self.assertEqual(how_many_times('', ''), 0)\nAssertionError: 1 != 0\n\n======================================================================\nFAIL: test_substring_length_greater_than_string (__main__.TestHowManyTimes.test_substring_length_greater_than_string)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_zero-shot.py\", line 20, in test_substring_length_greater_than_string\n    with self.assertRaises(ValueError):\nAssertionError: ValueError not raised\n\n----------------------------------------------------------------------\nRan 5 tests in 0.002s\n\nFAILED (failures=2)\n",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 2,
+          "assertion_roulette": 1
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.35,
+        "stdout": "",
+        "stderr": "....F.\n======================================================================\nFAIL: test_substring_length_zero (__main__.TestHowManyTimes.test_substring_length_zero)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_few-shot.py\", line 20, in test_substring_length_zero\n    self.assertEqual(how_many_times('abca', ''), 4)\nAssertionError: 5 != 4\n\n----------------------------------------------------------------------\nRan 6 tests in 0.002s\n\nFAILED (failures=1)\n",
+        "test_smells": {
+          "redundant_assertion": 3,
+          "magic_number": 3
+        }
+      },
+      "cot": {
+        "status": "passed",
+        "coverage": "37%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.85,
+        "stdout": "",
+        "stderr": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.001s\n\nOK\n",
+        "test_smells": {
+          "redundant_assertion": 3,
+          "magic_number": 2
+        }
+      }
+    },
+    "CodeGemma": {
+      "zero-shot": {
+        "status": "passed",
+        "coverage": "37%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.85,
+        "stdout": "",
+        "stderr": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.000s\n\nOK\n",
+        "test_smells": {
+          "redundant_assertion": 3,
+          "magic_number": 2
+        }
+      },
+      "few-shot": {
+        "status": "passed",
+        "coverage": "37%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.85,
+        "stdout": "",
+        "stderr": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.001s\n\nOK\n",
+        "test_smells": {
+          "redundant_assertion": 4,
+          "magic_number": 2
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.35,
+        "stdout": "",
+        "stderr": "..F...\n======================================================================\nFAIL: test_long_string_and_substring (__main__.HowManyTimesTest.test_long_string_and_substring)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_cot.py\", line 25, in test_long_string_and_substring\n    self.assertEqual(how_many_times(string, substring), 10)\nAssertionError: 901 != 10\n\n----------------------------------------------------------------------\nRan 6 tests in 0.002s\n\nFAILED (failures=1)\n",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 6
+        }
+      }
+    }
+  }

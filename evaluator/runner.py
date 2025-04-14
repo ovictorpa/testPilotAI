@@ -7,6 +7,7 @@ import tempfile
 import ast
 from datetime import datetime
 
+
 TESTS_DIR = 'generated_tests'
 TEMP_DIR = 'test_outputs'
 RESULTS_DIR = 'evaluation_results'
@@ -14,6 +15,63 @@ PROD_CODE_FILE = 'prompts/code.py'
 
 os.makedirs(TEMP_DIR, exist_ok=True)
 os.makedirs(RESULTS_DIR, exist_ok=True)
+
+
+import ast
+
+import ast
+
+def detect_test_smells(test_code: str) -> dict:
+    smells = {}
+
+    try:
+        tree = ast.parse(test_code)
+    except SyntaxError:
+        smells['syntax_error'] = 1
+        return smells
+
+    for node in ast.walk(tree):
+        # Assertion Roulette
+        if isinstance(node, ast.Call):
+            if isinstance(node.func, ast.Attribute) and node.func.attr.startswith('assert'):
+                if len(node.args) == 1:
+                    smells['assertion_roulette'] = smells.get('assertion_roulette', 0) + 1
+
+        # Magic Number
+        if isinstance(node, ast.Constant) and isinstance(node.value, (int, float)):
+            if node.value not in (0, 1):
+                smells['magic_number'] = smells.get('magic_number', 0) + 1
+
+        # Sleepy Test
+        if isinstance(node, ast.Call) and isinstance(node.func, ast.Attribute):
+            if node.func.attr == 'sleep':
+                smells['sleepy_test'] = smells.get('sleepy_test', 0) + 1
+
+        # Print Statement
+        if isinstance(node, ast.Call) and isinstance(node.func, ast.Name):
+            if node.func.id == 'print':
+                smells['print_statement'] = smells.get('print_statement', 0) + 1
+
+        # Redundant Assertion
+        if isinstance(node, ast.Call):
+            if isinstance(node.func, ast.Attribute) and node.func.attr.startswith('assert'):
+                for arg in node.args:
+                    if isinstance(arg, ast.Constant) and arg.value in [True, False]:
+                        smells['redundant_assertion'] = smells.get('redundant_assertion', 0) + 1
+
+        # Empty Test
+        if isinstance(node, ast.FunctionDef) and node.name.startswith("test"):
+            if not node.body or all(isinstance(stmt, ast.Pass) for stmt in node.body):
+                smells['empty_test'] = smells.get('empty_test', 0) + 1
+
+        # Ignored Test
+        if isinstance(node, ast.FunctionDef):
+            for decorator in node.decorator_list:
+                if isinstance(decorator, ast.Attribute) and 'skip' in decorator.attr.lower():
+                    smells['ignored_test'] = smells.get('ignored_test', 0) + 1
+
+    return smells
+
 
 def extract_code_blocks(text):
     matches = re.findall(r"```(?:python)?\s*(.*?)```", text, re.DOTALL)
@@ -23,13 +81,18 @@ def run_test_code_with_coverage(code_str, filename):
     filepath = os.path.join(TEMP_DIR, filename)
 
     try:
+        # Força o import do código de produção
+        forced_import = "from prompts.code import *\n\n"
+        full_code = forced_import + code_str
+
         with open(filepath, 'w', encoding='utf-8') as f:
-            f.write(code_str)
+            f.write(full_code)
 
         env = os.environ.copy()
         env['PYTHONPATH'] = os.path.abspath('.')
 
         subprocess.run(["coverage", "erase"], env=env)
+
         result = subprocess.run(
             ['coverage', 'run', '--source=prompts', filepath],
             capture_output=True,
@@ -60,23 +123,6 @@ def run_test_code_with_coverage(code_str, filename):
     except Exception as e:
         return False, "", str(e), "-"
 
-
-def run_flake8_linter(code_str):
-    with tempfile.NamedTemporaryFile(suffix='.py', delete=False, mode='w', encoding='utf-8') as tmp:
-        tmp.write(code_str)
-        tmp_path = tmp.name
-
-    try:
-        result = subprocess.run(
-            ['flake8', tmp_path],
-            capture_output=True,
-            text=True
-        )
-        lint_passed = result.returncode == 0
-        return lint_passed, result.stdout.strip()
-    finally:
-        os.unlink(tmp_path)
-
 def get_prod_functions():
     try:
         with open(PROD_CODE_FILE, 'r', encoding='utf-8') as f:
@@ -84,16 +130,6 @@ def get_prod_functions():
         return [node.name for node in ast.walk(tree) if isinstance(node, ast.FunctionDef)]
     except:
         return []
-
-def analyze_test_smells(code_str):
-    smells = []
-    if 'assert' not in code_str:
-        smells.append('no_assert')
-    if re.search(r'def test_?(1|func)?\s*\(', code_str):
-        smells.append('bad_name')
-    if re.search(r'assert\s+(True|1\s*==\s*1)', code_str):
-        smells.append('always_true')
-    return smells
 
 def extract_assert_types(code_str):
     return re.findall(r'self\.(assert\w+)', code_str)
@@ -131,48 +167,60 @@ def run_all_tests():
             filename = f"{model}_{prompt_type}.py"
 
             passed, stdout, stderr, coverage_percent = run_test_code_with_coverage(code, filename)
-            lint_passed, lint_output = run_flake8_linter(code)
-            smells = analyze_test_smells(code)
             assert_types = extract_assert_types(code)
             edge_case_found = detect_edge_cases(code)
             tested_funcs = count_functions_tested(code, prod_functions)
 
             score = 0.0
             if passed:
-                score += 0.5
-            if lint_passed:
+                score += 2.0
+            try:
+                coverage_value = float(coverage_percent.strip('%'))
+            except ValueError:
+                coverage_value = -1
+
+            if coverage_value == 0:
+                score -= 1.0
+            elif 0 < coverage_value <= 25:
                 score += 0.25
-            if "100%" in coverage_percent:
-                score += 0.25
-            if len(set(assert_types)) >= 3:
-                score += 0.25
-            elif len(set(assert_types)) == 2:
+            elif 25 < coverage_value <= 50:
+                score += 0.50
+            elif 50 < coverage_value <= 75:
+                score += 0.75
+            elif coverage_value > 75:
+                score += 1.0
+            if len(set(assert_types)) >= 4:
+                score += 0.30
+            elif len(set(assert_types)) == 3:
                 score += 0.15
+            elif len(set(assert_types)) == 2:
+                score += 0.07
             if edge_case_found:
                 score += 0.25
-            if 'no_assert' in smells:
-                score -= 0.3
-            if 'bad_name' in smells:
-                score -= 0.1
-            if 'always_true' in smells:
-                score -= 0.1
             if prod_functions:
-                score += 0.1 * (tested_funcs / len(prod_functions))
+                score += 0.5 * (tested_funcs / len(prod_functions))
+
+            smells_found = detect_test_smells(code)
+
+            if smells_found and "error" not in smells_found:
+                score -= 0.2 * len(smells_found)
+            elif "error" in smells_found:
+                score -= 1.0
 
             results[model][prompt_type] = {
                 "status": "passed" if passed else "failed",
                 "coverage": coverage_percent,
-                "lint_passed": lint_passed,
-                "lint_output": lint_output,
                 "assert_types": list(set(assert_types)),
                 "edge_case_found": edge_case_found,
-                "test_smells": smells,
                 "functions_tested": tested_funcs,
                 "total_functions": len(prod_functions),
                 "score": round(score, 2),
                 "stdout": stdout,
-                "stderr": stderr
+                "stderr": stderr,
+                "test_smells": smells_found
             }
+            #if any(count > 0 for count in smells_found.values()):
+                #result["test_smells"] = smells_found
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     output_file = os.path.join(RESULTS_DIR, f"evaluation_{timestamp}.json")

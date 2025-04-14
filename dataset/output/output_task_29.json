@@ -1,0 +1,303 @@
+{
+    "CodeLLaMA": {
+      "zero-shot": {
+        "status": "passed",
+        "coverage": "13%",
+        "assert_types": [],
+        "edge_case_found": false,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": 2.05,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "magic_number": 13
+        }
+      },
+      "few-shot": {
+        "status": "no_code_found",
+        "score": 0.0
+      },
+      "cot": {
+        "status": "passed",
+        "coverage": "13%",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": false,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": 1.92,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "assertion_roulette": 1,
+          "magic_number": 39
+        }
+      }
+    },
+    "LLaMA3": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": false,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": -0.2,
+        "stdout": "",
+        "stderr": "F...\n======================================================================\nFAIL: test_concatenation_of_multiple_tuples (__main__.TestConcatenateNested.test_concatenation_of_multiple_tuples)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_zero-shot.py\", line 15, in test_concatenation_of_multiple_tuples\n    self.assertEqual(concatenate_nested((1, 2), concatenate_nested((3, 4), (5, 6))),\nAssertionError: Tuples differ: (1, 2, 3, 4, 5, 6) != ((1, 2), (3, 4, 5, 6))\n\nFirst differing element 0:\n1\n(1, 2)\n\nFirst tuple contains 4 additional elements.\nFirst extra element 2:\n3\n\n- (1, 2, 3, 4, 5, 6)\n+ ((1, 2), (3, 4, 5, 6))\n? +     +  +           +\n\n\n----------------------------------------------------------------------\nRan 4 tests in 0.002s\n\nFAILED (failures=1)\n",
+        "test_smells": {
+          "magic_number": 22
+        }
+      },
+      "few-shot": {
+        "status": "passed",
+        "coverage": "13%",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises",
+          "assertIsInstance"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": 2.25,
+        "stdout": "",
+        "stderr": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.001s\n\nOK\n",
+        "test_smells": {
+          "magic_number": 10,
+          "assertion_roulette": 1
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": -0.08,
+        "stdout": "",
+        "stderr": "..F.\n======================================================================\nFAIL: test_concat_tuples_of_different_types (__main__.TestConcatenateNested.test_concat_tuples_of_different_types)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 50, in test_concat_tuples_of_different_types\n    with self.assertRaises(TypeError):\nAssertionError: TypeError not raised\n\n----------------------------------------------------------------------\nRan 4 tests in 0.001s\n\nFAILED (failures=1)\n",
+        "test_smells": {
+          "magic_number": 16,
+          "assertion_roulette": 1
+        }
+      }
+    },
+    "WizardCoder": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": 0.12,
+        "stdout": "Couldn't run 'C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_zero-shot.py' as Python code: SyntaxError: invalid syntax. Perhaps you forgot a comma? (WizardCoder_zero-shot.py, line 10)\n",
+        "stderr": "C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\venv\\Lib\\site-packages\\coverage\\control.py:915: CoverageWarning: No data was collected. (no-data-collected)\n  self._warn(\"No data was collected.\", slug=\"no-data-collected\")\n",
+        "test_smells": {
+          "syntax_error": 1
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": false,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": -0.13,
+        "stdout": "Couldn't run 'C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_few-shot.py' as Python code: SyntaxError: '(' was never closed (WizardCoder_few-shot.py, line 22)\n",
+        "stderr": "C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\venv\\Lib\\site-packages\\coverage\\control.py:915: CoverageWarning: No data was collected. (no-data-collected)\n  self._warn(\"No data was collected.\", slug=\"no-data-collected\")\n",
+        "test_smells": {
+          "syntax_error": 1
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": 0.05,
+        "stdout": "Couldn't run 'C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_cot.py' as Python code: SyntaxError: invalid syntax. Perhaps you forgot a comma? (WizardCoder_cot.py, line 9)\n",
+        "stderr": "C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\venv\\Lib\\site-packages\\coverage\\control.py:915: CoverageWarning: No data was collected. (no-data-collected)\n  self._warn(\"No data was collected.\", slug=\"no-data-collected\")\n",
+        "test_smells": {
+          "syntax_error": 1
+        }
+      }
+    },
+    "WizardLM": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertListEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": 0.05,
+        "stdout": "",
+        "stderr": "FFFFF\n======================================================================\nFAIL: test_concatenation_of_two_tuples (__main__.TestConcatenateNested.test_concatenation_of_two_tuples)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 15, in test_concatenation_of_two_tuples\n    self.assertListEqual(list(concatenate_nested(test_tup1, test_tup2)), expected)\nAssertionError: Second sequence is not a list: ('a', 1, [3, 4], 'b', 2, {'m': 5, 'n': 6})\n\n======================================================================\nFAIL: test_concatenation_with_mixed_types_in_tuples (__main__.TestConcatenateNested.test_concatenation_with_mixed_types_in_tuples)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 32, in test_concatenation_with_mixed_types_in_tuples\n    self.assertListEqual(list(concatenate_nested(test_tup1, test_tup2)), expected)\nAssertionError: Second sequence is not a list: (42, 'hello', [1, 2, 3], 'world', {'key': 'value'}, None)\n\n======================================================================\nFAIL: test_concatenation_with_nested_tuples (__main__.TestConcatenateNested.test_concatenation_with_nested_tuples)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 38, in test_concatenation_with_nested_tuples\n    self.assertListEqual(list(concatenate_nested(test_tup1, test_tup2)), expected)\nAssertionError: Second sequence is not a list: ((1, 2), (3, 4), (5, 6), (7, 8))\n\n======================================================================\nFAIL: test_concatenation_with_single_element_tuples (__main__.TestConcatenateNested.test_concatenation_with_single_element_tuples)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 26, in test_concatenation_with_single_element_tuples\n    self.assertListEqual(list(concatenate_nested(test_tup1, test_tup2)), expected)\nAssertionError: Second sequence is not a list: ('first', 'second', 'third')\n\n======================================================================\nFAIL: test_empty_tuples_should_return_empty_tuple (__main__.TestConcatenateNested.test_empty_tuples_should_return_empty_tuple)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 20, in test_empty_tuples_should_return_empty_tuple\n    self.assertListEqual(list(concatenate_nested(test_tup1, test_tup2)), ())\nAssertionError: Second sequence is not a list: ()\n\n----------------------------------------------------------------------\nRan 5 tests in 0.002s\n\nFAILED (failures=5)\n",
+        "test_smells": {
+          "magic_number": 30
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": 0.05,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 6, in <module>\n    class TestConcatenateNested(unittest.TestCase):\n                                ^^^^^^^^\nNameError: name 'unittest' is not defined. Did you forget to import 'unittest'?\n",
+        "test_smells": {
+          "magic_number": 38
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": false,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": -0.33,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 6, in <module>\n    class TestConcatenateNested(unittest.TestCase):\n                                ^^^^^^^^\nNameError: name 'unittest' is not defined. Did you forget to import 'unittest'?\n",
+        "test_smells": {
+          "magic_number": 65,
+          "assertion_roulette": 3
+        }
+      }
+    },
+    "CodeGemma": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": false,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": -0.2,
+        "stdout": "",
+        "stderr": "EEE\n======================================================================\nERROR: test_empty_tuples (__main__.TestConcatenateNested.test_empty_tuples)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_zero-shot.py\", line 10, in test_empty_tuples\n    result = concatenate_nested(test_tup1, test_tup2)\n             ^^^^^^^^^^^^^^^^^^\nNameError: name 'concatenate_nested' is not defined. Did you mean: 'TestConcatenateNested'?\n\n======================================================================\nERROR: test_mixed_types (__main__.TestConcatenateNested.test_mixed_types)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_zero-shot.py\", line 22, in test_mixed_types\n    result = concatenate_nested(test_tup1, test_tup2)\n             ^^^^^^^^^^^^^^^^^^\nNameError: name 'concatenate_nested' is not defined. Did you mean: 'TestConcatenateNested'?\n\n======================================================================\nERROR: test_non_empty_tuples (__main__.TestConcatenateNested.test_non_empty_tuples)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_zero-shot.py\", line 16, in test_non_empty_tuples\n    result = concatenate_nested(test_tup1, test_tup2)\n             ^^^^^^^^^^^^^^^^^^\nNameError: name 'concatenate_nested' is not defined. Did you mean: 'TestConcatenateNested'?\n\n----------------------------------------------------------------------\nRan 3 tests in 0.020s\n\nFAILED (errors=3)\n",
+        "test_smells": {
+          "magic_number": 14
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": false,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": -0.2,
+        "stdout": "",
+        "stderr": "EEE\n======================================================================\nERROR: test_concatenate_nested (__main__.TestConcatenateNested.test_concatenate_nested)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_few-shot.py\", line 11, in test_concatenate_nested\n    self.assertEqual(concatenate_nested(test_tup1, test_tup2), expected_result)\n                     ^^^^^^^^^^^^^^^^^^\nNameError: name 'concatenate_nested' is not defined. Did you mean: 'TestConcatenateNested'?\n\n======================================================================\nERROR: test_concatenate_nested_different_types (__main__.TestConcatenateNested.test_concatenate_nested_different_types)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_few-shot.py\", line 23, in test_concatenate_nested_different_types\n    self.assertEqual(concatenate_nested(test_tup1, test_tup2), expected_result)\n                     ^^^^^^^^^^^^^^^^^^\nNameError: name 'concatenate_nested' is not defined. Did you mean: 'TestConcatenateNested'?\n\n======================================================================\nERROR: test_concatenate_nested_empty_tuple (__main__.TestConcatenateNested.test_concatenate_nested_empty_tuple)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_few-shot.py\", line 17, in test_concatenate_nested_empty_tuple\n    self.assertEqual(concatenate_nested(test_tup1, test_tup2), expected_result)\n                     ^^^^^^^^^^^^^^^^^^\nNameError: name 'concatenate_nested' is not defined. Did you mean: 'TestConcatenateNested'?\n\n----------------------------------------------------------------------\nRan 3 tests in 0.021s\n\nFAILED (errors=3)\n",
+        "test_smells": {
+          "magic_number": 18
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": -0.08,
+        "stdout": "",
+        "stderr": "EEEE\n======================================================================\nERROR: test_basic (__main__.TestConcatenateNested.test_basic)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_cot.py\", line 11, in test_basic\n    self.assertEqual(concatenate_nested(test_tup1, test_tup2), expected)\n                     ^^^^^^^^^^^^^^^^^^\nNameError: name 'concatenate_nested' is not defined. Did you mean: 'TestConcatenateNested'?\n\n======================================================================\nERROR: test_different_types (__main__.TestConcatenateNested.test_different_types)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_cot.py\", line 29, in test_different_types\n    concatenate_nested(test_tup1, test_tup2)\n    ^^^^^^^^^^^^^^^^^^\nNameError: name 'concatenate_nested' is not defined. Did you mean: 'TestConcatenateNested'?\n\n======================================================================\nERROR: test_empty_tuples (__main__.TestConcatenateNested.test_empty_tuples)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_cot.py\", line 17, in test_empty_tuples\n    self.assertEqual(concatenate_nested(test_tup1, test_tup2), expected)\n                     ^^^^^^^^^^^^^^^^^^\nNameError: name 'concatenate_nested' is not defined. Did you mean: 'TestConcatenateNested'?\n\n======================================================================\nERROR: test_tuple_with_none (__main__.TestConcatenateNested.test_tuple_with_none)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_cot.py\", line 23, in test_tuple_with_none\n    self.assertEqual(concatenate_nested(test_tup1, test_tup2), expected)\n                     ^^^^^^^^^^^^^^^^^^\nNameError: name 'concatenate_nested' is not defined. Did you mean: 'TestConcatenateNested'?\n\n----------------------------------------------------------------------\nRan 4 tests in 0.028s\n\nFAILED (errors=4)\n",
+        "test_smells": {
+          "magic_number": 17,
+          "assertion_roulette": 1
+        }
+      }
+    },
+    "Gemma": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": false,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": -0.2,
+        "stdout": "",
+        "stderr": "EEE\n======================================================================\nERROR: test_basic (__main__.TestConcatenateNested.test_basic)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_zero-shot.py\", line 11, in test_basic\n    actual = concatenate_nested(test_tup1, test_tup2)\n             ^^^^^^^^^^^^^^^^^^\nNameError: name 'concatenate_nested' is not defined. Did you mean: 'TestConcatenateNested'?\n\n======================================================================\nERROR: test_empty (__main__.TestConcatenateNested.test_empty)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_zero-shot.py\", line 18, in test_empty\n    actual = concatenate_nested(test_tup1, test_tup2)\n             ^^^^^^^^^^^^^^^^^^\nNameError: name 'concatenate_nested' is not defined. Did you mean: 'TestConcatenateNested'?\n\n======================================================================\nERROR: test_nested (__main__.TestConcatenateNested.test_nested)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_zero-shot.py\", line 25, in test_nested\n    actual = concatenate_nested(test_tup1, test_tup2)\n             ^^^^^^^^^^^^^^^^^^\nNameError: name 'concatenate_nested' is not defined. Did you mean: 'TestConcatenateNested'?\n\n----------------------------------------------------------------------\nRan 3 tests in 0.021s\n\nFAILED (errors=3)\n",
+        "test_smells": {
+          "magic_number": 28
+        }
+      },
+      "few-shot": {
+        "status": "passed",
+        "coverage": "13%",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": false,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": 1.92,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "magic_number": 8,
+          "assertion_roulette": 1
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": 0.05,
+        "stdout": "",
+        "stderr": "EEEEE\n======================================================================\nERROR: test_different_lengths (__main__.TestConcatenateNested.test_different_lengths)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 14, in test_different_lengths\n    self.assertEqual(concatenate_nested([1, 2], [3, 4]), ([1, 2, 3, 4]))\n                     ^^^^^^^^^^^^^^^^^^\nNameError: name 'concatenate_nested' is not defined. Did you mean: 'TestConcatenateNested'?\n\n======================================================================\nERROR: test_empty_tuples (__main__.TestConcatenateNested.test_empty_tuples)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 8, in test_empty_tuples\n    self.assertEqual(concatenate_nested([], []), ())\n                     ^^^^^^^^^^^^^^^^^^\nNameError: name 'concatenate_nested' is not defined. Did you mean: 'TestConcatenateNested'?\n\n======================================================================\nERROR: test_equal_length_integers (__main__.TestConcatenateNested.test_equal_length_integers)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 17, in test_equal_length_integers\n    self.assertEqual(concatenate_nested([1, 2], [3, 4]), ([1, 2, 3, 4]))\n                     ^^^^^^^^^^^^^^^^^^\nNameError: name 'concatenate_nested' is not defined. Did you mean: 'TestConcatenateNested'?\n\n======================================================================\nERROR: test_equal_length_strings (__main__.TestConcatenateNested.test_equal_length_strings)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 20, in test_equal_length_strings\n    self.assertEqual(concatenate_nested(['a', 'b'], ['c', 'd']),(['a', 'b', 'c', 'd']))\n                     ^^^^^^^^^^^^^^^^^^\nNameError: name 'concatenate_nested' is not defined. Did you mean: 'TestConcatenateNested'?\n\n======================================================================\nERROR: test_one_empty_tuple (__main__.TestConcatenateNested.test_one_empty_tuple)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 11, in test_one_empty_tuple\n    self.assertEqual(concatenate_nested([], [1, 2, 3]), ([1, 2, 3]))\n                     ^^^^^^^^^^^^^^^^^^\nNameError: name 'concatenate_nested' is not defined. Did you mean: 'TestConcatenateNested'?\n\n----------------------------------------------------------------------\nRan 5 tests in 0.037s\n\nFAILED (errors=5)\n",
+        "test_smells": {
+          "magic_number": 16
+        }
+      }
+    }
+  }

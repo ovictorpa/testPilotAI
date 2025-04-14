@@ -5,7 +5,21 @@
     <title>Testes Gerados por LLMs</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100 py-10 px-6">
+<body class="bg-gray-100 pt-20 px-6"> <!-- padding-top aumentado para compensar a barra fixa -->
+
+    <!-- Barra flutuante com botão -->
+    <div class="fixed top-0 left-0 w-full bg-white shadow-md z-50 px-6 py-4">
+        <div class="max-w-5xl mx-auto flex justify-between items-center">
+            <span class="text-lg font-semibold text-gray-700">🔗 Navegação</span>
+            <a href="/dashboard">
+                <button class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded shadow">
+                    📊 Ir para Dashboard
+                </button>
+            </a>
+        </div>
+    </div>
+
+    <!-- Conteúdo principal -->
     <div class="max-w-5xl mx-auto bg-white p-8 rounded-xl shadow-lg">
         <h1 class="text-3xl font-bold mb-6 text-center">🧪 Testes Gerados por LLMs</h1>
 
@@ -26,5 +40,6 @@
             <a href="/" class="text-blue-600 hover:underline font-medium">🔙 Voltar ao início</a>
         </div>
     </div>
+
 </body>
 </html>

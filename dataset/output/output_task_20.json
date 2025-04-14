@@ -1,0 +1,312 @@
+{
+    "WizardCoder": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertDictEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.62,
+        "stdout": "Couldn't run 'C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_zero-shot.py' as Python code: SyntaxError: invalid syntax (WizardCoder_zero-shot.py, line 17)\n",
+        "stderr": "C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\venv\\Lib\\site-packages\\coverage\\control.py:915: CoverageWarning: No data was collected. (no-data-collected)\n  self._warn(\"No data was collected.\", slug=\"no-data-collected\")\n",
+        "test_smells": {
+          "syntax_error": 1
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.55,
+        "stdout": "Couldn't run 'C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_few-shot.py' as Python code: SyntaxError: invalid syntax (WizardCoder_few-shot.py, line 16)\n",
+        "stderr": "C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\venv\\Lib\\site-packages\\coverage\\control.py:915: CoverageWarning: No data was collected. (no-data-collected)\n  self._warn(\"No data was collected.\", slug=\"no-data-collected\")\n",
+        "test_smells": {
+          "syntax_error": 1
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.55,
+        "stdout": "Couldn't run 'C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_cot.py' as Python code: SyntaxError: closing parenthesis ')' does not match opening parenthesis '[' (WizardCoder_cot.py, line 42)\n",
+        "stderr": "C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\venv\\Lib\\site-packages\\coverage\\control.py:915: CoverageWarning: No data was collected. (no-data-collected)\n  self._warn(\"No data was collected.\", slug=\"no-data-collected\")\n",
+        "test_smells": {
+          "syntax_error": 1
+        }
+      }
+    },
+    "CodeLLaMA": {
+      "zero-shot": {
+        "status": "passed",
+        "coverage": "18%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.8,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "magic_number": 8
+        }
+      },
+      "few-shot": {
+        "status": "passed",
+        "coverage": "18%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.8,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "magic_number": 16
+        }
+      },
+      "cot": {
+        "status": "passed",
+        "coverage": "18%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.8,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "magic_number": 21
+        }
+      }
+    },
+    "WizardLM": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertIsNone",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.7,
+        "stdout": "Couldn't run 'C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py' as Python code: SyntaxError: unmatched ']' (WizardLM_zero-shot.py, line 36)\n",
+        "stderr": "C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\venv\\Lib\\site-packages\\coverage\\control.py:915: CoverageWarning: No data was collected. (no-data-collected)\n  self._warn(\"No data was collected.\", slug=\"no-data-collected\")\n",
+        "test_smells": {
+          "syntax_error": 1
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertIn"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.62,
+        "stdout": "Couldn't run 'C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py' as Python code: SyntaxError: closing parenthesis ']' does not match opening parenthesis '(' (WizardLM_few-shot.py, line 19)\n",
+        "stderr": "C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\venv\\Lib\\site-packages\\coverage\\control.py:915: CoverageWarning: No data was collected. (no-data-collected)\n  self._warn(\"No data was collected.\", slug=\"no-data-collected\")\n",
+        "test_smells": {
+          "syntax_error": 1
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.42,
+        "stdout": "",
+        "stderr": "F..F.FE.E.F\n======================================================================\nERROR: test_large_numbers (__main__.TestFreqElementFunction.test_large_numbers)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 45, in test_large_numbers\n    self.assertEqual(freq_element(nums), expected)\n                     ^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 8, in freq_element\n    result = Counter(chain.from_iterable(nums))\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 607, in __init__\n    self.update(iterable, **kwds)\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 699, in update\n    _count_elements(self, iterable)\nTypeError: unhashable type: 'list'\n\n======================================================================\nERROR: test_nested_lists (__main__.TestFreqElementFunction.test_nested_lists)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 58, in test_nested_lists\n    self.assertEqual(freq_element(nums), expected)\n                     ^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 8, in freq_element\n    result = Counter(chain.from_iterable(nums))\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 607, in __init__\n    self.update(iterable, **kwds)\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 699, in update\n    _count_elements(self, iterable)\nTypeError: unhashable type: 'list'\n\n======================================================================\nFAIL: test_all_elements_unique (__main__.TestFreqElementFunction.test_all_elements_unique)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 24, in test_all_elements_unique\n    self.assertEqual(freq_element(nums), expected)\nAssertionError: Counter({5: 1, 6: 1, 7: 1, 8: 1, 9: 1, 10: 1}) != Counter({5: 3, 6: 3, 7: 3, 8: 3, 9: 3, 10: 3})\n\n======================================================================\nFAIL: test_duplicate_elements (__main__.TestFreqElementFunction.test_duplicate_elements)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 29, in test_duplicate_elements\n    self.assertEqual(freq_element(nums), expected)\nAssertionError: Counter({2: 4, 1: 2}) != Counter({2: 4, 1: 3})\n\n======================================================================\nFAIL: test_empty_lists (__main__.TestFreqElementFunction.test_empty_lists)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 19, in test_empty_lists\n    self.assertEqual(freq_element(nums), Counter({0: 1, 1: 1}))\nAssertionError: Counter({1: 1}) != Counter({0: 1, 1: 1})\n\n======================================================================\nFAIL: test_single_inner_list (__main__.TestFreqElementFunction.test_single_inner_list)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 34, in test_single_inner_list\n    self.assertEqual(freq_element(nums), expected)\nAssertionError: Counter({3: 1, 5: 1, 7: 1}) != Counter({3: 3, 5: 3, 7: 3})\n\n----------------------------------------------------------------------\nRan 11 tests in 0.260s\n\nFAILED (failures=4, errors=2)\n",
+        "test_smells": {
+          "magic_number": 65,
+          "assertion_roulette": 1
+        }
+      }
+    },
+    "LLaMA3": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.55,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_zero-shot.py\", line 4, in <module>\n    from your_module import freq_element  # Replace 'your_module' with the actual name of the module containing the function.\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'your_module'\n",
+        "test_smells": {
+          "magic_number": 21
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.42,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_few-shot.py\", line 6, in <module>\n    from your_module import freq_element  # Replace 'your_module' with the actual name of the module containing the function\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'your_module'\n",
+        "test_smells": {
+          "magic_number": 27,
+          "assertion_roulette": 1
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.55,
+        "stdout": "",
+        "stderr": "EE.EEE\n======================================================================\nERROR: test_all_elements_unique (__main__.TestFreqElementFunction.test_all_elements_unique)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 26, in test_all_elements_unique\n    self.assertEqual(freq_element([1, 2, 3, 4, 5]), Counter({1: 1, 2: 1, 3: 1, 4: 1, 5: 1}))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 8, in freq_element\n    result = Counter(chain.from_iterable(nums))\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 607, in __init__\n    self.update(iterable, **kwds)\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 699, in update\n    _count_elements(self, iterable)\nTypeError: 'int' object is not iterable\n\n======================================================================\nERROR: test_duplicate_values_in_single_element (__main__.TestFreqElementFunction.test_duplicate_values_in_single_element)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 23, in test_duplicate_values_in_single_element\n    self.assertEqual(freq_element([1, 2, 2]), Counter({1: 1, 2: 2}))\n                     ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 8, in freq_element\n    result = Counter(chain.from_iterable(nums))\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 607, in __init__\n    self.update(iterable, **kwds)\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 699, in update\n    _count_elements(self, iterable)\nTypeError: 'int' object is not iterable\n\n======================================================================\nERROR: test_multiple_elements_in_list (__main__.TestFreqElementFunction.test_multiple_elements_in_list)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 20, in test_multiple_elements_in_list\n    self.assertEqual(freq_element([1, 2, 3, 2, 3]), Counter({1: 1, 2: 2, 3: 2}))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 8, in freq_element\n    result = Counter(chain.from_iterable(nums))\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 607, in __init__\n    self.update(iterable, **kwds)\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 699, in update\n    _count_elements(self, iterable)\nTypeError: 'int' object is not iterable\n\n======================================================================\nERROR: test_single_element_repeated_multiple_times (__main__.TestFreqElementFunction.test_single_element_repeated_multiple_times)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 17, in test_single_element_repeated_multiple_times\n    self.assertEqual(freq_element([1, 1, 1]), {1: 3})\n                     ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 8, in freq_element\n    result = Counter(chain.from_iterable(nums))\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 607, in __init__\n    self.update(iterable, **kwds)\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 699, in update\n    _count_elements(self, iterable)\nTypeError: 'int' object is not iterable\n\n======================================================================\nERROR: test_single_value_list_with_negative_numbers (__main__.TestFreqElementFunction.test_single_value_list_with_negative_numbers)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 29, in test_single_value_list_with_negative_numbers\n    self.assertEqual(freq_element([-1, -1, -1]), {(-1): 3})\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 8, in freq_element\n    result = Counter(chain.from_iterable(nums))\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 607, in __init__\n    self.update(iterable, **kwds)\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 699, in update\n    _count_elements(self, iterable)\nTypeError: 'int' object is not iterable\n\n----------------------------------------------------------------------\nRan 6 tests in 0.006s\n\nFAILED (errors=5)\n",
+        "test_smells": {
+          "magic_number": 22
+        }
+      }
+    },
+    "Gemma": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.55,
+        "stdout": "",
+        "stderr": ".EEE.\n======================================================================\nERROR: test_mixed_types (__main__.TestFreqElement.test_mixed_types)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_zero-shot.py\", line 31, in test_mixed_types\n    self.assertEqual(freq_element([1, 'a', 3.14, 1, 'a']), Counter({1: 2, 'a': 2, '3.14': 1}))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_zero-shot.py\", line 11, in freq_element\n    result = Counter(chain.from_iterable(nums))\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 607, in __init__\n    self.update(iterable, **kwds)\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 699, in update\n    _count_elements(self, iterable)\nTypeError: 'int' object is not iterable\n\n======================================================================\nERROR: test_multiple_elements (__main__.TestFreqElement.test_multiple_elements)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_zero-shot.py\", line 25, in test_multiple_elements\n    self.assertEqual(freq_element([1, 2, 3, 1, 2]), Counter({1: 2, 2: 2, 3: 1}))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_zero-shot.py\", line 11, in freq_element\n    result = Counter(chain.from_iterable(nums))\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 607, in __init__\n    self.update(iterable, **kwds)\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 699, in update\n    _count_elements(self, iterable)\nTypeError: 'int' object is not iterable\n\n======================================================================\nERROR: test_single_element (__main__.TestFreqElement.test_single_element)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_zero-shot.py\", line 22, in test_single_element\n    self.assertEqual(freq_element([1]), Counter({1: 1}))\n                     ^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_zero-shot.py\", line 11, in freq_element\n    result = Counter(chain.from_iterable(nums))\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 607, in __init__\n    self.update(iterable, **kwds)\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 699, in update\n    _count_elements(self, iterable)\nTypeError: 'int' object is not iterable\n\n----------------------------------------------------------------------\nRan 5 tests in 0.003s\n\nFAILED (errors=3)\n",
+        "test_smells": {
+          "magic_number": 12
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertIsNone"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.42,
+        "stdout": "",
+        "stderr": ".EEEE\n======================================================================\nERROR: test_iterable_elements (__main__.TestFreqElement.test_iterable_elements)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_few-shot.py\", line 30, in test_iterable_elements\n    self.assertEqual(freq_element(range(1, 5)), Counter({0: 1, 1: 1, 2: 1, 3: 1, 4: 1}))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_few-shot.py\", line 11, in freq_element\n    result = Counter(chain.from_iterable(nums))\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 607, in __init__\n    self.update(iterable, **kwds)\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 699, in update\n    _count_elements(self, iterable)\nTypeError: 'int' object is not iterable\n\n======================================================================\nERROR: test_multiple_elements (__main__.TestFreqElement.test_multiple_elements)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_few-shot.py\", line 24, in test_multiple_elements\n    self.assertEqual(freq_element([1, 2, 1, 3]), Counter({1: 2, 2: 1, 3: 1}))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_few-shot.py\", line 11, in freq_element\n    result = Counter(chain.from_iterable(nums))\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 607, in __init__\n    self.update(iterable, **kwds)\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 699, in update\n    _count_elements(self, iterable)\nTypeError: 'int' object is not iterable\n\n======================================================================\nERROR: test_none_element (__main__.TestFreqElement.test_none_element)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_few-shot.py\", line 27, in test_none_element\n    self.assertIsNone(freq_element(None))\n                      ^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_few-shot.py\", line 11, in freq_element\n    result = Counter(chain.from_iterable(nums))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: 'NoneType' object is not iterable\n\n======================================================================\nERROR: test_single_element (__main__.TestFreqElement.test_single_element)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_few-shot.py\", line 21, in test_single_element\n    self.assertEqual(freq_element([1]), Counter({1: 1}))\n                     ^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_few-shot.py\", line 11, in freq_element\n    result = Counter(chain.from_iterable(nums))\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 607, in __init__\n    self.update(iterable, **kwds)\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 699, in update\n    _count_elements(self, iterable)\nTypeError: 'int' object is not iterable\n\n----------------------------------------------------------------------\nRan 5 tests in 0.003s\n\nFAILED (errors=4)\n",
+        "test_smells": {
+          "assertion_roulette": 1,
+          "magic_number": 9
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.55,
+        "stdout": "",
+        "stderr": "EE.EE\n======================================================================\nERROR: test_different_data_types (__main__.TestFreqElement.test_different_data_types)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 31, in test_different_data_types\n    self.assertEqual(freq_element([1, 'a', True]), Counter({'1': 1, 'a': 1, 'True': 1}))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 11, in freq_element\n    result = Counter(chain.from_iterable(nums))\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 607, in __init__\n    self.update(iterable, **kwds)\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 699, in update\n    _count_elements(self, iterable)\nTypeError: 'int' object is not iterable\n\n======================================================================\nERROR: test_duplicate_elements (__main__.TestFreqElement.test_duplicate_elements)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 28, in test_duplicate_elements\n    self.assertEqual(freq_element([1, 1, 2]), Counter({'1': 2, '2': 1}))\n                     ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 11, in freq_element\n    result = Counter(chain.from_iterable(nums))\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 607, in __init__\n    self.update(iterable, **kwds)\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 699, in update\n    _count_elements(self, iterable)\nTypeError: 'int' object is not iterable\n\n======================================================================\nERROR: test_multiple_elements (__main__.TestFreqElement.test_multiple_elements)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 25, in test_multiple_elements\n    self.assertEqual(freq_element([1, 2, 3]), Counter({'1': 1, '2': 1, '3': 1}))\n                     ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 11, in freq_element\n    result = Counter(chain.from_iterable(nums))\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 607, in __init__\n    self.update(iterable, **kwds)\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 699, in update\n    _count_elements(self, iterable)\nTypeError: 'int' object is not iterable\n\n======================================================================\nERROR: test_single_element (__main__.TestFreqElement.test_single_element)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 22, in test_single_element\n    self.assertEqual(freq_element([1]), Counter({'1': 1}))\n                     ^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 11, in freq_element\n    result = Counter(chain.from_iterable(nums))\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 607, in __init__\n    self.update(iterable, **kwds)\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 699, in update\n    _count_elements(self, iterable)\nTypeError: 'int' object is not iterable\n\n----------------------------------------------------------------------\nRan 5 tests in 0.003s\n\nFAILED (errors=4)\n",
+        "test_smells": {
+          "magic_number": 4
+        }
+      }
+    },
+    "CodeGemma": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.55,
+        "stdout": "",
+        "stderr": "E.E.E\n======================================================================\nERROR: test_different_types (__main__.TestFreqElement.test_different_types)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_zero-shot.py\", line 30, in test_different_types\n    self.assertEqual(freq_element([1, \"a\", 2.0]), Counter({1: 1, \"a\": 1, 2.0: 1}))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_zero-shot.py\", line 10, in freq_element\n    result = Counter(chain.from_iterable(nums))\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 607, in __init__\n    self.update(iterable, **kwds)\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 699, in update\n    _count_elements(self, iterable)\nTypeError: 'int' object is not iterable\n\n======================================================================\nERROR: test_multiple_element_list (__main__.TestFreqElement.test_multiple_element_list)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_zero-shot.py\", line 24, in test_multiple_element_list\n    self.assertEqual(freq_element([1, 2, 2, 3]), Counter({1: 1, 2: 2, 3: 1}))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_zero-shot.py\", line 10, in freq_element\n    result = Counter(chain.from_iterable(nums))\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 607, in __init__\n    self.update(iterable, **kwds)\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 699, in update\n    _count_elements(self, iterable)\nTypeError: 'int' object is not iterable\n\n======================================================================\nERROR: test_single_element_list (__main__.TestFreqElement.test_single_element_list)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_zero-shot.py\", line 21, in test_single_element_list\n    self.assertEqual(freq_element([1]), Counter({1: 1}))\n                     ^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_zero-shot.py\", line 10, in freq_element\n    result = Counter(chain.from_iterable(nums))\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 607, in __init__\n    self.update(iterable, **kwds)\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 699, in update\n    _count_elements(self, iterable)\nTypeError: 'int' object is not iterable\n\n----------------------------------------------------------------------\nRan 5 tests in 0.003s\n\nFAILED (errors=3)\n",
+        "test_smells": {
+          "magic_number": 17
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.55,
+        "stdout": "",
+        "stderr": ".E.E\n======================================================================\nERROR: test_multiple_elements (__main__.TestFreqElement.test_multiple_elements)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_few-shot.py\", line 20, in test_multiple_elements\n    self.assertEqual(freq_element([1, 2, 2, 3]), Counter({1: 1, 2: 2, 3: 1}))\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_few-shot.py\", line 8, in freq_element\n    result = Counter(chain.from_iterable(nums))\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 607, in __init__\n    self.update(iterable, **kwds)\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 699, in update\n    _count_elements(self, iterable)\nTypeError: 'int' object is not iterable\n\n======================================================================\nERROR: test_single_element (__main__.TestFreqElement.test_single_element)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_few-shot.py\", line 17, in test_single_element\n    self.assertEqual(freq_element([1]), Counter({1: 1}))\n                     ^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_few-shot.py\", line 8, in freq_element\n    result = Counter(chain.from_iterable(nums))\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 607, in __init__\n    self.update(iterable, **kwds)\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 699, in update\n    _count_elements(self, iterable)\nTypeError: 'int' object is not iterable\n\n----------------------------------------------------------------------\nRan 4 tests in 0.002s\n\nFAILED (errors=2)\n",
+        "test_smells": {
+          "magic_number": 7
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.55,
+        "stdout": "",
+        "stderr": ".EE.E\n======================================================================\nERROR: test_large_dataset (__main__.TestFreqElement.test_large_dataset)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_cot.py\", line 36, in test_large_dataset\n    self.assertEqual(freq_element(nums), expected)\n                     ^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_cot.py\", line 8, in freq_element\n    result = Counter(chain.from_iterable(nums))\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 607, in __init__\n    self.update(iterable, **kwds)\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 699, in update\n    _count_elements(self, iterable)\nTypeError: 'int' object is not iterable\n\n======================================================================\nERROR: test_multiple_elements (__main__.TestFreqElement.test_multiple_elements)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_cot.py\", line 26, in test_multiple_elements\n    self.assertEqual(freq_element(nums), expected)\n                     ^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_cot.py\", line 8, in freq_element\n    result = Counter(chain.from_iterable(nums))\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 607, in __init__\n    self.update(iterable, **kwds)\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 699, in update\n    _count_elements(self, iterable)\nTypeError: 'int' object is not iterable\n\n======================================================================\nERROR: test_single_element (__main__.TestFreqElement.test_single_element)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_cot.py\", line 21, in test_single_element\n    self.assertEqual(freq_element(nums), expected)\n                     ^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_cot.py\", line 8, in freq_element\n    result = Counter(chain.from_iterable(nums))\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 607, in __init__\n    self.update(iterable, **kwds)\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\collections\\__init__.py\", line 699, in update\n    _count_elements(self, iterable)\nTypeError: 'int' object is not iterable\n\n----------------------------------------------------------------------\nRan 5 tests in 0.003s\n\nFAILED (errors=3)\n",
+        "test_smells": {
+          "magic_number": 18
+        }
+      }
+    }
+  }

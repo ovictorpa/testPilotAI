@@ -1,0 +1,319 @@
+{
+    "WizardCoder": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": 0.05,
+        "stdout": "",
+        "stderr": "E\n======================================================================\nERROR: test_electricity_bill (__main__.TestCalElectbill.test_electricity_bill)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_zero-shot.py\", line 8, in test_electricity_bill\n    self.assertEqual(cal_electbill(5), 2.6) #for units < 50\n                     ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n----------------------------------------------------------------------\nRan 1 test in 0.007s\n\nFAILED (errors=1)\n",
+        "test_smells": {
+          "magic_number": 12
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertAlmostEqual",
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": 0.12,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_few-shot.py\", line 4, in <module>\n    from electbill import cal_electbill\nModuleNotFoundError: No module named 'electbill'\n",
+        "test_smells": {
+          "magic_number": 25
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertAlmostEqual",
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": 0.12,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_cot.py\", line 4, in <module>\n    from electbill import cal_electbill # assuming the file name of the code to be tested is \"electbill.py\"\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'electbill'\n",
+        "test_smells": {
+          "magic_number": 15
+        }
+      }
+    },
+    "CodeLLaMA": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": 0.05,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeLLaMA_zero-shot.py\", line 3, in <module>\n    [PYTHON]\n     ^^^^^^\nNameError: name 'PYTHON' is not defined\n",
+        "test_smells": {
+          "magic_number": 18
+        }
+      },
+      "few-shot": {
+        "status": "passed",
+        "coverage": "13%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": 2.3,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "magic_number": 6
+        }
+      },
+      "cot": {
+        "status": "passed",
+        "coverage": "13%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": 2.3,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "magic_number": 19
+        }
+      }
+    },
+    "WizardLM": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertAlmostEqual",
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": 0.12,
+        "stdout": "",
+        "stderr": "FFFFFFFFFF\n======================================================================\nFAIL: test_above_200_units (__main__.TestCalculateElectricBill.test_above_200_units)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 41, in test_above_200_units\n    self.assertEqual(cal_electbill(300), 2153.75)\nAssertionError: 1738.5 != 2153.75\n\n======================================================================\nFAIL: test_below_50_units (__main__.TestCalculateElectricBill.test_below_50_units)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 23, in test_below_50_units\n    self.assertEqual(cal_electbill(40), 104.00)\nAssertionError: 129.0 != 104.0\n\n======================================================================\nFAIL: test_between_100_and_200_units (__main__.TestCalculateElectricBill.test_between_100_and_200_units)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 35, in test_between_100_and_200_units\n    self.assertEqual(cal_electbill(150), 647.50)\nAssertionError: 600.5 != 647.5\n\n======================================================================\nFAIL: test_between_50_and_100_units (__main__.TestCalculateElectricBill.test_between_50_and_100_units)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 29, in test_between_50_and_100_units\n    self.assertEqual(cal_electbill(75), 268.75)\nAssertionError: 246.25 != 268.75\n\n======================================================================\nFAIL: test_exactly_100_units (__main__.TestCalculateElectricBill.test_exactly_100_units)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 32, in test_exactly_100_units\n    self.assertEqual(cal_electbill(100), 345.00)\nAssertionError: 327.5 != 345.0\n\n======================================================================\nFAIL: test_exactly_200_units (__main__.TestCalculateElectricBill.test_exactly_200_units)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 38, in test_exactly_200_units\n    self.assertEqual(cal_electbill(200), 998.00)\nAssertionError: 863.5 != 998.0\n\n======================================================================\nFAIL: test_exactly_50_units (__main__.TestCalculateElectricBill.test_exactly_50_units)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 26, in test_exactly_50_units\n    self.assertEqual(cal_electbill(50), 155.00)\nAssertionError: 165.0 != 155.0\n\n======================================================================\nFAIL: test_negative_units (__main__.TestCalculateElectricBill.test_negative_units)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 44, in test_negative_units\n    self.assertEqual(cal_electbill(-10), 26.00)\nAssertionError: -1.0 != 26.0\n\n======================================================================\nFAIL: test_non_integer_units (__main__.TestCalculateElectricBill.test_non_integer_units)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 47, in test_non_integer_units\n    self.assertAlmostEqual(cal_electbill(50.75), 159.38, places=2)\nAssertionError: 167.4375 != 159.38 within 2 places (8.057500000000005 difference)\n\n======================================================================\nFAIL: test_units_greater_than_200_with_discount (__main__.TestCalculateElectricBill.test_units_greater_than_200_with_discount)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 51, in test_units_greater_than_200_with_discount\n    self.assertEqual(cal_electbill(250), 1173.75)\nAssertionError: 1316.0 != 1173.75\n\n----------------------------------------------------------------------\nRan 10 tests in 0.003s\n\nFAILED (failures=10)\n",
+        "test_smells": {
+          "magic_number": 41
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertRaises",
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": -0.08,
+        "stdout": "",
+        "stderr": "FFFFF.FF\n======================================================================\nFAIL: test_above_200_units (__main__.TestCalElectBill.test_above_200_units)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 35, in test_above_200_units\n    self.assertEqual(cal_electbill(220), 1943.90) # 220 units, should include all tiers + surcharge\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 1062.5 != 1943.9\n\n======================================================================\nFAIL: test_below_50_units (__main__.TestCalElectBill.test_below_50_units)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 23, in test_below_50_units\n    self.assertEqual(cal_electbill(40), 106.00)  # 40 units, should include base cost and surcharge\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 129.0 != 106.0\n\n======================================================================\nFAIL: test_exact_200_units (__main__.TestCalElectBill.test_exact_200_units)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 38, in test_exact_200_units\n    self.assertEqual(cal_electbill(200), 865.00)   # 200 units, exactly at the threshold for tier 2\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 863.5 != 865.0\n\n======================================================================\nFAIL: test_exactly_50_units (__main__.TestCalElectBill.test_exactly_50_units)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 26, in test_exactly_50_units\n    self.assertEqual(cal_electbill(50), 175.00)  # 50 units, should be exactly the threshold rate\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 165.0 != 175.0\n\n======================================================================\nFAIL: test_invalid_input_less_than_zero (__main__.TestCalElectBill.test_invalid_input_less_than_zero)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 41, in test_invalid_input_less_than_zero\n    with self.assertRaises(ValueError):\nAssertionError: ValueError not raised\n\n======================================================================\nFAIL: test_up_to_100_units (__main__.TestCalElectBill.test_up_to_100_units)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 29, in test_up_to_100_units\n    self.assertEqual(cal_electbill(90), 347.50)   # 90 units, should include tier 1 + surcharge\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 295.0 != 347.5\n\n======================================================================\nFAIL: test_up_to_200_units (__main__.TestCalElectBill.test_up_to_200_units)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 32, in test_up_to_200_units\n    self.assertEqual(cal_electbill(180), 865.00)  # 180 units, should include tier 1 & 2 + surcharge\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 758.3 != 865.0\n\n----------------------------------------------------------------------\nRan 8 tests in 0.002s\n\nFAILED (failures=7)\n",
+        "test_smells": {
+          "magic_number": 33,
+          "assertion_roulette": 2
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertRaises",
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": -0.28,
+        "stdout": "",
+        "stderr": "EEEEEEEEEEEE\n======================================================================\nERROR: test_invalid_input (__main__.TestElectricBillCalculation.test_invalid_input)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 43, in test_invalid_input\n    cal_electbill(-50)  # Invalid input should raise an error\n    ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n======================================================================\nERROR: test_negative_units (__main__.TestElectricBillCalculation.test_negative_units)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 32, in test_negative_units\n    cal_electbill(-10)  # Should raise an error for negative units\n    ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n======================================================================\nERROR: test_units_above_200 (__main__.TestElectricBillCalculation.test_units_above_200)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 16, in test_units_above_200\n    self.assertEqual(cal_electbill(250), 1418.75)  # 200 units * $8.45 + 50 units * $5.26 each + $75 surcharge\n                     ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n======================================================================\nERROR: test_units_below_50 (__main__.TestElectricBillCalculation.test_units_below_50)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 7, in test_units_below_50\n    self.assertEqual(cal_electbill(40), 104.00)  # 40 units * $2.60 each + $25 surcharge\n                     ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n======================================================================\nERROR: test_units_between_100_and_200 (__main__.TestElectricBillCalculation.test_units_between_100_and_200)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 13, in test_units_between_100_and_200\n    self.assertEqual(cal_electbill(150), 496.75)  # 100 units * $3.25 + 50 units * $5.26 each + $45 surcharge\n                     ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n======================================================================\nERROR: test_units_between_50_and_100 (__main__.TestElectricBillCalculation.test_units_between_50_and_100)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 10, in test_units_between_50_and_100\n    self.assertEqual(cal_electbill(80), 237.00)  # 80 units (50+30) * $3.25 each + $35 surcharge\n                     ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n======================================================================\nERROR: test_units_exactly_at_threshold_100 (__main__.TestElectricBillCalculation.test_units_exactly_at_threshold_100)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 22, in test_units_exactly_at_threshold_100\n    self.assertEqual(cal_electbill(100), 325.00)  # 50 units * $2.60 + 50 units * $3.25 each + $35 surcharge\n                     ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n======================================================================\nERROR: test_units_exactly_at_threshold_200 (__main__.TestElectricBillCalculation.test_units_exactly_at_threshold_200)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 25, in test_units_exactly_at_threshold_200\n    self.assertEqual(cal_electbill(200), 1193.75)  # 100 units * $3.25 + 100 units * $5.26 + 50 units * $8.45 each + $75 surcharge\n                     ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n======================================================================\nERROR: test_units_exactly_at_threshold_50 (__main__.TestElectricBillCalculation.test_units_exactly_at_threshold_50)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 19, in test_units_exactly_at_threshold_50\n    self.assertEqual(cal_electbill(50), 185.00)  # 50 units * $2.60 each + $25 surcharge\n                     ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n======================================================================\nERROR: test_units_greater_than_200 (__main__.TestElectricBillCalculation.test_units_greater_than_200)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 36, in test_units_greater_than_200\n    cal_electbill(300)  # Should raise an error for units exceeding 200\n    ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n======================================================================\nERROR: test_units_zero (__main__.TestElectricBillCalculation.test_units_zero)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 39, in test_units_zero\n    self.assertEqual(cal_electbill(0), 0.00)  # No charge for zero usage\n                     ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n======================================================================\nERROR: test_zero_units (__main__.TestElectricBillCalculation.test_zero_units)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 28, in test_zero_units\n    self.assertEqual(cal_electbill(0), 25.00)  # No amount for zero units + $25 surcharge\n                     ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n----------------------------------------------------------------------\nRan 12 tests in 0.078s\n\nFAILED (errors=12)\n",
+        "test_smells": {
+          "redundant_assertion": 1,
+          "magic_number": 18,
+          "assertion_roulette": 3
+        }
+      }
+    },
+    "LLaMA3": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertRaises",
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": 0.12,
+        "stdout": "Couldn't run 'C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_zero-shot.py' as Python code: SyntaxError: invalid syntax (LLaMA3_zero-shot.py, line 5)\n",
+        "stderr": "C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\venv\\Lib\\site-packages\\coverage\\control.py:915: CoverageWarning: No data was collected. (no-data-collected)\n  self._warn(\"No data was collected.\", slug=\"no-data-collected\")\n",
+        "test_smells": {
+          "syntax_error": 1
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": 0.05,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_few-shot.py\", line 4, in <module>\n    from your_module import cal_electbill # replace 'your_module' with actual name of where you defined your cal_electbill function\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'your_module'\n",
+        "test_smells": {
+          "magic_number": 14
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertAlmostEqual",
+          "assertRaises",
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": -0.2,
+        "stdout": "",
+        "stderr": "EEEEEE\n======================================================================\nERROR: test_above_higher_threshold (__main__.TestElectBillCalculation.test_above_higher_threshold)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 27, in test_above_higher_threshold\n    self.assertAlmostEqual(cal_electbill(201), 1211.45)\n                           ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n======================================================================\nERROR: test_below_threshold (__main__.TestElectBillCalculation.test_below_threshold)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 17, in test_below_threshold\n    self.assertAlmostEqual(cal_electbill(49), 66.2)\n                           ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n======================================================================\nERROR: test_between_thresholds (__main__.TestElectBillCalculation.test_between_thresholds)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 22, in test_between_thresholds\n    self.assertAlmostEqual(cal_electbill(51), 157.5)\n                           ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n======================================================================\nERROR: test_large_units (__main__.TestElectBillCalculation.test_large_units)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 32, in test_large_units\n    self.assertAlmostEqual(cal_electbill(500), 5312.35)\n                           ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n======================================================================\nERROR: test_negative_units (__main__.TestElectBillCalculation.test_negative_units)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 10, in test_negative_units\n    cal_electbill(-1)\n    ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n======================================================================\nERROR: test_zero_units (__main__.TestElectBillCalculation.test_zero_units)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 14, in test_zero_units\n    self.assertEqual(cal_electbill(0), 0)\n                     ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n----------------------------------------------------------------------\nRan 6 tests in 0.039s\n\nFAILED (errors=6)\n",
+        "test_smells": {
+          "redundant_assertion": 1,
+          "assertion_roulette": 1,
+          "magic_number": 14
+        }
+      }
+    },
+    "Gemma": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": 0.05,
+        "stdout": "",
+        "stderr": "EEEE\n======================================================================\nERROR: test_large_units (__main__.TestCalElectBill.test_large_units)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_zero-shot.py\", line 14, in test_large_units\n    self.assertEqual(cal_electbill(150), 307.5)\n                     ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n======================================================================\nERROR: test_medium_units (__main__.TestCalElectBill.test_medium_units)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_zero-shot.py\", line 11, in test_medium_units\n    self.assertEqual(cal_electbill(80), 190)\n                     ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n======================================================================\nERROR: test_small_units (__main__.TestCalElectBill.test_small_units)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_zero-shot.py\", line 8, in test_small_units\n    self.assertEqual(cal_electbill(40), 104)\n                     ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n======================================================================\nERROR: test_very_large_units (__main__.TestCalElectBill.test_very_large_units)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_zero-shot.py\", line 17, in test_very_large_units\n    self.assertEqual(cal_electbill(250), 482.5)\n                     ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n----------------------------------------------------------------------\nRan 4 tests in 0.027s\n\nFAILED (errors=4)\n",
+        "test_smells": {
+          "magic_number": 8
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": 0.05,
+        "stdout": "",
+        "stderr": "EEEEE\n======================================================================\nERROR: test_basic (__main__.TestCalElectBill.test_basic)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_few-shot.py\", line 8, in test_basic\n    self.assertEqual(cal_electbill(20), 89)\n                     ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n======================================================================\nERROR: test_large (__main__.TestCalElectBill.test_large)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_few-shot.py\", line 14, in test_large\n    self.assertEqual(cal_electbill(250), 483)\n                     ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n======================================================================\nERROR: test_midrange (__main__.TestCalElectBill.test_midrange)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_few-shot.py\", line 11, in test_midrange\n    self.assertEqual(cal_electbill(80), 238)\n                     ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n======================================================================\nERROR: test_units_greater_than_200 (__main__.TestCalElectBill.test_units_greater_than_200)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_few-shot.py\", line 20, in test_units_greater_than_200\n    self.assertEqual(cal_electbill(260), 683)\n                     ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n======================================================================\nERROR: test_units_less_than_50 (__main__.TestCalElectBill.test_units_less_than_50)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_few-shot.py\", line 17, in test_units_less_than_50\n    self.assertEqual(cal_electbill(40), 104)\n                     ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n----------------------------------------------------------------------\nRan 5 tests in 0.034s\n\nFAILED (errors=5)\n",
+        "test_smells": {
+          "magic_number": 10
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertRaises",
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": -0.08,
+        "stdout": "",
+        "stderr": "EEEEE\n======================================================================\nERROR: test_basic_billing (__main__.TestCalElectbill.test_basic_billing)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 10, in test_basic_billing\n    actual_amount = cal_electbill(units)\n                    ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n======================================================================\nERROR: test_large_billing (__main__.TestCalElectbill.test_large_billing)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 28, in test_large_billing\n    actual_amount = cal_electbill(units)\n                    ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n======================================================================\nERROR: test_medium_billing (__main__.TestCalElectbill.test_medium_billing)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 22, in test_medium_billing\n    actual_amount = cal_electbill(units)\n                    ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n======================================================================\nERROR: test_negative_units (__main__.TestCalElectbill.test_negative_units)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 33, in test_negative_units\n    cal_electbill(-10)\n    ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n======================================================================\nERROR: test_small_surcharge (__main__.TestCalElectbill.test_small_surcharge)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 16, in test_small_surcharge\n    actual_amount = cal_electbill(units)\n                    ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n----------------------------------------------------------------------\nRan 5 tests in 0.033s\n\nFAILED (errors=5)\n",
+        "test_smells": {
+          "magic_number": 22,
+          "assertion_roulette": 1
+        }
+      }
+    },
+    "CodeGemma": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": 0.05,
+        "stdout": "",
+        "stderr": "EEEE\n======================================================================\nERROR: test_units_between_100_and_200 (__main__.TestCalElectbill.test_units_between_100_and_200)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_zero-shot.py\", line 22, in test_units_between_100_and_200\n    total = cal_electbill(units)\n            ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n======================================================================\nERROR: test_units_between_50_and_100 (__main__.TestCalElectbill.test_units_between_50_and_100)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_zero-shot.py\", line 16, in test_units_between_50_and_100\n    total = cal_electbill(units)\n            ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n======================================================================\nERROR: test_units_greater_than_200 (__main__.TestCalElectbill.test_units_greater_than_200)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_zero-shot.py\", line 28, in test_units_greater_than_200\n    total = cal_electbill(units)\n            ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n======================================================================\nERROR: test_units_less_than_50 (__main__.TestCalElectbill.test_units_less_than_50)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_zero-shot.py\", line 10, in test_units_less_than_50\n    total = cal_electbill(units)\n            ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n----------------------------------------------------------------------\nRan 4 tests in 0.026s\n\nFAILED (errors=4)\n",
+        "test_smells": {
+          "magic_number": 8
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": 0.05,
+        "stdout": "",
+        "stderr": "EEEE\n======================================================================\nERROR: test_units_between_100_and_200 (__main__.TestCalElectbill.test_units_between_100_and_200)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_few-shot.py\", line 14, in test_units_between_100_and_200\n    self.assertEqual(cal_electbill(150), 537.5)\n                     ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n======================================================================\nERROR: test_units_between_50_and_100 (__main__.TestCalElectbill.test_units_between_50_and_100)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_few-shot.py\", line 11, in test_units_between_50_and_100\n    self.assertEqual(cal_electbill(70), 285)\n                     ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n======================================================================\nERROR: test_units_greater_than_200 (__main__.TestCalElectbill.test_units_greater_than_200)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_few-shot.py\", line 17, in test_units_greater_than_200\n    self.assertEqual(cal_electbill(250), 957.5)\n                     ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n======================================================================\nERROR: test_units_less_than_50 (__main__.TestCalElectbill.test_units_less_than_50)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_few-shot.py\", line 8, in test_units_less_than_50\n    self.assertEqual(cal_electbill(40), 105)\n                     ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n----------------------------------------------------------------------\nRan 4 tests in 0.027s\n\nFAILED (errors=4)\n",
+        "test_smells": {
+          "magic_number": 8
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertRaises",
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": -0.08,
+        "stdout": "",
+        "stderr": "EEEEEE\n======================================================================\nERROR: test_negative_units (__main__.TestCalElectbill.test_negative_units)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_cot.py\", line 30, in test_negative_units\n    cal_electbill(units)\n    ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n======================================================================\nERROR: test_units_between_100_and_200 (__main__.TestCalElectbill.test_units_between_100_and_200)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_cot.py\", line 20, in test_units_between_100_and_200\n    self.assertEqual(cal_electbill(units), expected_total)\n                     ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n======================================================================\nERROR: test_units_between_50_and_100 (__main__.TestCalElectbill.test_units_between_50_and_100)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_cot.py\", line 15, in test_units_between_50_and_100\n    self.assertEqual(cal_electbill(units), expected_total)\n                     ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n======================================================================\nERROR: test_units_greater_than_200 (__main__.TestCalElectbill.test_units_greater_than_200)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_cot.py\", line 25, in test_units_greater_than_200\n    self.assertEqual(cal_electbill(units), expected_total)\n                     ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n======================================================================\nERROR: test_units_less_than_50 (__main__.TestCalElectbill.test_units_less_than_50)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_cot.py\", line 10, in test_units_less_than_50\n    self.assertEqual(cal_electbill(units), expected_total)\n                     ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n======================================================================\nERROR: test_zero_units (__main__.TestCalElectbill.test_zero_units)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_cot.py\", line 35, in test_zero_units\n    self.assertEqual(cal_electbill(units), expected_total)\n                     ^^^^^^^^^^^^^\nNameError: name 'cal_electbill' is not defined\n\n----------------------------------------------------------------------\nRan 6 tests in 0.041s\n\nFAILED (errors=6)\n",
+        "test_smells": {
+          "magic_number": 10,
+          "assertion_roulette": 1
+        }
+      }
+    }
+  }

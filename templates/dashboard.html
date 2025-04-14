@@ -54,8 +54,7 @@
                     <th>Status</th>
                     <th>Score</th>
                     <th>Coverage</th>
-                    <th>Lint</th>
-                    <th>Smells</th>
+                    <th>Problems</th>
                     <th>Asserts</th>
                     <th>Edge Cases</th>
                 </tr>
@@ -69,10 +68,9 @@
                         <td>{{ '✅' if result.status == 'passed' else '❌' }}</td>
                         <td><span class="badge bg-{{ 'success' if result.score >= 1.0 else 'warning' }} badge-score">{{ result.score }}</span></td>
                         <td>{{ result.coverage | default('-') }}</td>
-                        <td>{{ '✔️' if result.lint_passed else '❌' }}</td>
-                        <td>{{ result.test_smells | join(', ') if result.test_smells else 'Nenhum' }}</td>
-                        <td>{{ result.asserts_count }}</td>
-                        <td>{{ result.edge_cases_count }}</td>
+                        <td>{{ result.test_smells | join(', ') if result.test_smells else 'No problems' }}</td>
+                        <td>{{ result.assert_types }}</td>
+                        <td>{{ result.edge_case_found }}</td>
                     </tr>
                     {% endfor %}
                 {% endfor %}

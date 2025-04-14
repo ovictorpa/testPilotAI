@@ -1,0 +1,327 @@
+{
+    "WizardLM": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.35,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 4, in <module>\n    from greatest_common_divisor import greatest_common_divisor as gcd  # Assuming the function is in a file named greatest_common_divisor.py\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'greatest_common_divisor'\n",
+        "test_smells": {
+          "redundant_assertion": 6,
+          "magic_number": 34
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.35,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 4, in <module>\n    from greatest_common_divisor import greatest_common_divisor  # Assuming the function is defined in greatest_common_divisor.py\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'greatest_common_divisor'\n",
+        "test_smells": {
+          "redundant_assertion": 5,
+          "magic_number": 37
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.22,
+        "stdout": "",
+        "stderr": "..F..E.F...\n======================================================================\nERROR: test_input_as_tuple_or_list (__main__.TestGCD.test_input_as_tuple_or_list)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 32, in test_input_as_tuple_or_list\n    self.assertEqual(greatest_common_divisor((27, 64),), 9)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: greatest_common_divisor() missing 1 required positional argument: 'b'\n\n======================================================================\nFAIL: test_coprime_pairs (__main__.TestGCD.test_coprime_pairs)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 15, in test_coprime_pairs\n    self.assertEqual(greatest_common_divisor(24, 36), 8)\nAssertionError: 12 != 8\n\n======================================================================\nFAIL: test_large_fibonacci_numbers (__main__.TestGCD.test_large_fibonacci_numbers)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 29, in test_large_fibonacci_numbers\n    self.assertEqual(greatest_common_divisor(89, 144), 89)\nAssertionError: 1 != 89\n\n----------------------------------------------------------------------\nRan 11 tests in 0.003s\n\nFAILED (failures=2, errors=1)\n",
+        "test_smells": {
+          "redundant_assertion": 4,
+          "magic_number": 47,
+          "assertion_roulette": 4
+        }
+      }
+    },
+    "CodeLLaMA": {
+      "zero-shot": {
+        "status": "passed",
+        "coverage": "6%",
+        "assert_types": [],
+        "edge_case_found": false,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.55,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "magic_number": 5
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.35,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeLLaMA_few-shot.py\", line 4, in <module>\n    from greatest_common_divisor import greatest_common_divisor\nModuleNotFoundError: No module named 'greatest_common_divisor'\n",
+        "test_smells": {
+          "redundant_assertion": 1,
+          "magic_number": 13
+        }
+      },
+      "cot": {
+        "status": "passed",
+        "coverage": "6%",
+        "assert_types": [],
+        "edge_case_found": false,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": 2.25,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {}
+      }
+    },
+    "WizardCoder": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": false,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_zero-shot.py\", line 4, in <module>\n    from greatest_common_divisor import greatest_common_divisor\nModuleNotFoundError: No module named 'greatest_common_divisor'\n",
+        "test_smells": {
+          "redundant_assertion": 1,
+          "magic_number": 5
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertNotEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.42,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_few-shot.py\", line 4, in <module>\n    from greatest_common_divisor import greatest_common_divisor\nModuleNotFoundError: No module named 'greatest_common_divisor'\n",
+        "test_smells": {
+          "redundant_assertion": 1,
+          "magic_number": 11
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.22,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_cot.py\", line 4, in <module>\n    from greatest_common_divisor import greatest_common_divisor\nModuleNotFoundError: No module named 'greatest_common_divisor'\n",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "assertion_roulette": 2,
+          "magic_number": 4
+        }
+      }
+    },
+    "LLaMA3": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.22,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_zero-shot.py\", line 4, in <module>\n    from your_module import greatest_common_divisor  # Replace 'your_module' with the actual name of the module containing the function\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'your_module'\n",
+        "test_smells": {
+          "redundant_assertion": 1,
+          "magic_number": 17,
+          "assertion_roulette": 2
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.22,
+        "stdout": "",
+        "stderr": ".F.F\n======================================================================\nFAIL: test_gcd_with_negative_numbers (__main__.TestGCD.test_gcd_with_negative_numbers)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_few-shot.py\", line 18, in test_gcd_with_negative_numbers\n    self.assertEqual(greatest_common_divisor(-3, -5), 1)\nAssertionError: -1 != 1\n\n======================================================================\nFAIL: test_gcd_with_zero (__main__.TestGCD.test_gcd_with_zero)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_few-shot.py\", line 13, in test_gcd_with_zero\n    with self.assertRaises(ZeroDivisionError):\nAssertionError: ZeroDivisionError not raised\n\n----------------------------------------------------------------------\nRan 4 tests in 0.001s\n\nFAILED (failures=2)\n",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 25,
+          "assertion_roulette": 1
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.22,
+        "stdout": "",
+        "stderr": "..FFF.F\n======================================================================\nFAIL: test_large_numbers (__main__.TestGreatestCommonDivisor.test_large_numbers)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 35, in test_large_numbers\n    self.assertEqual(greatest_common_divisor(num1, num2), greatest_common_divisor(random.randint(1, 10000), random.randint(1, 10000)))\nAssertionError: 2 != 1\n\n======================================================================\nFAIL: test_negative_integers (__main__.TestGreatestCommonDivisor.test_negative_integers)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 13, in test_negative_integers\n    self.assertEqual(greatest_common_divisor(-25, -15), 5)\nAssertionError: -5 != 5\n\n======================================================================\nFAIL: test_one_of_inputs_is_zero_or_one (__main__.TestGreatestCommonDivisor.test_one_of_inputs_is_zero_or_one)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 27, in test_one_of_inputs_is_zero_or_one\n    with self.assertRaises(ValueError):\nAssertionError: ValueError not raised\n\n======================================================================\nFAIL: test_zero_input (__main__.TestGreatestCommonDivisor.test_zero_input)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 16, in test_zero_input\n    with self.assertRaises(ValueError):\nAssertionError: ValueError not raised\n\n----------------------------------------------------------------------\nRan 7 tests in 0.002s\n\nFAILED (failures=4)\n",
+        "test_smells": {
+          "redundant_assertion": 3,
+          "magic_number": 30,
+          "assertion_roulette": 2
+        }
+      }
+    },
+    "Gemma": {
+      "zero-shot": {
+        "status": "passed",
+        "coverage": "25%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.6,
+        "stdout": "",
+        "stderr": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.001s\n\nOK\n",
+        "test_smells": {
+          "redundant_assertion": 4,
+          "magic_number": 5
+        }
+      },
+      "few-shot": {
+        "status": "passed",
+        "coverage": "6%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.6,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 9
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.22,
+        "stdout": "",
+        "stderr": "FF.F..\n======================================================================\nFAIL: test_large_integers (__main__.TestGreatestCommonDivisor.test_large_integers)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 22, in test_large_integers\n    self.assertEqual(greatest_common_divisor(1000, 500), 100)\nAssertionError: 500 != 100\n\n======================================================================\nFAIL: test_negative_integers (__main__.TestGreatestCommonDivisor.test_negative_integers)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 12, in test_negative_integers\n    self.assertEqual(greatest_common_divisor(-3, -5), 1)\nAssertionError: -1 != 1\n\n======================================================================\nFAIL: test_overflow (__main__.TestGreatestCommonDivisor.test_overflow)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 25, in test_overflow\n    with self.assertRaises(ValueError):\nAssertionError: ValueError not raised\n\n----------------------------------------------------------------------\nRan 6 tests in 0.002s\n\nFAILED (failures=3)\n",
+        "test_smells": {
+          "redundant_assertion": 4,
+          "magic_number": 17,
+          "assertion_roulette": 1
+        }
+      }
+    },
+    "CodeGemma": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.22,
+        "stdout": "",
+        "stderr": "....F\n======================================================================\nFAIL: test_gcd_zero_divisor (__main__.TestGreatestCommonDivisor.test_gcd_zero_divisor)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_zero-shot.py\", line 23, in test_gcd_zero_divisor\n    with self.assertRaises(ZeroDivisionError):\nAssertionError: ZeroDivisionError not raised\n\n----------------------------------------------------------------------\nRan 5 tests in 0.001s\n\nFAILED (failures=1)\n",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 18,
+          "assertion_roulette": 1
+        }
+      },
+      "few-shot": {
+        "status": "passed",
+        "coverage": "25%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.6,
+        "stdout": "",
+        "stderr": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.000s\n\nOK\n",
+        "test_smells": {
+          "redundant_assertion": 3,
+          "magic_number": 15
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.35,
+        "stdout": "",
+        "stderr": ".FF..\n======================================================================\nFAIL: test_large_numbers (__main__.TestGreatestCommonDivisor.test_large_numbers)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_cot.py\", line 23, in test_large_numbers\n    self.assertEqual(greatest_common_divisor(1000000007, 1000000009), 7)\nAssertionError: 1 != 7\n\n======================================================================\nFAIL: test_negative_numbers (__main__.TestGreatestCommonDivisor.test_negative_numbers)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_cot.py\", line 13, in test_negative_numbers\n    self.assertEqual(greatest_common_divisor(25, -15), 5)\nAssertionError: -5 != 5\n\n----------------------------------------------------------------------\nRan 5 tests in 0.002s\n\nFAILED (failures=2)\n",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 20
+        }
+      }
+    }
+  }

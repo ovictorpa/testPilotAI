@@ -1,0 +1,324 @@
+{
+    "WizardCoder": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [],
+        "edge_case_found": false,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.3,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_zero-shot.py\", line 3, in <module>\n    import pytest\nModuleNotFoundError: No module named 'pytest'\n",
+        "test_smells": {
+          "magic_number": 10
+        }
+      },
+      "few-shot": {
+        "status": "passed",
+        "coverage": "6%",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.47,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "redundant_assertion": 3,
+          "magic_number": 11,
+          "assertion_roulette": 1
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises",
+          "assertTrue"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.3,
+        "stdout": "",
+        "stderr": ".E.E\n======================================================================\nERROR: test_negative_input (__main__.TestSequence.test_negative_input)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_cot.py\", line 8, in test_negative_input\n    self.assertRaises(ValueError, sequence, -1)\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\unittest\\case.py\", line 778, in assertRaises\n    return context.handle('assertRaises', args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\unittest\\case.py\", line 238, in handle\n    callable_obj(*args, **kwargs)\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 9, in sequence\n    return sequence(sequence(n-1)) + sequence(n-sequence(n-1))\n                    ^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 9, in sequence\n    return sequence(sequence(n-1)) + sequence(n-sequence(n-1))\n                    ^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 9, in sequence\n    return sequence(sequence(n-1)) + sequence(n-sequence(n-1))\n                    ^^^^^^^^^^^^^\n  [Previous line repeated 975 more times]\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 1, in sequence\n    def sequence(n):\n    \nRecursionError: maximum recursion depth exceeded\n\n======================================================================\nERROR: test_zero_input (__main__.TestSequence.test_zero_input)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_cot.py\", line 11, in test_zero_input\n    self.assertEqual(sequence(0), 0)\n                     ^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 9, in sequence\n    return sequence(sequence(n-1)) + sequence(n-sequence(n-1))\n                    ^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 9, in sequence\n    return sequence(sequence(n-1)) + sequence(n-sequence(n-1))\n                    ^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 9, in sequence\n    return sequence(sequence(n-1)) + sequence(n-sequence(n-1))\n                    ^^^^^^^^^^^^^\n  [Previous line repeated 977 more times]\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 1, in sequence\n    def sequence(n):\n    \nRecursionError: maximum recursion depth exceeded\n\n----------------------------------------------------------------------\nRan 4 tests in 0.119s\n\nFAILED (errors=2)\n",
+        "test_smells": {
+          "redundant_assertion": 3,
+          "assertion_roulette": 1,
+          "magic_number": 2
+        }
+      }
+    },
+    "CodeLLaMA": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": false,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeLLaMA_zero-shot.py\", line 3, in <module>\n    [PYTHON]\n     ^^^^^^\nNameError: name 'PYTHON' is not defined\n",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 7
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": false,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeLLaMA_few-shot.py\", line 4, in <module>\n    from sequence import sequence\nModuleNotFoundError: No module named 'sequence'\n",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 5
+        }
+      },
+      "cot": {
+        "status": "no_code_found",
+        "score": 0.0
+      }
+    },
+    "WizardLM": {
+      "zero-shot": {
+        "status": "passed",
+        "coverage": "6%",
+        "assert_types": [],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.8,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "magic_number": 1
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises",
+          "assertGreater"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.3,
+        "stdout": "",
+        "stderr": "Timeout",
+        "test_smells": {
+          "redundant_assertion": 4,
+          "magic_number": 16,
+          "assertion_roulette": 4
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises",
+          "assertLess"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.3,
+        "stdout": "",
+        "stderr": "Timeout",
+        "test_smells": {
+          "redundant_assertion": 3,
+          "magic_number": 13,
+          "assertion_roulette": 3
+        }
+      }
+    },
+    "LLaMA3": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.35,
+        "stdout": "",
+        "stderr": "FF.\n======================================================================\nFAIL: testLargerNumbers (__main__.TestSequenceFunction.testLargerNumbers)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_zero-shot.py\", line 23, in testLargerNumbers\n    self.assertEqual(sequence(10), 33)\nAssertionError: 6 != 33\n\n======================================================================\nFAIL: testSmallNumbers (__main__.TestSequenceFunction.testSmallNumbers)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_zero-shot.py\", line 19, in testSmallNumbers\n    self.assertEqual(sequence(4), 3)\nAssertionError: 2 != 3\n\n----------------------------------------------------------------------\nRan 3 tests in 0.002s\n\nFAILED (failures=2)\n",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 12
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.22,
+        "stdout": "",
+        "stderr": "FE...\n======================================================================\nERROR: test_sequence_negative (__main__.TestSequence.test_sequence_negative)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_few-shot.py\", line 29, in test_sequence_negative\n    sequence(-1)\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_few-shot.py\", line 11, in sequence\n    return sequence(sequence(n-1)) + sequence(n-sequence(n-1))\n                    ^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_few-shot.py\", line 11, in sequence\n    return sequence(sequence(n-1)) + sequence(n-sequence(n-1))\n                    ^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_few-shot.py\", line 11, in sequence\n    return sequence(sequence(n-1)) + sequence(n-sequence(n-1))\n                    ^^^^^^^^^^^^^\n  [Previous line repeated 978 more times]\nRecursionError: maximum recursion depth exceeded\n\n======================================================================\nFAIL: test_sequence_four (__main__.TestSequence.test_sequence_four)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_few-shot.py\", line 25, in test_sequence_four\n    self.assertEqual(sequence(4), 5)\nAssertionError: 2 != 5\n\n----------------------------------------------------------------------\nRan 5 tests in 0.028s\n\nFAILED (failures=1, errors=1)\n",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 6,
+          "assertion_roulette": 1
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.22,
+        "stdout": "",
+        "stderr": "EF...E\n======================================================================\nERROR: test_negative_input (__main__.TestSequenceFunction.test_negative_input)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 21, in test_negative_input\n    sequence(-1)\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 9, in sequence\n    return sequence(sequence(n-1)) + sequence(n-sequence(n-1))\n                    ^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 9, in sequence\n    return sequence(sequence(n-1)) + sequence(n-sequence(n-1))\n                    ^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 9, in sequence\n    return sequence(sequence(n-1)) + sequence(n-sequence(n-1))\n                    ^^^^^^^^^^^^^\n  [Previous line repeated 977 more times]\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 1, in sequence\n    def sequence(n):\n    \nRecursionError: maximum recursion depth exceeded\n\n======================================================================\nERROR: test_zero_input (__main__.TestSequenceFunction.test_zero_input)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 25, in test_zero_input\n    sequence(0)\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 9, in sequence\n    return sequence(sequence(n-1)) + sequence(n-sequence(n-1))\n                    ^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 9, in sequence\n    return sequence(sequence(n-1)) + sequence(n-sequence(n-1))\n                    ^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 9, in sequence\n    return sequence(sequence(n-1)) + sequence(n-sequence(n-1))\n                    ^^^^^^^^^^^^^\n  [Previous line repeated 977 more times]\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 1, in sequence\n    def sequence(n):\n    \nRecursionError: maximum recursion depth exceeded\n\n======================================================================\nFAIL: test_sequence_four (__main__.TestSequenceFunction.test_sequence_four)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 17, in test_sequence_four\n    self.assertEqual(sequence(4), 5)\nAssertionError: 2 != 5\n\n----------------------------------------------------------------------\nRan 6 tests in 0.058s\n\nFAILED (failures=1, errors=2)\n",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 5,
+          "assertion_roulette": 2
+        }
+      }
+    },
+    "Gemma": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.22,
+        "stdout": "",
+        "stderr": ".FEF\n======================================================================\nERROR: test_negative_numbers (__main__.TestSequence.test_negative_numbers)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_zero-shot.py\", line 20, in test_negative_numbers\n    sequence(-1)\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 9, in sequence\n    return sequence(sequence(n-1)) + sequence(n-sequence(n-1))\n                    ^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 9, in sequence\n    return sequence(sequence(n-1)) + sequence(n-sequence(n-1))\n                    ^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 9, in sequence\n    return sequence(sequence(n-1)) + sequence(n-sequence(n-1))\n                    ^^^^^^^^^^^^^\n  [Previous line repeated 977 more times]\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 1, in sequence\n    def sequence(n):\n    \nRecursionError: maximum recursion depth exceeded\n\n======================================================================\nFAIL: test_large_numbers (__main__.TestSequence.test_large_numbers)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_zero-shot.py\", line 16, in test_large_numbers\n    self.assertEqual(sequence(10), 55)\nAssertionError: 6 != 55\n\n======================================================================\nFAIL: test_small_numbers (__main__.TestSequence.test_small_numbers)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_zero-shot.py\", line 13, in test_small_numbers\n    self.assertEqual(sequence(4), 3)\nAssertionError: 2 != 3\n\n----------------------------------------------------------------------\nRan 4 tests in 0.029s\n\nFAILED (failures=2, errors=1)\n",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 7,
+          "assertion_roulette": 1
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.35,
+        "stdout": "",
+        "stderr": "...FFF\n======================================================================\nFAIL: test_sequence_4 (__main__.TestSequence.test_sequence_4)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_few-shot.py\", line 17, in test_sequence_4\n    self.assertEqual(sequence(4), 3)\nAssertionError: 2 != 3\n\n======================================================================\nFAIL: test_sequence_5 (__main__.TestSequence.test_sequence_5)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_few-shot.py\", line 20, in test_sequence_5\n    self.assertEqual(sequence(5), 5)\nAssertionError: 3 != 5\n\n======================================================================\nFAIL: test_sequence_large (__main__.TestSequence.test_sequence_large)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_few-shot.py\", line 23, in test_sequence_large\n    self.assertEqual(sequence(10), 55)\nAssertionError: 6 != 55\n\n----------------------------------------------------------------------\nRan 6 tests in 0.003s\n\nFAILED (failures=3)\n",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 9
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.22,
+        "stdout": "",
+        "stderr": "..EEF\n======================================================================\nERROR: test_large_input (__main__.TestSequence.test_large_input)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 22, in test_large_input\n    with self.assertRaises(StackOverflowError):\n                           ^^^^^^^^^^^^^^^^^^\nNameError: name 'StackOverflowError' is not defined. Did you mean: 'OverflowError'?\n\n======================================================================\nERROR: test_negative_input (__main__.TestSequence.test_negative_input)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 19, in test_negative_input\n    sequence(-1)\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 9, in sequence\n    return sequence(sequence(n-1)) + sequence(n-sequence(n-1))\n                    ^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 9, in sequence\n    return sequence(sequence(n-1)) + sequence(n-sequence(n-1))\n                    ^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 9, in sequence\n    return sequence(sequence(n-1)) + sequence(n-sequence(n-1))\n                    ^^^^^^^^^^^^^\n  [Previous line repeated 977 more times]\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 1, in sequence\n    def sequence(n):\n    \nRecursionError: maximum recursion depth exceeded\n\n======================================================================\nFAIL: test_recursive_case (__main__.TestSequence.test_recursive_case)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 15, in test_recursive_case\n    self.assertEqual(sequence(4), 3)\nAssertionError: 2 != 3\n\n----------------------------------------------------------------------\nRan 5 tests in 0.038s\n\nFAILED (failures=1, errors=2)\n",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 6,
+          "assertion_roulette": 2
+        }
+      }
+    },
+    "CodeGemma": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.35,
+        "stdout": "",
+        "stderr": "..FFF\n======================================================================\nFAIL: test_large_input (__main__.TestSequence.test_large_input)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_zero-shot.py\", line 20, in test_large_input\n    self.assertEqual(sequence(10), 134669)\nAssertionError: 6 != 134669\n\n======================================================================\nFAIL: test_nested_recursion (__main__.TestSequence.test_nested_recursion)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_zero-shot.py\", line 17, in test_nested_recursion\n    self.assertEqual(sequence(4), 21)\nAssertionError: 2 != 21\n\n======================================================================\nFAIL: test_recursive_case (__main__.TestSequence.test_recursive_case)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_zero-shot.py\", line 14, in test_recursive_case\n    self.assertEqual(sequence(3), 3)\nAssertionError: 2 != 3\n\n----------------------------------------------------------------------\nRan 5 tests in 0.003s\n\nFAILED (failures=3)\n",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 7
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.22,
+        "stdout": "",
+        "stderr": "..F\n======================================================================\nFAIL: test_sequence_recursive_case (__main__.TestSequence.test_sequence_recursive_case)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_few-shot.py\", line 22, in test_sequence_recursive_case\n    self.assertEqual(sequence(3), 3)\nAssertionError: 2 != 3\n\n----------------------------------------------------------------------\nRan 3 tests in 0.002s\n\nFAILED (failures=1)\n",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 6,
+          "assertion_roulette": 1
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.22,
+        "stdout": "",
+        "stderr": "..EFEE.\n======================================================================\nERROR: test_float_input (__main__.SequenceTest.test_float_input)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_cot.py\", line 25, in test_float_input\n    sequence(1.5)\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 9, in sequence\n    return sequence(sequence(n-1)) + sequence(n-sequence(n-1))\n                    ^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 9, in sequence\n    return sequence(sequence(n-1)) + sequence(n-sequence(n-1))\n                    ^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 9, in sequence\n    return sequence(sequence(n-1)) + sequence(n-sequence(n-1))\n                    ^^^^^^^^^^^^^\n  [Previous line repeated 977 more times]\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 1, in sequence\n    def sequence(n):\n    \nRecursionError: maximum recursion depth exceeded\n\n======================================================================\nERROR: test_negative_input (__main__.SequenceTest.test_negative_input)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_cot.py\", line 21, in test_negative_input\n    sequence(-1)\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 9, in sequence\n    return sequence(sequence(n-1)) + sequence(n-sequence(n-1))\n                    ^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 9, in sequence\n    return sequence(sequence(n-1)) + sequence(n-sequence(n-1))\n                    ^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 9, in sequence\n    return sequence(sequence(n-1)) + sequence(n-sequence(n-1))\n                    ^^^^^^^^^^^^^\n  [Previous line repeated 977 more times]\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 1, in sequence\n    def sequence(n):\n    \nRecursionError: maximum recursion depth exceeded\n\n======================================================================\nERROR: test_non_integer_input (__main__.SequenceTest.test_non_integer_input)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_cot.py\", line 29, in test_non_integer_input\n    sequence(1.5)\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 9, in sequence\n    return sequence(sequence(n-1)) + sequence(n-sequence(n-1))\n                    ^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 9, in sequence\n    return sequence(sequence(n-1)) + sequence(n-sequence(n-1))\n                    ^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 9, in sequence\n    return sequence(sequence(n-1)) + sequence(n-sequence(n-1))\n                    ^^^^^^^^^^^^^\n  [Previous line repeated 977 more times]\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 1, in sequence\n    def sequence(n):\n    \nRecursionError: maximum recursion depth exceeded\n\n======================================================================\nFAIL: test_large_input (__main__.SequenceTest.test_large_input)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_cot.py\", line 17, in test_large_input\n    self.assertEqual(sequence(10), 1023)\nAssertionError: 6 != 1023\n\n----------------------------------------------------------------------\nRan 7 tests in 0.079s\n\nFAILED (failures=1, errors=3)\n",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 7,
+          "assertion_roulette": 3
+        }
+      }
+    }
+  }

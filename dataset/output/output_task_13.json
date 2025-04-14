@@ -1,0 +1,288 @@
+{
+    "WizardCoder": {
+      "zero-shot": {
+        "status": "no_code_found",
+        "score": 0.0
+      },
+      "few-shot": {
+        "status": "no_code_found",
+        "score": 0.0
+      },
+      "cot": {
+        "status": "passed",
+        "coverage": "7%",
+        "assert_types": [],
+        "edge_case_found": false,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.75,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {}
+      }
+    },
+    "CodeLLaMA": {
+      "zero-shot": {
+        "status": "passed",
+        "coverage": "7%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.6,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 3
+        }
+      },
+      "few-shot": {
+        "status": "passed",
+        "coverage": "7%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.6,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 3
+        }
+      },
+      "cot": {
+        "status": "passed",
+        "coverage": "7%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.6,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "redundant_assertion": 3,
+          "magic_number": 2
+        }
+      }
+    },
+    "WizardLM": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertNotEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.62,
+        "stdout": "Couldn't run 'C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py' as Python code: SyntaxError: unterminated string literal (detected at line 33) (WizardLM_zero-shot.py, line 33)\n",
+        "stderr": "C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\venv\\Lib\\site-packages\\coverage\\control.py:915: CoverageWarning: No data was collected. (no-data-collected)\n  self._warn(\"No data was collected.\", slug=\"no-data-collected\")\n",
+        "test_smells": {
+          "syntax_error": 1
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.35,
+        "stdout": "",
+        "stderr": "F.F....FF..FFF.\n======================================================================\nFAIL: test_accented_characters (__main__.TestCountDistinctCharacters.test_accented_characters)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 34, in test_accented_characters\n    self.assertEqual(count_distinct_characters('CafÃ©'), 4)\nAssertionError: 5 != 4\n\n======================================================================\nFAIL: test_emoji (__main__.TestCountDistinctCharacters.test_emoji)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 37, in test_emoji\n    self.assertEqual(count_distinct_characters('ðŸ˜€ðŸ˜„ðŸ˜‚'), 3)\nAssertionError: 6 != 3\n\n======================================================================\nFAIL: test_non_alphanumeric_characters (__main__.TestCountDistinctCharacters.test_non_alphanumeric_characters)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 46, in test_non_alphanumeric_characters\n    self.assertEqual(count_distinct_characters('This is a test! 12345'), 10)\nAssertionError: 13 != 10\n\n======================================================================\nFAIL: test_punctuation (__main__.TestCountDistinctCharacters.test_punctuation)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 28, in test_punctuation\n    self.assertEqual(count_distinct_characters('Hello, World!'), 8)\nAssertionError: 10 != 8\n\n======================================================================\nFAIL: test_string_with_newlines (__main__.TestCountDistinctCharacters.test_string_with_newlines)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 49, in test_string_with_newlines\n    self.assertEqual(count_distinct_characters('\\n\\rHello, World!\\n'), 9)\nAssertionError: 12 != 9\n\n======================================================================\nFAIL: test_string_with_tab (__main__.TestCountDistinctCharacters.test_string_with_tab)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 52, in test_string_with_tab\n    self.assertEqual(count_distinct_characters('\\tHello, World!\\t'), 8)\nAssertionError: 11 != 8\n\n======================================================================\nFAIL: test_uppercase_letters (__main__.TestCountDistinctCharacters.test_uppercase_letters)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 25, in test_uppercase_letters\n    self.assertEqual(count_distinct_characters('ABCabc'), 6)\nAssertionError: 3 != 6\n\n----------------------------------------------------------------------\nRan 15 tests in 0.004s\n\nFAILED (failures=7)\n",
+        "test_smells": {
+          "redundant_assertion": 5,
+          "magic_number": 10
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.35,
+        "stdout": "",
+        "stderr": "....E..FFF.\n======================================================================\nERROR: test_performance_with_very_large_string (__main__.TestCountDistinctCharacters.test_performance_with_very_large_string)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 45, in test_performance_with_very_large_string\n    with patch('sys.stdout', open(os.devnull, 'w')):  # Suppress output to avoid performance impact due to logging\n                                  ^^\nNameError: name 'os' is not defined. Did you forget to import 'os'\n\n======================================================================\nFAIL: test_with_non_alphabetic_characters (__main__.TestCountDistinctCharacters.test_with_non_alphabetic_characters)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 14, in test_with_non_alphabetic_characters\n    self.assertEqual(count_distinct_characters('Hello, World!'), 7)\nAssertionError: 10 != 7\n\n======================================================================\nFAIL: test_with_repeated_characters (__main__.TestCountDistinctCharacters.test_with_repeated_characters)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 17, in test_with_repeated_characters\n    self.assertEqual(count_distinct_characters('aabc'), 4)\nAssertionError: 3 != 4\n\n======================================================================\nFAIL: test_with_unicode_characters (__main__.TestCountDistinctCharacters.test_with_unicode_characters)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 34, in test_with_unicode_characters\n    self.assertEqual(count_distinct_characters('HÃ©llÃ¶ WÃ¶rld!'), 9)\nAssertionError: 10 != 9\n\n----------------------------------------------------------------------\nRan 11 tests in 0.008s\n\nFAILED (failures=3, errors=1)\n",
+        "test_smells": {
+          "redundant_assertion": 4,
+          "magic_number": 12
+        }
+      }
+    },
+    "LLaMA3": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.35,
+        "stdout": "",
+        "stderr": "...F.\n======================================================================\nFAIL: test_only_whitespace (__main__.TestDistinctCharacters.test_only_whitespace)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_zero-shot.py\", line 32, in test_only_whitespace\n    self.assertEqual(count_distinct_characters('   '), 0)\nAssertionError: 1 != 0\n\n----------------------------------------------------------------------\nRan 5 tests in 0.001s\n\nFAILED (failures=1)\n",
+        "test_smells": {
+          "redundant_assertion": 3,
+          "magic_number": 2
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.35,
+        "stdout": "",
+        "stderr": "FFFFFFF\n======================================================================\nFAIL: test_case_insensitive (__main__.TestCountDistinctCharacters.test_case_insensitive)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_few-shot.py\", line 21, in test_case_insensitive\n    self.assertEqual(count_distinct_characters(\"Jerry\"), 4)\nAssertionError: None != 4\n\n======================================================================\nFAIL: test_empty_string (__main__.TestCountDistinctCharacters.test_empty_string)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_few-shot.py\", line 12, in test_empty_string\n    self.assertEqual(count_distinct_characters(\"\"), 0)\nAssertionError: None != 0\n\n======================================================================\nFAIL: test_multiple_characters (__main__.TestCountDistinctCharacters.test_multiple_characters)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_few-shot.py\", line 18, in test_multiple_characters\n    self.assertEqual(count_distinct_characters(\"xyzXYZ\"), 3)\nAssertionError: None != 3\n\n======================================================================\nFAIL: test_no_duplicates (__main__.TestCountDistinctCharacters.test_no_duplicates)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_few-shot.py\", line 24, in test_no_duplicates\n    self.assertEqual(count_distinct_characters(\"aaaaaa\"), 1)\nAssertionError: None != 1\n\n======================================================================\nFAIL: test_numbers_and_special_chars (__main__.TestCountDistinctCharacters.test_numbers_and_special_chars)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_few-shot.py\", line 30, in test_numbers_and_special_chars\n    self.assertEqual(count_distinct_characters(\"123!@#\"), 3)\nAssertionError: None != 3\n\n======================================================================\nFAIL: test_single_character (__main__.TestCountDistinctCharacters.test_single_character)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_few-shot.py\", line 15, in test_single_character\n    self.assertEqual(count_distinct_characters(\"a\"), 1)\nAssertionError: None != 1\n\n======================================================================\nFAIL: test_whitespace (__main__.TestCountDistinctCharacters.test_whitespace)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_few-shot.py\", line 27, in test_whitespace\n    self.assertEqual(count_distinct_characters(\"   \"), 0)\nAssertionError: None != 0\n\n----------------------------------------------------------------------\nRan 7 tests in 0.002s\n\nFAILED (failures=7)\n",
+        "test_smells": {
+          "redundant_assertion": 4,
+          "magic_number": 3
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.35,
+        "stdout": "",
+        "stderr": "...F.\n======================================================================\nFAIL: test_string_with_numbers_and_special_chars (__main__.TestDistinctCharacters.test_string_with_numbers_and_special_chars)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 23, in test_string_with_numbers_and_special_chars\n    self.assertEqual(count_distinct_characters('Hello, World!'), 7)\nAssertionError: 10 != 7\n\n----------------------------------------------------------------------\nRan 5 tests in 0.002s\n\nFAILED (failures=1)\n",
+        "test_smells": {
+          "redundant_assertion": 5,
+          "magic_number": 3
+        }
+      }
+    },
+    "Gemma": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.35,
+        "stdout": "",
+        "stderr": "...F.\n======================================================================\nFAIL: test_special_characters (__main__.TestCountDistinctCharacters.test_special_characters)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_zero-shot.py\", line 20, in test_special_characters\n    self.assertEqual(count_distinct_characters('!@#$%^&*'), 6)\nAssertionError: 8 != 6\n\n----------------------------------------------------------------------\nRan 5 tests in 0.002s\n\nFAILED (failures=1)\n",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 3
+        }
+      },
+      "few-shot": {
+        "status": "passed",
+        "coverage": "7%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.6,
+        "stdout": "",
+        "stderr": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.000s\n\nOK\n",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 3
+        }
+      },
+      "cot": {
+        "status": "passed",
+        "coverage": "14%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.6,
+        "stdout": "",
+        "stderr": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.000s\n\nOK\n",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 3
+        }
+      }
+    },
+    "CodeGemma": {
+      "zero-shot": {
+        "status": "passed",
+        "coverage": "14%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.6,
+        "stdout": "",
+        "stderr": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.000s\n\nOK\n",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 3
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": false,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.3,
+        "stdout": "",
+        "stderr": "F\n======================================================================\nFAIL: test_count_distinct_characters (__main__.TestCountDistinctCharacters.test_count_distinct_characters)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_few-shot.py\", line 10, in test_count_distinct_characters\n    self.assertEqual(count_distinct_characters('aAbBcCd'), 6)\nAssertionError: 4 != 6\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (failures=1)\n",
+        "test_smells": {
+          "magic_number": 5
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.35,
+        "stdout": "",
+        "stderr": "....F\n======================================================================\nFAIL: test_string_with_special_characters (__main__.TestCountDistinctCharacters.test_string_with_special_characters)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_cot.py\", line 20, in test_string_with_special_characters\n    self.assertEqual(count_distinct_characters(\"J!er$ry\"), 4)\nAssertionError: 6 != 4\n\n----------------------------------------------------------------------\nRan 5 tests in 0.001s\n\nFAILED (failures=1)\n",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 3
+        }
+      }
+    }
+  }

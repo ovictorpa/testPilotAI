@@ -3,7 +3,5 @@ venv/
 generated_tests/
 evaluation_results/
 test_outputs/
-.coverage
 .idea
 __pycache__
-coverage.xml

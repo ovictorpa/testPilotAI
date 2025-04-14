@@ -1,0 +1,324 @@
+{
+    "WizardLM": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 2,
+        "total_functions": 2,
+        "score": 0.22,
+        "stdout": "",
+        "stderr": ".FFEFEF\n======================================================================\nERROR: test_binomial_Coeff_negative_k (__main__.TestBinomialCoeff.test_binomial_Coeff_negative_k)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 26, in test_binomial_Coeff_negative_k\n    self.assertEqual(binomial_Coeff(5, -1), 0)\n                     ^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 8, in binomial_Coeff\n    C[0] = 1\n    ~^^^\nIndexError: list assignment index out of range\n\n======================================================================\nERROR: test_sum_of_product_invalid_input (__main__.TestSumOfProduct.test_sum_of_product_invalid_input)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 54, in test_sum_of_product_invalid_input\n    sum_Of_product(-1)\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 15, in sum_Of_product\n    return binomial_Coeff(2 * n, n - 1)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 8, in binomial_Coeff\n    C[0] = 1\n    ~^^^\nIndexError: list assignment index out of range\n\n======================================================================\nFAIL: test_binomial_Coeff_invalid_input (__main__.TestBinomialCoeff.test_binomial_Coeff_invalid_input)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 33, in test_binomial_Coeff_invalid_input\n    with self.assertRaises(ValueError):\nAssertionError: ValueError not raised\n\n======================================================================\nFAIL: test_binomial_Coeff_large_values (__main__.TestBinomialCoeff.test_binomial_Coeff_large_values)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 30, in test_binomial_Coeff_large_values\n    self.assertEqual(binomial_Coeff(100, 49), 300300807692)\nAssertionError: 98913082887808032681188722800 != 300300807692\n\n======================================================================\nFAIL: test_sum_of_product_basics (__main__.TestSumOfProduct.test_sum_of_product_basics)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 44, in test_sum_of_product_basics\n    self.assertEqual(sum_Of_product(1), 2)\nAssertionError: 1 != 2\n\n======================================================================\nFAIL: test_sum_of_product_large_value (__main__.TestSumOfProduct.test_sum_of_product_large_value)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 50, in test_sum_of_product_large_value\n    self.assertEqual(sum_Of_product(10), 1001001)\nAssertionError: 167960 != 1001001\n\n----------------------------------------------------------------------\nRan 7 tests in 0.003s\n\nFAILED (failures=4, errors=2)\n",
+        "test_smells": {
+          "redundant_assertion": 5,
+          "magic_number": 27,
+          "assertion_roulette": 7
+        }
+      },
+      "few-shot": {
+        "status": "passed",
+        "coverage": "10%",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 2,
+        "score": 2.42,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "redundant_assertion": 10,
+          "magic_number": 29
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertLess",
+          "assertIn",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 2,
+        "total_functions": 2,
+        "score": 0.45,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 4, in <module>\n    from binomial import binomial_Coeff, sum_Of_product  # Assuming these functions are in a file named 'binomial.py'\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'binomial'\n",
+        "test_smells": {
+          "redundant_assertion": 4,
+          "magic_number": 42,
+          "assertion_roulette": 3
+        }
+      }
+    },
+    "WizardCoder": {
+      "zero-shot": {
+        "status": "passed",
+        "coverage": "10%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 2,
+        "score": 2.35,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "redundant_assertion": 1,
+          "magic_number": 6
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 2,
+        "total_functions": 2,
+        "score": 0.22,
+        "stdout": "",
+        "stderr": "F\n======================================================================\nFAIL: test_sum_of_product (__main__.TestSumOfProduct.test_sum_of_product)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_few-shot.py\", line 22, in test_sum_of_product\n    self.assertEqual(sum_Of_product(2),3)\nAssertionError: 4 != 3\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nFAILED (failures=1)\n",
+        "test_smells": {
+          "redundant_assertion": 1,
+          "magic_number": 12,
+          "assertion_roulette": 2
+        }
+      },
+      "cot": {
+        "status": "no_code_found",
+        "score": 0.0
+      }
+    },
+    "CodeLLaMA": {
+      "zero-shot": {
+        "status": "passed",
+        "coverage": "10%",
+        "assert_types": [],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 2,
+        "score": 2.3,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "magic_number": 8
+        }
+      },
+      "few-shot": {
+        "status": "passed",
+        "coverage": "10%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": false,
+        "functions_tested": 0,
+        "total_functions": 2,
+        "score": 2.05,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "magic_number": 11
+        }
+      },
+      "cot": {
+        "status": "passed",
+        "coverage": "10%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 2,
+        "score": 2.35,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "redundant_assertion": 3,
+          "magic_number": 11
+        }
+      }
+    },
+    "LLaMA3": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertGreaterEqual",
+          "assertLessEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 2,
+        "total_functions": 2,
+        "score": 0.45,
+        "stdout": "",
+        "stderr": "..F....\n======================================================================\nFAIL: test_binomial_coefficient_invalid_input (__main__.TestBinomialCoefficients.test_binomial_coefficient_invalid_input)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_zero-shot.py\", line 30, in test_binomial_coefficient_invalid_input\n    with self.assertRaises(TypeError):\nAssertionError: TypeError not raised\n\n----------------------------------------------------------------------\nRan 7 tests in 0.002s\n\nFAILED (failures=1)\n",
+        "test_smells": {
+          "redundant_assertion": 4,
+          "magic_number": 16,
+          "assertion_roulette": 2
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 2,
+        "total_functions": 2,
+        "score": 0.22,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_few-shot.py\", line 4, in <module>\n    from your_module import binomial_Coeff, sum_Of_product  # Replace 'your_module' with actual module name\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'your_module'\n",
+        "test_smells": {
+          "redundant_assertion": 4,
+          "magic_number": 27,
+          "assertion_roulette": 6
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 2,
+        "total_functions": 2,
+        "score": 0.22,
+        "stdout": "",
+        "stderr": ".EFE..E\n======================================================================\nERROR: test_binomial_coefficient_edge_case (__main__.TestBinomialFunctions.test_binomial_coefficient_edge_case)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 29, in test_binomial_coefficient_edge_case\n    binomial_Coeff(-5, -2)\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 5, in binomial_Coeff\n    C[0] = 1; # nC0 is 1\n    ~^^^\nIndexError: list assignment index out of range\n\n======================================================================\nERROR: test_binomial_coefficient_negative_k (__main__.TestBinomialFunctions.test_binomial_coefficient_negative_k)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 18, in test_binomial_coefficient_negative_k\n    binomial_Coeff(-5, -2)\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 5, in binomial_Coeff\n    C[0] = 1; # nC0 is 1\n    ~^^^\nIndexError: list assignment index out of range\n\n======================================================================\nERROR: test_sum_of_product_zero_n (__main__.TestBinomialFunctions.test_sum_of_product_zero_n)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 25, in test_sum_of_product_zero_n\n    sum_Of_product(0)\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 17, in sum_Of_product\n    return binomial_Coeff(2 * n,n - 1);\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 5, in binomial_Coeff\n    C[0] = 1; # nC0 is 1\n    ~^^^\nIndexError: list assignment index out of range\n\n======================================================================\nFAIL: test_binomial_coefficient_large_n (__main__.TestBinomialFunctions.test_binomial_coefficient_large_n)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 14, in test_binomial_coefficient_large_n\n    self.assertEqual(binomial_Coeff(20, 15), 15511210043330985984000000)\nAssertionError: 15504 != 15511210043330985984000000\n\n----------------------------------------------------------------------\nRan 7 tests in 0.003s\n\nFAILED (failures=1, errors=3)\n",
+        "test_smells": {
+          "redundant_assertion": 1,
+          "magic_number": 14,
+          "assertion_roulette": 3
+        }
+      }
+    },
+    "Gemma": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 2,
+        "score": -0.15,
+        "stdout": "",
+        "stderr": "EEEE\n======================================================================\nERROR: test_binom_coeff_basic (__main__.TestBinomialCoeff.test_binom_coeff_basic)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_zero-shot.py\", line 8, in test_binom_coeff_basic\n    self.assertEqual(binom_coeff(3, 2), 3)\n                     ^^^^^^^^^^^\nNameError: name 'binom_coeff' is not defined. Did you mean: 'binomial_Coeff'?\n\n======================================================================\nERROR: test_binom_coeff_edge_cases (__main__.TestBinomialCoeff.test_binom_coeff_edge_cases)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_zero-shot.py\", line 11, in test_binom_coeff_edge_cases\n    self.assertEqual(binom_coeff(0, 0), 1)\n                     ^^^^^^^^^^^\nNameError: name 'binom_coeff' is not defined. Did you mean: 'binomial_Coeff'?\n\n======================================================================\nERROR: test_sum_of_product_basic (__main__.TestSumOfProduct.test_sum_of_product_basic)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_zero-shot.py\", line 18, in test_sum_of_product_basic\n    self.assertEqual(sum_of_product(2), 6)\n                     ^^^^^^^^^^^^^^\nNameError: name 'sum_of_product' is not defined. Did you mean: 'sum_Of_product'?\n\n======================================================================\nERROR: test_sum_of_product_large (__main__.TestSumOfProduct.test_sum_of_product_large)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_zero-shot.py\", line 21, in test_sum_of_product_large\n    self.assertEqual(sum_of_product(10), 3024)\n                     ^^^^^^^^^^^^^^\nNameError: name 'sum_of_product' is not defined. Did you mean: 'sum_Of_product'?\n\n----------------------------------------------------------------------\nRan 4 tests in 0.011s\n\nFAILED (errors=4)\n",
+        "test_smells": {
+          "redundant_assertion": 3,
+          "magic_number": 9
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 2,
+        "total_functions": 2,
+        "score": 0.55,
+        "stdout": "",
+        "stderr": "FF\n======================================================================\nFAIL: test_binomical_coeff (__main__.TestBinomialCoeff.test_binomical_coeff)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_few-shot.py\", line 9, in test_binomical_coeff\n    self.assertEqual(binomial_Coeff(4, 3), 6)\nAssertionError: 4 != 6\n\n======================================================================\nFAIL: test_sum_of_product (__main__.TestSumOfProduct.test_sum_of_product)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_few-shot.py\", line 14, in test_sum_of_product\n    self.assertEqual(sum_Of_product(2), 6)\nAssertionError: 4 != 6\n\n----------------------------------------------------------------------\nRan 2 tests in 0.001s\n\nFAILED (failures=2)\n",
+        "test_smells": {
+          "magic_number": 10
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 2,
+        "total_functions": 2,
+        "score": 0.42,
+        "stdout": "",
+        "stderr": "..FF..F\n======================================================================\nFAIL: test_n_k_negative (__main__.TestBinomialCoeff.test_n_k_negative)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 11, in test_n_k_negative\n    with self.assertRaises(ValueError):\nAssertionError: ValueError not raised\n\n======================================================================\nFAIL: test_n_k_outside_range (__main__.TestBinomialCoeff.test_n_k_outside_range)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 15, in test_n_k_outside_range\n    with self.assertRaises(ValueError):\nAssertionError: ValueError not raised\n\n======================================================================\nFAIL: test_sum_of_product (__main__.TestSumOfProduct.test_sum_of_product)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 30, in test_sum_of_product\n    self.assertEqual(sum_Of_product(2), 6)\nAssertionError: 4 != 6\n\n----------------------------------------------------------------------\nRan 7 tests in 0.062s\n\nFAILED (failures=3)\n",
+        "test_smells": {
+          "magic_number": 16,
+          "assertion_roulette": 2
+        }
+      }
+    },
+    "CodeGemma": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 2,
+        "score": -0.28,
+        "stdout": "",
+        "stderr": "EEEEEE\n======================================================================\nERROR: test_binom_coeff_basic (__main__.TestBinomialCoeff.test_binom_coeff_basic)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_zero-shot.py\", line 8, in test_binom_coeff_basic\n    self.assertEqual(binom_coeff(4,2), 6)\n                     ^^^^^^^^^^^\nNameError: name 'binom_coeff' is not defined. Did you mean: 'binomial_Coeff'?\n\n======================================================================\nERROR: test_binom_coeff_edge_cases (__main__.TestBinomialCoeff.test_binom_coeff_edge_cases)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_zero-shot.py\", line 11, in test_binom_coeff_edge_cases\n    self.assertEqual(binom_coeff(0,0), 1)\n                     ^^^^^^^^^^^\nNameError: name 'binom_coeff' is not defined. Did you mean: 'binomial_Coeff'?\n\n======================================================================\nERROR: test_binom_coeff_invalid_inputs (__main__.TestBinomialCoeff.test_binom_coeff_invalid_inputs)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_zero-shot.py\", line 17, in test_binom_coeff_invalid_inputs\n    binom_coeff(-1,2)\n    ^^^^^^^^^^^\nNameError: name 'binom_coeff' is not defined. Did you mean: 'binomial_Coeff'?\n\n======================================================================\nERROR: test_sum_of_product_basic (__main__.TestSumOfProduct.test_sum_of_product_basic)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_zero-shot.py\", line 24, in test_sum_of_product_basic\n    self.assertEqual(sum_of_product(2), 15)\n                     ^^^^^^^^^^^^^^\nNameError: name 'sum_of_product' is not defined. Did you mean: 'sum_Of_product'?\n\n======================================================================\nERROR: test_sum_of_product_edge_cases (__main__.TestSumOfProduct.test_sum_of_product_edge_cases)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_zero-shot.py\", line 27, in test_sum_of_product_edge_cases\n    self.assertEqual(sum_of_product(0), 1)\n                     ^^^^^^^^^^^^^^\nNameError: name 'sum_of_product' is not defined. Did you mean: 'sum_Of_product'?\n\n======================================================================\nERROR: test_sum_of_product_invalid_inputs (__main__.TestSumOfProduct.test_sum_of_product_invalid_inputs)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_zero-shot.py\", line 32, in test_sum_of_product_invalid_inputs\n    sum_of_product(-1)\n    ^^^^^^^^^^^^^^\nNameError: name 'sum_of_product' is not defined. Did you mean: 'sum_Of_product'?\n\n----------------------------------------------------------------------\nRan 6 tests in 0.022s\n\nFAILED (errors=6)\n",
+        "test_smells": {
+          "redundant_assertion": 4,
+          "magic_number": 8,
+          "assertion_roulette": 3
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 2,
+        "total_functions": 2,
+        "score": 0.22,
+        "stdout": "",
+        "stderr": "..FFEE\n======================================================================\nERROR: test_sum_of_product_edge_cases (__main__.TestSumOfProduct.test_sum_of_product_edge_cases)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_few-shot.py\", line 24, in test_sum_of_product_edge_cases\n    self.assertEqual(sum_Of_product(0), 1)\n                     ^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 17, in sum_Of_product\n    return binomial_Coeff(2 * n,n - 1);\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 5, in binomial_Coeff\n    C[0] = 1; # nC0 is 1\n    ~^^^\nIndexError: list assignment index out of range\n\n======================================================================\nERROR: test_sum_of_product_invalid_inputs (__main__.TestSumOfProduct.test_sum_of_product_invalid_inputs)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_few-shot.py\", line 29, in test_sum_of_product_invalid_inputs\n    sum_Of_product(-5)\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 17, in sum_Of_product\n    return binomial_Coeff(2 * n,n - 1);\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 5, in binomial_Coeff\n    C[0] = 1; # nC0 is 1\n    ~^^^\nIndexError: list assignment index out of range\n\n======================================================================\nFAIL: test_binom_coeff_invalid_inputs (__main__.TestBinomialCoeff.test_binom_coeff_invalid_inputs)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_few-shot.py\", line 15, in test_binom_coeff_invalid_inputs\n    with self.assertRaises(ValueError):\nAssertionError: ValueError not raised\n\n======================================================================\nFAIL: test_sum_of_product_basic (__main__.TestSumOfProduct.test_sum_of_product_basic)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_few-shot.py\", line 21, in test_sum_of_product_basic\n    self.assertEqual(sum_Of_product(5), 455)\nAssertionError: 210 != 455\n\n----------------------------------------------------------------------\nRan 6 tests in 0.002s\n\nFAILED (failures=2, errors=2)\n",
+        "test_smells": {
+          "redundant_assertion": 3,
+          "magic_number": 11,
+          "assertion_roulette": 2
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 2,
+        "total_functions": 2,
+        "score": 0.35,
+        "stdout": "",
+        "stderr": "....E\n======================================================================\nERROR: test_n_is_zero (__main__.TestSumOfProduct.test_n_is_zero)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_cot.py\", line 25, in test_n_is_zero\n    self.assertEqual(sum_Of_product(0), 1)\n                     ^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 17, in sum_Of_product\n    return binomial_Coeff(2 * n,n - 1);\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\prompts\\code.py\", line 5, in binomial_Coeff\n    C[0] = 1; # nC0 is 1\n    ~^^^\nIndexError: list assignment index out of range\n\n----------------------------------------------------------------------\nRan 5 tests in 0.004s\n\nFAILED (errors=1)\n",
+        "test_smells": {
+          "redundant_assertion": 4,
+          "magic_number": 4
+        }
+      }
+    }
+  }

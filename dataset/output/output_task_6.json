@@ -1,0 +1,278 @@
+{
+    "WizardCoder": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 2,
+        "total_functions": 2,
+        "score": 0.62,
+        "stdout": "",
+        "stderr": "FFFFF\n======================================================================\nFAIL: test_different_lengths (__main__.TestStringXOR.test_different_lengths)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_zero-shot.py\", line 17, in test_different_lengths\n    with self.assertRaises(ValueError):\nAssertionError: ValueError not raised\n\n======================================================================\nFAIL: test_different_strings (__main__.TestStringXOR.test_different_strings)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_zero-shot.py\", line 11, in test_different_strings\n    self.assertEqual(string_xor('110', '001'), '110')\nAssertionError: '111' != '110'\n- 111\n?   ^\n+ 110\n?   ^\n\n\n======================================================================\nFAIL: test_equal_strings (__main__.TestStringXOR.test_equal_strings)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_zero-shot.py\", line 8, in test_equal_strings\n    self.assertEqual(string_xor('110', '110'), '0')\nAssertionError: '000' != '0'\n- 000\n+ 0\n\n\n======================================================================\nFAIL: test_longer_string (__main__.TestStringXOR.test_longer_string)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_zero-shot.py\", line 14, in test_longer_string\n    self.assertEqual(string_xor('1101', '00110'), '1011')\nAssertionError: '1110' != '1011'\n- 1110\n+ 1011\n\n\n======================================================================\nFAIL: test_non_binary_string (__main__.TestStringXOR.test_non_binary_string)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_zero-shot.py\", line 21, in test_non_binary_string\n    with self.assertRaises(ValueError):\nAssertionError: ValueError not raised\n\n----------------------------------------------------------------------\nRan 5 tests in 0.003s\n\nFAILED (failures=5)\n",
+        "test_smells": {
+          "assertion_roulette": 2
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 2,
+        "total_functions": 2,
+        "score": 0.42,
+        "stdout": "",
+        "stderr": "...FFF\n======================================================================\nFAIL: test_mismatched_lengths (__main__.TestStringXOR.test_mismatched_lengths)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_few-shot.py\", line 39, in test_mismatched_lengths\n    with self.assertRaises(ValueError):\nAssertionError: ValueError not raised\n\n======================================================================\nFAIL: test_nonbinary_input (__main__.TestStringXOR.test_nonbinary_input)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_few-shot.py\", line 43, in test_nonbinary_input\n    with self.assertRaises(TypeError):\nAssertionError: TypeError not raised\n\n======================================================================\nFAIL: test_padding (__main__.TestStringXOR.test_padding)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_few-shot.py\", line 50, in test_padding\n    self.assertEqual(string_xor('01', '1111'), '0011')  # padding with zeros to make the strings of equal length\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: '10' != '0011'\n- 10\n+ 0011\n\n\n----------------------------------------------------------------------\nRan 6 tests in 0.003s\n\nFAILED (failures=3)\n",
+        "test_smells": {
+          "assertion_roulette": 3,
+          "magic_number": 2
+        }
+      },
+      "cot": {
+        "status": "passed",
+        "coverage": "33%",
+        "assert_types": [],
+        "edge_case_found": true,
+        "functions_tested": 2,
+        "total_functions": 2,
+        "score": 3.25,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {}
+      }
+    },
+    "WizardLM": {
+      "zero-shot": {
+        "status": "passed",
+        "coverage": "6%",
+        "assert_types": [],
+        "edge_case_found": true,
+        "functions_tested": 2,
+        "total_functions": 2,
+        "score": 3.0,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {}
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 2,
+        "total_functions": 2,
+        "score": 0.62,
+        "stdout": "Couldn't run 'C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py' as Python code: IndentationError: expected an indented block after function definition on line 5 (WizardLM_few-shot.py, line 8)\n",
+        "stderr": "C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\venv\\Lib\\site-packages\\coverage\\control.py:915: CoverageWarning: No data was collected. (no-data-collected)\n  self._warn(\"No data was collected.\", slug=\"no-data-collected\")\n",
+        "test_smells": {
+          "syntax_error": 1
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 2,
+        "total_functions": 2,
+        "score": 0.75,
+        "stdout": "",
+        "stderr": ".....FFFFF..FFF\n======================================================================\nFAIL: test_leading_zeros (__main__.TestStringXor.test_leading_zeros)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 47, in test_leading_zeros\n    self.assertEqual(string_xor('000001010', '11000010'), '10010000')\nAssertionError: '11000111' != '10010000'\n- 11000111\n+ 10010000\n\n\n======================================================================\nFAIL: test_mixed_with_even_ones (__main__.TestStringXor.test_mixed_with_even_ones)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 25, in test_mixed_with_even_ones\n    self.assertEqual(string_xor('01010', '110010'), '100010')\nAssertionError: '10011' != '100010'\n- 10011\n?     ^\n+ 100010\n?    + ^\n\n\n======================================================================\nFAIL: test_mixed_with_odd_ones (__main__.TestStringXor.test_mixed_with_odd_ones)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 28, in test_mixed_with_odd_ones\n    self.assertEqual(string_xor('01011', '110011'), '001100')\nAssertionError: '10010' != '001100'\n- 10010\n+ 001100\n\n\n======================================================================\nFAIL: test_mixed_with_one_longer (__main__.TestStringXor.test_mixed_with_one_longer)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 38, in test_mixed_with_one_longer\n    self.assertEqual(string_xor('01010', '110'), '100010')\nAssertionError: '100' != '100010'\n- 100\n+ 100010\n\n\n======================================================================\nFAIL: test_mixed_with_other_one_longer (__main__.TestStringXor.test_mixed_with_other_one_longer)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 41, in test_mixed_with_other_one_longer\n    self.assertEqual(string_xor('0101011', '11011'), '00110011')\nAssertionError: '10001' != '00110011'\n- 10001\n+ 00110011\n\n\n======================================================================\nFAIL: test_trailing_ones (__main__.TestStringXor.test_trailing_ones)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 50, in test_trailing_ones\n    self.assertEqual(string_xor('1010', '010000'), '1010000')\nAssertionError: '1110' != '1010000'\n- 1110\n+ 1010000\n\n\n======================================================================\nFAIL: test_unequal_length_ends_with_one (__main__.TestStringXor.test_unequal_length_ends_with_one)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 16, in test_unequal_length_ends_with_one\n    self.assertEqual(string_xor('0101', '110'), '0011')\nAssertionError: '100' != '0011'\n- 100\n+ 0011\n\n\n======================================================================\nFAIL: test_unequal_length_ends_with_zero (__main__.TestStringXor.test_unequal_length_ends_with_zero)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 13, in test_unequal_length_ends_with_zero\n    self.assertEqual(string_xor('010', '1100'), '1000')\nAssertionError: '100' != '1000'\n- 100\n+ 1000\n?    +\n\n\n----------------------------------------------------------------------\nRan 15 tests in 0.005s\n\nFAILED (failures=8)\n",
+        "test_smells": {}
+      }
+    },
+    "CodeLLaMA": {
+      "zero-shot": {
+        "status": "passed",
+        "coverage": "6%",
+        "assert_types": [],
+        "edge_case_found": true,
+        "functions_tested": 2,
+        "total_functions": 2,
+        "score": 3.0,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {}
+      },
+      "few-shot": {
+        "status": "no_code_found",
+        "score": 0.0
+      },
+      "cot": {
+        "status": "passed",
+        "coverage": "6%",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 2,
+        "total_functions": 2,
+        "score": 2.87,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "assertion_roulette": 2
+        }
+      }
+    },
+    "LLaMA3": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 2,
+        "total_functions": 2,
+        "score": 0.42,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_zero-shot.py\", line 4, in <module>\n    from string_xor import string_xor  # Import the function to be tested\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'string_xor'\n",
+        "test_smells": {
+          "assertion_roulette": 2,
+          "magic_number": 3
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 2,
+        "total_functions": 2,
+        "score": 0.62,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_few-shot.py\", line 4, in <module>\n    from your_module import string_xor  # replace 'your_module' with the actual name of the module containing the function\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'your_module'\n",
+        "test_smells": {
+          "assertion_roulette": 2
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 2,
+        "total_functions": 2,
+        "score": 0.62,
+        "stdout": "",
+        "stderr": "F....\n======================================================================\nFAIL: test_different_lengths (__main__.TestStringXOR.test_different_lengths)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 23, in test_different_lengths\n    with self.assertRaises(ValueError):\nAssertionError: ValueError not raised\n\n----------------------------------------------------------------------\nRan 5 tests in 0.002s\n\nFAILED (failures=1)\n",
+        "test_smells": {
+          "assertion_roulette": 1
+        }
+      }
+    },
+    "Gemma": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 2,
+        "total_functions": 2,
+        "score": 0.75,
+        "stdout": "",
+        "stderr": ".F..\n======================================================================\nFAIL: test_strings_with_longer_length (__main__.TestStringXor.test_strings_with_longer_length)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_zero-shot.py\", line 17, in test_strings_with_longer_length\n    self.assertEqual(string_xor('0101', '1101'), '1010')\nAssertionError: '1000' != '1010'\n- 1000\n?   ^\n+ 1010\n?   ^\n\n\n----------------------------------------------------------------------\nRan 4 tests in 0.002s\n\nFAILED (failures=1)\n",
+        "test_smells": {}
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 2,
+        "total_functions": 2,
+        "score": 0.82,
+        "stdout": "",
+        "stderr": "..E..\n======================================================================\nERROR: test_strings_of_different_lengths (__main__.TestStringXor.test_strings_of_different_lengths)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_few-shot.py\", line 11, in test_strings_of_different_lengths\n    self.assertRaises(ValueError, string_xor('01', '10'))\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\unittest\\case.py\", line 778, in assertRaises\n    return context.handle('assertRaises', args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\unittest\\case.py\", line 238, in handle\n    callable_obj(*args, **kwargs)\nTypeError: 'str' object is not callable\n\n----------------------------------------------------------------------\nRan 5 tests in 0.056s\n\nFAILED (errors=1)\n",
+        "test_smells": {}
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 2,
+        "total_functions": 2,
+        "score": 0.82,
+        "stdout": "",
+        "stderr": "E.E..\n======================================================================\nERROR: test_different_lengths (__main__.TestStringXor.test_different_lengths)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 14, in test_different_lengths\n    self.assertRaises(ValueError, string_xor('01', '10'))\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\unittest\\case.py\", line 778, in assertRaises\n    return context.handle('assertRaises', args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\unittest\\case.py\", line 238, in handle\n    callable_obj(*args, **kwargs)\nTypeError: 'str' object is not callable\n\n======================================================================\nERROR: test_non_binary_characters (__main__.TestStringXor.test_non_binary_characters)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 11, in test_non_binary_characters\n    self.assertRaises(ValueError, string_xor('a', 'b'))\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\unittest\\case.py\", line 778, in assertRaises\n    return context.handle('assertRaises', args, kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\unittest\\case.py\", line 238, in handle\n    callable_obj(*args, **kwargs)\nTypeError: 'str' object is not callable\n\n----------------------------------------------------------------------\nRan 5 tests in 0.002s\n\nFAILED (errors=2)\n",
+        "test_smells": {}
+      }
+    },
+    "CodeGemma": {
+      "zero-shot": {
+        "status": "passed",
+        "coverage": "33%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 2,
+        "total_functions": 2,
+        "score": 3.25,
+        "stdout": "",
+        "stderr": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.000s\n\nOK\n",
+        "test_smells": {}
+      },
+      "few-shot": {
+        "status": "passed",
+        "coverage": "6%",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 2,
+        "total_functions": 2,
+        "score": 2.87,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "assertion_roulette": 1
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 2,
+        "total_functions": 2,
+        "score": 0.75,
+        "stdout": "",
+        "stderr": "F.....\n======================================================================\nFAIL: test_different_lengths (__main__.TestStringXor.test_different_lengths)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_cot.py\", line 11, in test_different_lengths\n    self.assertEqual(string_xor('101', '10'), '101')\nAssertionError: '00' != '101'\n- 00\n+ 101\n\n\n----------------------------------------------------------------------\nRan 6 tests in 0.002s\n\nFAILED (failures=1)\n",
+        "test_smells": {}
+      }
+    }
+  }

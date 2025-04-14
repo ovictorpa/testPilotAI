@@ -1,0 +1,287 @@
+{
+    "WizardCoder": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.55,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_zero-shot.py\", line 3, in <module>\n    import pytest\nModuleNotFoundError: No module named 'pytest'\n",
+        "test_smells": {
+          "magic_number": 15
+        }
+      },
+      "few-shot": {
+        "status": "no_code_found",
+        "score": 0.0
+      },
+      "cot": {
+        "status": "no_code_found",
+        "score": 0.0
+      }
+    },
+    "CodeLLaMA": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": 0.05,
+        "stdout": "Couldn't run 'C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeLLaMA_zero-shot.py' as Python code: SyntaxError: invalid syntax (CodeLLaMA_zero-shot.py, line 3)\n",
+        "stderr": "C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\venv\\Lib\\site-packages\\coverage\\control.py:915: CoverageWarning: No data was collected. (no-data-collected)\n  self._warn(\"No data was collected.\", slug=\"no-data-collected\")\n",
+        "test_smells": {
+          "syntax_error": 1
+        }
+      },
+      "few-shot": {
+        "status": "no_code_found",
+        "score": 0.0
+      },
+      "cot": {
+        "status": "passed",
+        "coverage": "5%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.6,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 30
+        }
+      }
+    },
+    "WizardLM": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.62,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 4, in <module>\n    from decimal_to_binary import decimal_To_Binary  # Assuming this is the name of the file where your function is defined\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'decimal_to_binary'\n",
+        "test_smells": {
+          "magic_number": 19
+        }
+      },
+      "few-shot": {
+        "status": "passed",
+        "coverage": "5%",
+        "assert_types": [],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": 2.3,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {
+          "magic_number": 2
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertIsNone"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 0,
+        "total_functions": 1,
+        "score": -0.08,
+        "stdout": "",
+        "stderr": "EEEEEE\n======================================================================\nERROR: test_binary_input (__main__.TestDecimalToBinary.test_binary_input) (binary_input=10)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 61, in test_binary_input\n    self.assertEqual(result, int(binary, 2), msg=f\"Input: {binary}, Expected: {binary}, Got: {bin(result)}\")\n                             ^^^^^^^^^^^^^^\nTypeError: int() can't convert non-string with explicit base\n\n======================================================================\nERROR: test_binary_input (__main__.TestDecimalToBinary.test_binary_input) (binary_input='1010')\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 60, in test_binary_input\n    result = decimal_to_binary(binary)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 10, in decimal_to_binary\n    rem = int(N % 2)  # Ensure we're dealing with an integer remainder\n              ~~^~~\nTypeError: not all arguments converted during string formatting\n\n======================================================================\nERROR: test_decimal_to_binary (__main__.TestDecimalToBinary.test_decimal_to_binary)\n----------------------------------------------------------------------\nTypeError: TestDecimalToBinary.test_decimal_to_binary() missing 2 required positional arguments: 'input_value' and 'expected_output'\n\n======================================================================\nERROR: test_invalid_input (__main__.TestDecimalToBinary.test_invalid_input) (invalid_input=None)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 55, in test_invalid_input\n    self.assertIsNone(decimal_to_binary(invalid), msg=f\"Invalid input: {invalid}\")\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 10, in decimal_to_binary\n    rem = int(N % 2)  # Ensure we're dealing with an integer remainder\n              ~~^~~\nTypeError: unsupported operand type(s) for %: 'NoneType' and 'int'\n\n======================================================================\nERROR: test_invalid_input (__main__.TestDecimalToBinary.test_invalid_input) (invalid_input='not a number')\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 55, in test_invalid_input\n    self.assertIsNone(decimal_to_binary(invalid), msg=f\"Invalid input: {invalid}\")\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 10, in decimal_to_binary\n    rem = int(N % 2)  # Ensure we're dealing with an integer remainder\n              ~~^~~\nTypeError: not all arguments converted during string formatting\n\n======================================================================\nERROR: test_invalid_input (__main__.TestDecimalToBinary.test_invalid_input) (invalid_input=nan)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 55, in test_invalid_input\n    self.assertIsNone(decimal_to_binary(invalid), msg=f\"Invalid input: {invalid}\")\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 10, in decimal_to_binary\n    rem = int(N % 2)  # Ensure we're dealing with an integer remainder\n          ^^^^^^^^^^\nValueError: cannot convert float NaN to integer\n\n----------------------------------------------------------------------\nRan 3 tests in 0.002s\n\nFAILED (errors=6)\n",
+        "test_smells": {
+          "magic_number": 20,
+          "assertion_roulette": 1
+        }
+      }
+    },
+    "LLaMA3": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.22,
+        "stdout": "",
+        "stderr": "FFFFF\n======================================================================\nFAIL: test_binary_conversion (__main__.TestDecimalToBinary.test_binary_conversion)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_zero-shot.py\", line 12, in test_binary_conversion\n    self.assertEqual(decimal_To_Binary(5), 101)\nAssertionError: None != 101\n\n======================================================================\nFAIL: test_large_numbers (__main__.TestDecimalToBinary.test_large_numbers)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_zero-shot.py\", line 26, in test_large_numbers\n    self.assertEqual(decimal_To_Binary(255), 11111111)\nAssertionError: None != 11111111\n\n======================================================================\nFAIL: test_negative_number (__main__.TestDecimalToBinary.test_negative_number)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_zero-shot.py\", line 19, in test_negative_number\n    with self.assertRaises(ValueError):\nAssertionError: ValueError not raised\n\n======================================================================\nFAIL: test_single_digit (__main__.TestDecimalToBinary.test_single_digit)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_zero-shot.py\", line 15, in test_single_digit\n    self.assertEqual(decimal_To_Binary(0), 0)\nAssertionError: None != 0\n\n======================================================================\nFAIL: test_zero (__main__.TestDecimalToBinary.test_zero)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_zero-shot.py\", line 23, in test_zero\n    self.assertEqual(decimal_To_Binary(0), 0)\nAssertionError: None != 0\n\n----------------------------------------------------------------------\nRan 5 tests in 0.002s\n\nFAILED (failures=5)\n",
+        "test_smells": {
+          "redundant_assertion": 3,
+          "magic_number": 7,
+          "assertion_roulette": 1
+        }
+      },
+      "few-shot": {
+        "status": "passed",
+        "coverage": "5%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 2.6,
+        "stdout": "",
+        "stderr": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.001s\n\nOK\n",
+        "test_smells": {
+          "magic_number": 17,
+          "redundant_assertion": 2
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.22,
+        "stdout": "",
+        "stderr": "Timeout",
+        "test_smells": {
+          "redundant_assertion": 1,
+          "magic_number": 4,
+          "assertion_roulette": 2
+        }
+      }
+    },
+    "Gemma": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.22,
+        "stdout": "",
+        "stderr": "EEEEE.\n======================================================================\nERROR: test_DecimalToBinary_Negative (__main__.TestDecimalToBinary.test_DecimalToBinary_Negative)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_zero-shot.py\", line 24, in test_DecimalToBinary_Negative\n    decimal_ToBinary(-1)\n    ^^^^^^^^^^^^^^^^\nNameError: name 'decimal_ToBinary' is not defined. Did you mean: 'decimal_To_Binary'?\n\n======================================================================\nERROR: test_DecimalToBinary_One (__main__.TestDecimalToBinary.test_DecimalToBinary_One)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_zero-shot.py\", line 11, in test_DecimalToBinary_One\n    self.assertEqual(decimal_ToBinary(1), 1)\n                     ^^^^^^^^^^^^^^^^\nNameError: name 'decimal_ToBinary' is not defined. Did you mean: 'decimal_To_Binary'?\n\n======================================================================\nERROR: test_DecimalToBinary_Ten (__main__.TestDecimalToBinary.test_DecimalToBinary_Ten)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_zero-shot.py\", line 20, in test_DecimalToBinary_Ten\n    self.assertEqual(decimal_ToBinary(10), 1010)\n                     ^^^^^^^^^^^^^^^^\nNameError: name 'decimal_ToBinary' is not defined. Did you mean: 'decimal_To_Binary'?\n\n======================================================================\nERROR: test_DecimalToBinary_Three (__main__.TestDecimalToBinary.test_DecimalToBinary_Three)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_zero-shot.py\", line 17, in test_DecimalToBinary_Three\n    self.assertEqual(decimal_ToBinary(3), 11)\n                     ^^^^^^^^^^^^^^^^\nNameError: name 'decimal_ToBinary' is not defined. Did you mean: 'decimal_To_Binary'?\n\n======================================================================\nERROR: test_DecimalToBinary_Two (__main__.TestDecimalToBinary.test_DecimalToBinary_Two)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_zero-shot.py\", line 14, in test_DecimalToBinary_Two\n    self.assertEqual(decimal_ToBinary(2), 10)\n                     ^^^^^^^^^^^^^^^^\nNameError: name 'decimal_ToBinary' is not defined. Did you mean: 'decimal_To_Binary'?\n\n----------------------------------------------------------------------\nRan 6 tests in 0.006s\n\nFAILED (errors=5)\n",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 6,
+          "assertion_roulette": 1
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.22,
+        "stdout": "",
+        "stderr": "Timeout",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 4,
+          "assertion_roulette": 1
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.22,
+        "stdout": "",
+        "stderr": "Timeout",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 5,
+          "assertion_roulette": 3
+        }
+      }
+    },
+    "CodeGemma": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.35,
+        "stdout": "",
+        "stderr": "Timeout",
+        "test_smells": {
+          "redundant_assertion": 1,
+          "magic_number": 6
+        }
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.35,
+        "stdout": "",
+        "stderr": "Timeout",
+        "test_smells": {
+          "redundant_assertion": 1,
+          "magic_number": 8
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.22,
+        "stdout": "",
+        "stderr": "Timeout",
+        "test_smells": {
+          "redundant_assertion": 2,
+          "magic_number": 9,
+          "assertion_roulette": 2
+        }
+      }
+    }
+  }

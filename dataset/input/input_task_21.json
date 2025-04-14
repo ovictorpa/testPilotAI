@@ -1,0 +1,5 @@
+{
+    "zero-shot": "Write unit tests in Python for the following function.\n\ndef sequence(n): \n\n\tif n == 1 or n == 2: \n\n\t\treturn 1\n\n\telse: \n\n\t\treturn sequence(sequence(n-1)) + sequence(n-sequence(n-1))",
+    "few-shot": "Write unit tests in Python for the following function. Here are some examples:\nExample of basic unit test:\ndef add(a, b): return a + b\n\nTest:\nimport unittest\nclass TestAdd(unittest.TestCase):\n    def test_add(self):\n        self.assertEqual(add(1, 2), 3)\n\nNow for the function:\ndef sequence(n): \n\n\tif n == 1 or n == 2: \n\n\t\treturn 1\n\n\telse: \n\n\t\treturn sequence(sequence(n-1)) + sequence(n-sequence(n-1))",
+    "cot": "Write unit tests in Python for the following function. First, think step-by-step about the possible edge cases, scenarios, assertions and logic involved. Then write complete tests using unittest.\n\nFunction:\ndef sequence(n): \n\n\tif n == 1 or n == 2: \n\n\t\treturn 1\n\n\telse: \n\n\t\treturn sequence(sequence(n-1)) + sequence(n-sequence(n-1))"
+}

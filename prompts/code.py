@@ -1,23 +1,14 @@
-import math
-from typing import Optional
+from typing import List
 
-def is_prime(p: int) -> bool:
-
-    if p < 2:
-        return False
-    for k in range(2, int(math.sqrt(p)) + 1):
-        if p % k == 0:
-            return False
-    return True
-
-def prime_fib(n: int) -> Optional[int]:
-
-    f = [0, 1] 
-    prime_fib_count = 0
+def filter_by_substring(strings: List[str], substring: str) -> List[str]:
     
-    while True:
-        f.append(f[-1] + f[-2])
-        if is_prime(f[-1]):
-            prime_fib_count += 1
-            if prime_fib_count == n:
-                return f[-1]
+    """
+    Filter an input list of strings, returning only those that contain the given substring.
+    
+    >>> filter_by_substring([], 'a')
+    []
+    >>> filter_by_substring(['abc', 'bacd', 'cde', 'array'], 'a')
+    ['abc', 'bacd', 'array']
+    """
+
+    return [x for x in strings if substring in x]

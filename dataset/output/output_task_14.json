@@ -1,0 +1,251 @@
+{
+    "WizardCoder": {
+      "zero-shot": {
+        "status": "no_code_found",
+        "score": 0.0
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.62,
+        "stdout": "Couldn't run 'C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_few-shot.py' as Python code: SyntaxError: invalid syntax (WizardCoder_few-shot.py, line 23)\n",
+        "stderr": "C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\venv\\Lib\\site-packages\\coverage\\control.py:915: CoverageWarning: No data was collected. (no-data-collected)\n  self._warn(\"No data was collected.\", slug=\"no-data-collected\")\n",
+        "test_smells": {
+          "syntax_error": 1
+        }
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.62,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_cot.py\", line 4, in <module>\n    from filter_by_prefix import filter_by_prefix\nModuleNotFoundError: No module named 'filter_by_prefix'\n",
+        "test_smells": {
+          "assertion_roulette": 1
+        }
+      }
+    },
+    "CodeLLaMA": {
+      "zero-shot": {
+        "status": "no_code_found",
+        "score": 0.0
+      },
+      "few-shot": {
+        "status": "no_code_found",
+        "score": 0.0
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertListEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.75,
+        "stdout": "",
+        "stderr": ".F\n======================================================================\nFAIL: test_non_empty_list (__main__.TestFilterByPrefix.test_non_empty_list)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeLLaMA_cot.py\", line 15, in test_non_empty_list\n    self.assertListEqual(filter_by_prefix(input, 'a'), expected_output)\nAssertionError: Lists differ: ['abc'] != ['abc', 'bcd']\n\nSecond list contains 1 additional elements.\nFirst extra element 1:\n'bcd'\n\n- ['abc']\n+ ['abc', 'bcd']\n\n----------------------------------------------------------------------\nRan 2 tests in 0.002s\n\nFAILED (failures=1)\n",
+        "test_smells": {}
+      }
+    },
+    "WizardLM": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertListEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.82,
+        "stdout": "",
+        "stderr": "FF..F.\n======================================================================\nFAIL: test_all_strings_have_prefix (__main__.TestFilterByPrefix.test_all_strings_have_prefix)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 26, in test_all_strings_have_prefix\n    self.assertEqual(filter_by_prefix(['alpha', 'beta', 'gamma'], 'al'), ['alpha', 'beta', 'gamma'])\nAssertionError: Lists differ: ['alpha'] != ['alpha', 'beta', 'gamma']\n\nSecond list contains 2 additional elements.\nFirst extra element 1:\n'beta'\n\n- ['alpha']\n+ ['alpha', 'beta', 'gamma']\n\n======================================================================\nFAIL: test_case_insensitive_match (__main__.TestFilterByPrefix.test_case_insensitive_match)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 23, in test_case_insensitive_match\n    self.assertListEqual(filter_by_prefix(['Apple', 'orange', 'APPLE', 'Banana'], 'a'), ['Apple', 'orange'])\nAssertionError: Lists differ: [] != ['Apple', 'orange']\n\nSecond list contains 2 additional elements.\nFirst extra element 0:\n'Apple'\n\n- []\n+ ['Apple', 'orange']\n\n======================================================================\nFAIL: test_no_matching_prefix (__main__.TestFilterByPrefix.test_no_matching_prefix)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 14, in test_no_matching_prefix\n    self.assertEqual(filter_by_prefix(['abc', 'bcd', 'cde'], 'x'), ['x'])\nAssertionError: Lists differ: [] != ['x']\n\nSecond list contains 1 additional elements.\nFirst extra element 0:\n'x'\n\n- []\n+ ['x']\n\n----------------------------------------------------------------------\nRan 6 tests in 0.004s\n\nFAILED (failures=3)\n",
+        "test_smells": {}
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.75,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_few-shot.py\", line 5, in <module>\n    from your_module import filter_by_prefix  # Replace 'your_module' with the actual name of the module where filter_by_prefix is defined.\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'your_module'\n",
+        "test_smells": {}
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.42,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_cot.py\", line 6, in <module>\n    from your_module import filter_by_prefix  # Replace 'your_module' with the actual module where the function is defined.\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'your_module'\n",
+        "test_smells": {
+          "assertion_roulette": 2,
+          "magic_number": 3
+        }
+      }
+    },
+    "LLaMA3": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.75,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_zero-shot.py\", line 4, in <module>\n    from your_module import filter_by_prefix  # replace 'your_module' with the actual name of the module containing the function\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'your_module'\n",
+        "test_smells": {}
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.75,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_few-shot.py\", line 5, in <module>\n    from your_module import filter_by_prefix  # Replace 'your_module' with the actual name of the module containing the function.\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'your_module'\n",
+        "test_smells": {}
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.42,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 4, in <module>\n    from your_module import filter_by_prefix  # Replace 'your_module' with the actual name of the module\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'your_module'\n",
+        "test_smells": {
+          "assertion_roulette": 1,
+          "magic_number": 1
+        }
+      }
+    },
+    "Gemma": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.75,
+        "stdout": "",
+        "stderr": ".F.\n======================================================================\nFAIL: test_no_prefix (__main__.TestFilterByPrefix.test_no_prefix)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_zero-shot.py\", line 18, in test_no_prefix\n    self.assertEqual(filter_by_prefix(['abc', 'bcd', 'cde', 'array'], 'b'), ['abc', 'bcd', 'cde', 'array'])\nAssertionError: Lists differ: ['bcd'] != ['abc', 'bcd', 'cde', 'array']\n\nFirst differing element 0:\n'bcd'\n'abc'\n\nSecond list contains 3 additional elements.\nFirst extra element 1:\n'bcd'\n\n- ['bcd']\n+ ['abc', 'bcd', 'cde', 'array']\n\n----------------------------------------------------------------------\nRan 3 tests in 0.002s\n\nFAILED (failures=1)\n",
+        "test_smells": {}
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.75,
+        "stdout": "",
+        "stderr": "....F\n======================================================================\nFAIL: test_prefix_with_special_chars (__main__.TestFilterByPrefix.test_prefix_with_special_chars)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_few-shot.py\", line 27, in test_prefix_with_special_chars\n    self.assertEqual(filter_by_prefix(['abc!@#$%^', 'bcd', 'cde', 'array'], '!'), ['abc!@#$%^'])\nAssertionError: Lists differ: [] != ['abc!@#$%^']\n\nSecond list contains 1 additional elements.\nFirst extra element 0:\n'abc!@#$%^'\n\n- []\n+ ['abc!@#$%^']\n\n----------------------------------------------------------------------\nRan 5 tests in 0.002s\n\nFAILED (failures=1)\n",
+        "test_smells": {}
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.75,
+        "stdout": "",
+        "stderr": ".F..F\n======================================================================\nFAIL: test_no_prefix (__main__.TestFilterByPrefix.test_no_prefix)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 16, in test_no_prefix\n    self.assertEqual(filter_by_prefix(['abc', 'bcd', 'cde', 'array'], 'b'), ['abc', 'bcd', 'cde', 'array'])\nAssertionError: Lists differ: ['bcd'] != ['abc', 'bcd', 'cde', 'array']\n\nFirst differing element 0:\n'bcd'\n'abc'\n\nSecond list contains 3 additional elements.\nFirst extra element 1:\n'bcd'\n\n- ['bcd']\n+ ['abc', 'bcd', 'cde', 'array']\n\n======================================================================\nFAIL: test_prefix_match_uppercase (__main__.TestFilterByPrefix.test_prefix_match_uppercase)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 22, in test_prefix_match_uppercase\n    self.assertEqual(filter_by_prefix(['abc', 'bcd', 'cde', 'ARRAY'], 'A'), ['abc', 'ARRAY'])\nAssertionError: Lists differ: ['ARRAY'] != ['abc', 'ARRAY']\n\nFirst differing element 0:\n'ARRAY'\n'abc'\n\nSecond list contains 1 additional elements.\nFirst extra element 1:\n'ARRAY'\n\n- ['ARRAY']\n+ ['abc', 'ARRAY']\n\n----------------------------------------------------------------------\nRan 5 tests in 0.002s\n\nFAILED (failures=2)\n",
+        "test_smells": {}
+      }
+    },
+    "CodeGemma": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.75,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_zero-shot.py\", line 5, in <module>\n    from filter_by_prefix import filter_by_prefix\nModuleNotFoundError: No module named 'filter_by_prefix'\n",
+        "test_smells": {}
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.75,
+        "stdout": "",
+        "stderr": "..F.\n======================================================================\nFAIL: test_no_prefix_match (__main__.TestFilterByPrefix.test_no_prefix_match)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeGemma_few-shot.py\", line 11, in test_no_prefix_match\n    self.assertEqual(filter_by_prefix(['abc', 'bcd', 'cde'], 'a'), [])\nAssertionError: Lists differ: ['abc'] != []\n\nFirst list contains 1 additional elements.\nFirst extra element 0:\n'abc'\n\n- ['abc']\n+ []\n\n----------------------------------------------------------------------\nRan 4 tests in 0.002s\n\nFAILED (failures=1)\n",
+        "test_smells": {}
+      },
+      "cot": {
+        "status": "passed",
+        "coverage": "13%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 3.0,
+        "stdout": "",
+        "stderr": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.000s\n\nOK\n",
+        "test_smells": {}
+      }
+    }
+  }

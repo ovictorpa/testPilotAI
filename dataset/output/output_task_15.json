@@ -1,0 +1,254 @@
+{
+    "WizardLM": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.75,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardLM_zero-shot.py\", line 6, in <module>\n    from your_module import filter_by_substring  # Replace 'your_module' with the actual module name where the function is defined\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'your_module'\n",
+        "test_smells": {}
+      },
+      "few-shot": {
+        "status": "no_code_found",
+        "score": 0.0
+      },
+      "cot": {
+        "status": "no_code_found",
+        "score": 0.0
+      }
+    },
+    "LLaMA3": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.75,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_zero-shot.py\", line 4, in <module>\n    from your_module import filter_by_substring  # Replace 'your_module' with the actual name of the module containing the function\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'your_module'\n",
+        "test_smells": {}
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.75,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_few-shot.py\", line 4, in <module>\n    from your_module import filter_by_substring  # replace 'your_module' with the actual name of the module containing the function\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nModuleNotFoundError: No module named 'your_module'\n",
+        "test_smells": {}
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertIn",
+          "assertNotIn",
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.85,
+        "stdout": "",
+        "stderr": "F.F...\n======================================================================\nFAIL: test_duplicate_substrings (__main__.TestFilterBySubstring.test_duplicate_substrings)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 39, in test_duplicate_substrings\n    self.assertEqual(result, expected_result)\nAssertionError: Lists differ: ['abc', 'abca', 'bacd'] != ['abca', 'abc']\n\nFirst differing element 0:\n'abc'\n'abca'\n\nFirst list contains 1 additional elements.\nFirst extra element 2:\n'bacd'\n\n- ['abc', 'abca', 'bacd']\n+ ['abca', 'abc']\n\n======================================================================\nFAIL: test_multiple_elements (__main__.TestFilterBySubstring.test_multiple_elements)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\LLaMA3_cot.py\", line 32, in test_multiple_elements\n    self.assertEqual(result, expected_result)\nAssertionError: Lists differ: ['abc', 'bacd'] != ['bacd']\n\nFirst differing element 0:\n'abc'\n'bacd'\n\nFirst list contains 1 additional elements.\nFirst extra element 1:\n'bacd'\n\n- ['abc', 'bacd']\n+ ['bacd']\n\n----------------------------------------------------------------------\nRan 6 tests in 0.005s\n\nFAILED (failures=2)\n",
+        "test_smells": {
+          "assertion_roulette": 1
+        }
+      }
+    },
+    "WizardCoder": {
+      "zero-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [],
+        "edge_case_found": false,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.3,
+        "stdout": "Couldn't run 'C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_zero-shot.py' as Python code: IndentationError: expected an indented block after class definition on line 6 (WizardCoder_zero-shot.py, line 6)\n",
+        "stderr": "C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\venv\\Lib\\site-packages\\coverage\\control.py:915: CoverageWarning: No data was collected. (no-data-collected)\n  self._warn(\"No data was collected.\", slug=\"no-data-collected\")\n",
+        "test_smells": {
+          "syntax_error": 1
+        }
+      },
+      "few-shot": {
+        "status": "passed",
+        "coverage": "13%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 3.0,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {}
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual",
+          "assertRaises"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.62,
+        "stdout": "Couldn't run 'C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\WizardCoder_cot.py' as Python code: SyntaxError: '(' was never closed (WizardCoder_cot.py, line 31)\n",
+        "stderr": "C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\venv\\Lib\\site-packages\\coverage\\control.py:915: CoverageWarning: No data was collected. (no-data-collected)\n  self._warn(\"No data was collected.\", slug=\"no-data-collected\")\n",
+        "test_smells": {
+          "syntax_error": 1
+        }
+      }
+    },
+    "CodeLLaMA": {
+      "zero-shot": {
+        "status": "passed",
+        "coverage": "13%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 3.0,
+        "stdout": "",
+        "stderr": "",
+        "test_smells": {}
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.75,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\CodeLLaMA_few-shot.py\", line 5, in <module>\n    class TestFilterBySubstring(unittest.TestCase):\n                                ^^^^^^^^\nNameError: name 'unittest' is not defined. Did you forget to import 'unittest'?\n",
+        "test_smells": {}
+      },
+      "cot": {
+        "status": "passed",
+        "coverage": "20%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 3.0,
+        "stdout": "",
+        "stderr": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.001s\n\nOK\n",
+        "test_smells": {}
+      }
+    },
+    "Gemma": {
+      "zero-shot": {
+        "status": "passed",
+        "coverage": "13%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 3.0,
+        "stdout": "",
+        "stderr": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.000s\n\nOK\n",
+        "test_smells": {}
+      },
+      "few-shot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.75,
+        "stdout": "",
+        "stderr": "..FF\n======================================================================\nFAIL: test_substring_in_multiple_words (__main__.TestFilterBySubstring.test_substring_in_multiple_words)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_few-shot.py\", line 22, in test_substring_in_multiple_words\n    self.assertEqual(filter_by_substring(['abc def', 'bacg', 'cde'], 'bc'), ['abc def', 'bacg'])\nAssertionError: Lists differ: ['abc def'] != ['abc def', 'bacg']\n\nSecond list contains 1 additional elements.\nFirst extra element 1:\n'bacg'\n\n- ['abc def']\n+ ['abc def', 'bacg']\n\n======================================================================\nFAIL: test_substring_not_found (__main__.TestFilterBySubstring.test_substring_not_found)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_few-shot.py\", line 19, in test_substring_not_found\n    self.assertEqual(filter_by_substring(['cde', 'array'], 'a'), [])\nAssertionError: Lists differ: ['array'] != []\n\nFirst list contains 1 additional elements.\nFirst extra element 0:\n'array'\n\n- ['array']\n+ []\n\n----------------------------------------------------------------------\nRan 4 tests in 0.005s\n\nFAILED (failures=2)\n",
+        "test_smells": {}
+      },
+      "cot": {
+        "status": "failed",
+        "coverage": "-",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 0.75,
+        "stdout": "",
+        "stderr": ".F.F\n======================================================================\nFAIL: test_empty_substring (__main__.TestFilterBySubstring.test_empty_substring)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 18, in test_empty_substring\n    self.assertEqual(filter_by_substring(['abc', 'bacd', 'cde', 'array'], ''), [])\nAssertionError: Lists differ: ['abc', 'bacd', 'cde', 'array'] != []\n\nFirst list contains 4 additional elements.\nFirst extra element 0:\n'abc'\n\n- ['abc', 'bacd', 'cde', 'array']\n+ []\n\n======================================================================\nFAIL: test_substring_not_found (__main__.TestFilterBySubstring.test_substring_not_found)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\antho\\OneDrive\\Área de Trabalho\\testPilotAI\\test_outputs\\Gemma_cot.py\", line 21, in test_substring_not_found\n    self.assertEqual(filter_by_substring(['abc', 'bacd', 'cde'], 'd'), [])\nAssertionError: Lists differ: ['bacd', 'cde'] != []\n\nFirst list contains 2 additional elements.\nFirst extra element 0:\n'bacd'\n\n- ['bacd', 'cde']\n+ []\n\n----------------------------------------------------------------------\nRan 4 tests in 0.002s\n\nFAILED (failures=2)\n",
+        "test_smells": {}
+      }
+    },
+    "CodeGemma": {
+      "zero-shot": {
+        "status": "passed",
+        "coverage": "20%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 3.0,
+        "stdout": "",
+        "stderr": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.001s\n\nOK\n",
+        "test_smells": {}
+      },
+      "few-shot": {
+        "status": "passed",
+        "coverage": "20%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 3.0,
+        "stdout": "",
+        "stderr": ".....\n----------------------------------------------------------------------\nRan 5 tests in 0.001s\n\nOK\n",
+        "test_smells": {}
+      },
+      "cot": {
+        "status": "passed",
+        "coverage": "13%",
+        "assert_types": [
+          "assertEqual"
+        ],
+        "edge_case_found": true,
+        "functions_tested": 1,
+        "total_functions": 1,
+        "score": 3.0,
+        "stdout": "",
+        "stderr": ".......\n----------------------------------------------------------------------\nRan 7 tests in 0.001s\n\nOK\n",
+        "test_smells": {}
+      }
+    }
+  }
