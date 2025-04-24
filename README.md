@@ -26,8 +26,30 @@ The data extracted from the empirical study is available in the ``dataset/`` dir
 - Python ≥ 3.10
 - ollama CLI
 - coverage, flake8, pandas, seaborn, matplotlib
-- 8 GB RAM (minimum) for 7-13 B models
+- 16 GB RAM (minimum) for 7-13 B models
 - OS: Linux/macOS/Windows tested
 
+## Quick-start (local execution)
+
+1. Install the dependencies
+```pip install -r requirements.txt``
+
+
+2. Define the LLMs
+
+ Install the LLMs with ollama ```ollama pull llama3.2``
+
+   
+ Open the file llms/generate_tests.py/ and define the llm you want, for example:
+ ```
+ "LLaMA3": lambda prompt: query_ollama(prompt, model='llama3. 2'),
+ "CodeLLaMA": lambda prompt: query_ollama(prompt, model='codellama'),
+ ```
+ The 6 LLMs used in the search are already configured by default (LLaMa3, CodeLLaMa, Gemma, CodeGemma, WizardLM and WizardCoder)
+
+3. Run ``app.py`` and submit the production code to the interface
+4. After submitting the production code, a folder will be created with the results ```evaluation_results/```
+
+(Processing time can be high, especially for machines outside the recommendations)
 
 This README omits author names, affiliations and institutional URLs for review‑blindness.
