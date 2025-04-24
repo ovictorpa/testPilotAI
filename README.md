@@ -32,22 +32,27 @@ The data extracted from the empirical study is available in the ``dataset/`` dir
 ## Quick-start (local execution)
 
 1. Install the dependencies
-```pip install -r requirements.txt``
+```
+pip install -r requirements.txt
+```
 
 
-2. Define the LLMs
+3. Define the LLMs
 
- Install the LLMs with ollama ```ollama pull llama3.2``
+ Install the LLMs with ollama, see available models in https://ollama.com/search, example:
+ ```
+ ollama pull llama3.2
+```
 
    
- Open the file llms/generate_tests.py/ and define the llm you want, for example:
+ Open the file ```llms/generate_tests.py/``` and define the llm you want, for example:
  ```
  "LLaMA3": lambda prompt: query_ollama(prompt, model='llama3. 2'),
  "CodeLLaMA": lambda prompt: query_ollama(prompt, model='codellama'),
  ```
  The 6 LLMs used in the search are already configured by default (LLaMa3, CodeLLaMa, Gemma, CodeGemma, WizardLM and WizardCoder)
 
-3. Run ``app.py`` and submit the production code to the interface
+3. Run ```app.py``` and submit the production code to the interface
 4. After submitting the production code, a folder will be created with the results ```evaluation_results/```
 
 (Processing time can be high, especially for machines outside the recommendations)
