@@ -3,5 +3,7 @@ venv/
 generated_tests/
 evaluation_results/
 test_outputs/
+generated_prompts/
 .idea
 __pycache__
+.coverage
