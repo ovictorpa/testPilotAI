@@ -1,5 +1,1 @@
-from typing import List, Any
-
-def filter_integers(values: List[Any]) -> List[int]:
-
-    return [x for x in values if isinstance(x, int)]
+def greatest_common_divisor(a: int, b: int) -> int:    while b:        a, b = b, a % b    return a

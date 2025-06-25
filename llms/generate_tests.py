@@ -72,7 +72,7 @@ def generate_tests_from_all_llms():
     prompts = generate_prompts(code)
 
     llms = {
-        # "LLaMA3": lambda prompt: query_ollama(prompt, model='llama3.2'),
+        "LLaMA3": lambda prompt: query_ollama(prompt, model='llama3.2'),
         "CodeLLaMA": lambda prompt: query_ollama(prompt, model='codellama'),
         # Adicione mais modelos aqui
     }
