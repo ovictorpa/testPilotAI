@@ -11,22 +11,22 @@ os.makedirs(TEMP_DIR, exist_ok=True)
 class QualityEvaluator:
     def __init__(self, weights=None):
         self.weights = weights or {
-            "pass_bonus": 2.0,
+            "pass_bonus": 1.5,
             "coverage": {
                 "0": -1.0,
-                "1-25": 0.25,
+                "1-25": 0.2,
                 "26-50": 0.5,
-                "51-75": 0.75,
+                "51-75": 0.8,
                 "76-100": 1.0,
             },
             "assert_diversity": {
                 "4+": 0.3,
-                "3": 0.15,
-                "2": 0.07,
+                "3": 0.2,
+                "2": 0.1,
             },
-            "edge_case": 0.25,
-            "functions_tested_ratio": 0.5,
-            "test_smell_penalty": 0.2,
+            "edge_case": 0.3,
+            "functions_tested_ratio": 0.7,
+            "test_smell_penalty": 0.3,
             "fatal_smell_penalty": 1.0,
         }
 

@@ -72,9 +72,9 @@ def generate_tests_from_all_llms():
     prompts = generate_prompts(code)
 
     llms = {
-        "LLaMA3": lambda prompt: query_ollama(prompt, model='llama3.2'),
-        "CodeLLaMA": lambda prompt: query_ollama(prompt, model='codellama'),
-        # Adicione mais modelos aqui
+        "CodeLLaMA": lambda prompt: query_ollama(prompt, model='codellama:latest'),
+        "CodeGemma": lambda prompt: query_ollama(prompt, model='codegemma:latest'),
+        "StarCoder2": lambda prompt: query_ollama(prompt, model='starcoder2:7b')
     }
 
     # 1. Preparar prompts por modelo para salvar

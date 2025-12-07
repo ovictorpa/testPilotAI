@@ -1,1 +1,3 @@
-def greatest_common_divisor(a: int, b: int) -> int:    while b:        a, b = b, a % b    return a
+def string_sequence(n: int) -> str:
+
+    return ' '.join(str(x) for x in range(n + 1))

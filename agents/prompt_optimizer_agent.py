@@ -27,7 +27,19 @@ class PromptOptimizerAgent:
             lambda p: p + "\nInclude edge case scenarios.",
             lambda p: re.sub(r'unit test[s]?', 'robust test cases', p, flags=re.I),
             lambda p: p.replace("Ensure", "Make sure to"),
-            lambda p: p + "\nPrioritize coverage and correctness."
+            lambda p: p + "\nPrioritize coverage and correctness.",
+
+            # 🆕 Adicionadas:
+            lambda p: p + "\nFollow best practices for naming and structure.",
+            lambda p: p.replace("test cases", "test functions"),
+            lambda p: re.sub(r'\btest\b', 'validation', p, flags=re.I),
+            lambda p: p + "\nAdd comments explaining the purpose of each test.",
+            lambda p: p + "\nInclude negative tests and boundary conditions.",
+            lambda p: p.replace("Create", "Develop"),
+            lambda p: p + "\nUse clear and descriptive assertion messages.",
+            lambda p: p + "\nFocus on simplicity and readability of the tests.",
+            lambda p: p + "\nSimulate realistic data where applicable.",
+            lambda p: p + "\nExplain the reasoning behind test inputs used.",
         ]
         mutation = random.choice(mutations)
         return mutation(prompt)
