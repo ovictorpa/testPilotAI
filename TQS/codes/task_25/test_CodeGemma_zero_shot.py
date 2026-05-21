@@ -1,0 +1,34 @@
+from binomial_Coeff import *
+import unittest
+
+class TestBinomialCoeff(unittest.TestCase):
+
+    def test_binom_coeff_basic(self):
+        self.assertEqual(binom_coeff(4,2), 6)
+
+    def test_binom_coeff_edge_cases(self):
+        self.assertEqual(binom_coeff(0,0), 1)
+        self.assertEqual(binom_coeff(1,0), 1)
+        self.assertEqual(binom_coeff(0,1), 0)
+
+    def test_binom_coeff_invalid_inputs(self):
+        with self.assertRaises(ValueError):
+            binom_coeff(-1,2)
+        with self.assertRaises(ValueError):
+            binom_coeff(2,-1)
+
+class TestSumOfProduct(unittest.TestCase):
+
+    def test_sum_of_product_basic(self):
+        self.assertEqual(sum_of_product(2), 15)
+
+    def test_sum_of_product_edge_cases(self):
+        self.assertEqual(sum_of_product(0), 1)
+        self.assertEqual(sum_of_product(1), 2)
+
+    def test_sum_of_product_invalid_inputs(self):
+        with self.assertRaises(ValueError):
+            sum_of_product(-1)
+
+if __name__ == '__main__':
+    unittest.main()

@@ -1,0 +1,1017 @@
+[
+  {
+    "task_id": 1,
+    "llm": "CodeGemma",
+    "prompt_type": "few_shot",
+    "baseline_passed": true,
+    "mutation_score": 1.0,
+    "coverage": 1.0,
+    "test_smells": [
+      "magic_number"
+    ],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertEqual"
+    ],
+    "edge_case_found": true,
+    "tqs": 3.4
+  },
+  {
+    "task_id": 1,
+    "llm": "CodeGemma",
+    "prompt_type": "zero_shot",
+    "baseline_passed": true,
+    "mutation_score": 1.0,
+    "coverage": 1.0,
+    "test_smells": [
+      "magic_number"
+    ],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertEqual"
+    ],
+    "edge_case_found": true,
+    "tqs": 3.4
+  },
+  {
+    "task_id": 1,
+    "llm": "Gemma",
+    "prompt_type": "zero_shot",
+    "baseline_passed": true,
+    "mutation_score": 1.0,
+    "coverage": 1.0,
+    "test_smells": [
+      "magic_number"
+    ],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertEqual"
+    ],
+    "edge_case_found": true,
+    "tqs": 3.4
+  },
+  {
+    "task_id": 2,
+    "llm": "CodeGemma",
+    "prompt_type": "few_shot",
+    "baseline_passed": true,
+    "mutation_score": 0.222,
+    "coverage": 0.7143,
+    "test_smells": [
+      "redundant_assertion",
+      "magic_number"
+    ],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertEqual"
+    ],
+    "edge_case_found": true,
+    "tqs": 2.9143
+  },
+  {
+    "task_id": 2,
+    "llm": "CodeGemma",
+    "prompt_type": "zero_shot",
+    "baseline_passed": true,
+    "mutation_score": 0.926,
+    "coverage": 1.0,
+    "test_smells": [
+      "redundant_assertion",
+      "magic_number"
+    ],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertEqual"
+    ],
+    "edge_case_found": true,
+    "tqs": 3.2
+  },
+  {
+    "task_id": 2,
+    "llm": "CodeLLaMA",
+    "prompt_type": "few_shot",
+    "baseline_passed": true,
+    "mutation_score": 0.907,
+    "coverage": 1.0,
+    "test_smells": [
+      "redundant_assertion",
+      "magic_number"
+    ],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertEqual"
+    ],
+    "edge_case_found": true,
+    "tqs": 3.2
+  },
+  {
+    "task_id": 2,
+    "llm": "Gemma",
+    "prompt_type": "cot",
+    "baseline_passed": true,
+    "mutation_score": 0.926,
+    "coverage": 1.0,
+    "test_smells": [
+      "redundant_assertion",
+      "magic_number"
+    ],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertEqual"
+    ],
+    "edge_case_found": true,
+    "tqs": 3.2
+  },
+  {
+    "task_id": 2,
+    "llm": "WizardCoder",
+    "prompt_type": "few_shot",
+    "baseline_passed": true,
+    "mutation_score": 0.963,
+    "coverage": 1.0,
+    "test_smells": [
+      "redundant_assertion",
+      "magic_number"
+    ],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertEqual"
+    ],
+    "edge_case_found": true,
+    "tqs": 3.2
+  },
+  {
+    "task_id": 2,
+    "llm": "WizardCoder",
+    "prompt_type": "zero_shot",
+    "baseline_passed": true,
+    "mutation_score": 0.0,
+    "coverage": 1.0,
+    "test_smells": [
+      "magic_number"
+    ],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [],
+    "edge_case_found": true,
+    "tqs": 3.3
+  },
+  {
+    "task_id": 3,
+    "llm": "CodeGemma",
+    "prompt_type": "cot",
+    "baseline_passed": true,
+    "mutation_score": 0.87,
+    "coverage": 1.0,
+    "test_smells": [
+      "assertion_roulette"
+    ],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertTrue",
+      "assertFalse"
+    ],
+    "edge_case_found": true,
+    "tqs": 3.5
+  },
+  {
+    "task_id": 3,
+    "llm": "CodeGemma",
+    "prompt_type": "few_shot",
+    "baseline_passed": true,
+    "mutation_score": 0.833,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [
+      "assertion_roulette"
+    ],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertTrue",
+      "assertFalse"
+    ],
+    "edge_case_found": false,
+    "tqs": 2.5
+  },
+  {
+    "task_id": 3,
+    "llm": "CodeGemma",
+    "prompt_type": "zero_shot",
+    "baseline_passed": true,
+    "mutation_score": 0.833,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [
+      "assertion_roulette"
+    ],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertTrue",
+      "assertFalse"
+    ],
+    "edge_case_found": false,
+    "tqs": 2.5
+  },
+  {
+    "task_id": 3,
+    "llm": "Gemma",
+    "prompt_type": "cot",
+    "baseline_passed": true,
+    "mutation_score": 0.824,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [
+      "assertion_roulette"
+    ],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertTrue",
+      "assertFalse"
+    ],
+    "edge_case_found": true,
+    "tqs": 3.5
+  },
+  {
+    "task_id": 3,
+    "llm": "Gemma",
+    "prompt_type": "few_shot",
+    "baseline_passed": true,
+    "mutation_score": 0.852,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [
+      "assertion_roulette"
+    ],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertTrue",
+      "assertFalse"
+    ],
+    "edge_case_found": false,
+    "tqs": 2.5
+  },
+  {
+    "task_id": 3,
+    "llm": "Gemma",
+    "prompt_type": "zero_shot",
+    "baseline_passed": true,
+    "mutation_score": 0.88,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [
+      "redundant_assertion"
+    ],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertEqual"
+    ],
+    "edge_case_found": true,
+    "tqs": 3.4
+  },
+  {
+    "task_id": 3,
+    "llm": "LLaMA3",
+    "prompt_type": "few_shot",
+    "baseline_passed": true,
+    "mutation_score": 0.75,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [
+      "assertion_roulette"
+    ],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertTrue",
+      "assertFalse"
+    ],
+    "edge_case_found": false,
+    "tqs": 2.5
+  },
+  {
+    "task_id": 4,
+    "llm": "CodeGemma",
+    "prompt_type": "zero_shot",
+    "baseline_passed": true,
+    "mutation_score": 0.917,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [
+      "magic_number"
+    ],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertEqual"
+    ],
+    "edge_case_found": true,
+    "tqs": 3.4
+  },
+  {
+    "task_id": 4,
+    "llm": "LLaMA3",
+    "prompt_type": "few_shot",
+    "baseline_passed": true,
+    "mutation_score": 0.917,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [
+      "magic_number"
+    ],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertEqual"
+    ],
+    "edge_case_found": true,
+    "tqs": 3.4
+  },
+  {
+    "task_id": 4,
+    "llm": "LLaMA3",
+    "prompt_type": "zero_shot",
+    "baseline_passed": true,
+    "mutation_score": 0.917,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [
+      "magic_number"
+    ],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertEqual"
+    ],
+    "edge_case_found": true,
+    "tqs": 3.4
+  },
+  {
+    "task_id": 5,
+    "llm": "CodeGemma",
+    "prompt_type": "few_shot",
+    "baseline_passed": true,
+    "mutation_score": 1.0,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [
+      "redundant_assertion",
+      "magic_number"
+    ],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertEqual"
+    ],
+    "edge_case_found": true,
+    "tqs": 3.2
+  },
+  {
+    "task_id": 5,
+    "llm": "Gemma",
+    "prompt_type": "zero_shot",
+    "baseline_passed": true,
+    "mutation_score": 1.0,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [
+      "redundant_assertion",
+      "magic_number"
+    ],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertEqual"
+    ],
+    "edge_case_found": true,
+    "tqs": 3.2
+  },
+  {
+    "task_id": 5,
+    "llm": "WizardCoder",
+    "prompt_type": "zero_shot",
+    "baseline_passed": true,
+    "mutation_score": 1.0,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [
+      "redundant_assertion",
+      "magic_number"
+    ],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertEqual"
+    ],
+    "edge_case_found": false,
+    "tqs": 2.2
+  },
+  {
+    "task_id": 6,
+    "llm": "CodeGemma",
+    "prompt_type": "zero_shot",
+    "baseline_passed": true,
+    "mutation_score": 0.92,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [],
+    "functions_tested": 2,
+    "total_functions": 2,
+    "assert_types": [
+      "assertEqual"
+    ],
+    "edge_case_found": true,
+    "tqs": 3.6
+  },
+  {
+    "task_id": 6,
+    "llm": "CodeLLaMA",
+    "prompt_type": "zero_shot",
+    "baseline_passed": true,
+    "mutation_score": 0.0,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [],
+    "functions_tested": 2,
+    "total_functions": 2,
+    "assert_types": [],
+    "edge_case_found": true,
+    "tqs": 3.5
+  },
+  {
+    "task_id": 7,
+    "llm": "WizardCoder",
+    "prompt_type": "zero_shot",
+    "baseline_passed": true,
+    "mutation_score": 0.826,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [],
+    "edge_case_found": false,
+    "tqs": 2.0
+  },
+  {
+    "task_id": 8,
+    "llm": "CodeLLaMA",
+    "prompt_type": "few_shot",
+    "baseline_passed": true,
+    "mutation_score": 0.721,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [
+      "assertion_roulette",
+      "magic_number"
+    ],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertFalse",
+      "assertTrue"
+    ],
+    "edge_case_found": true,
+    "tqs": 3.3
+  },
+  {
+    "task_id": 8,
+    "llm": "CodeLLaMA",
+    "prompt_type": "zero_shot",
+    "baseline_passed": true,
+    "mutation_score": 0.0,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [
+      "magic_number"
+    ],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [],
+    "edge_case_found": true,
+    "tqs": 3.3
+  },
+  {
+    "task_id": 9,
+    "llm": "WizardCoder",
+    "prompt_type": "zero_shot",
+    "baseline_passed": true,
+    "mutation_score": 0.846,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [
+      "redundant_assertion",
+      "magic_number"
+    ],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertEqual",
+      "assertLess"
+    ],
+    "edge_case_found": true,
+    "tqs": 3.3
+  },
+  {
+    "task_id": 10,
+    "llm": "CodeGemma",
+    "prompt_type": "zero_shot",
+    "baseline_passed": true,
+    "mutation_score": 1.0,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [
+      "magic_number"
+    ],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertEqual"
+    ],
+    "edge_case_found": true,
+    "tqs": 3.4
+  },
+  {
+    "task_id": 10,
+    "llm": "CodeLLaMA",
+    "prompt_type": "few_shot",
+    "baseline_passed": true,
+    "mutation_score": 1.0,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [
+      "magic_number"
+    ],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertEqual"
+    ],
+    "edge_case_found": true,
+    "tqs": 3.4
+  },
+  {
+    "task_id": 10,
+    "llm": "LLaMA3",
+    "prompt_type": "few_shot",
+    "baseline_passed": true,
+    "mutation_score": 1.0,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [
+      "assertion_roulette",
+      "magic_number"
+    ],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertEqual",
+      "assertRaises"
+    ],
+    "edge_case_found": true,
+    "tqs": 3.3
+  },
+  {
+    "task_id": 11,
+    "llm": "Gemma",
+    "prompt_type": "zero_shot",
+    "baseline_passed": true,
+    "mutation_score": 1.0,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertEqual"
+    ],
+    "edge_case_found": true,
+    "tqs": 3.6
+  },
+  {
+    "task_id": 11,
+    "llm": "LLaMA3",
+    "prompt_type": "cot",
+    "baseline_passed": true,
+    "mutation_score": 1.0,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [
+      "assertion_roulette",
+      "magic_number"
+    ],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertRaises",
+      "assertEqual"
+    ],
+    "edge_case_found": true,
+    "tqs": 3.3
+  },
+  {
+    "task_id": 11,
+    "llm": "WizardCoder",
+    "prompt_type": "zero_shot",
+    "baseline_passed": true,
+    "mutation_score": 0.0,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [],
+    "edge_case_found": true,
+    "tqs": 3.5
+  },
+  {
+    "task_id": 12,
+    "llm": "Gemma",
+    "prompt_type": "zero_shot",
+    "baseline_passed": true,
+    "mutation_score": 0.923,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [
+      "assertion_roulette"
+    ],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertIsNone",
+      "assertEqual"
+    ],
+    "edge_case_found": true,
+    "tqs": 3.5
+  },
+  {
+    "task_id": 12,
+    "llm": "LLaMA3",
+    "prompt_type": "zero_shot",
+    "baseline_passed": true,
+    "mutation_score": 0.923,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [
+      "assertion_roulette"
+    ],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertIsNone",
+      "assertRaises",
+      "assertEqual"
+    ],
+    "edge_case_found": true,
+    "tqs": 3.6
+  },
+  {
+    "task_id": 14,
+    "llm": "CodeGemma",
+    "prompt_type": "zero_shot",
+    "baseline_passed": true,
+    "mutation_score": 1.0,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertEqual"
+    ],
+    "edge_case_found": true,
+    "tqs": 3.6
+  },
+  {
+    "task_id": 14,
+    "llm": "CodeLLaMA",
+    "prompt_type": "few_shot",
+    "baseline_passed": true,
+    "mutation_score": 1.0,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [],
+    "edge_case_found": false,
+    "tqs": 2.0
+  },
+  {
+    "task_id": 14,
+    "llm": "CodeLLaMA",
+    "prompt_type": "zero_shot",
+    "baseline_passed": true,
+    "mutation_score": 0.0,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [],
+    "edge_case_found": false,
+    "tqs": 2.0
+  },
+  {
+    "task_id": 14,
+    "llm": "LLaMA3",
+    "prompt_type": "few_shot",
+    "baseline_passed": true,
+    "mutation_score": 1.0,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertEqual"
+    ],
+    "edge_case_found": true,
+    "tqs": 3.6
+  },
+  {
+    "task_id": 14,
+    "llm": "WizardCoder",
+    "prompt_type": "zero_shot",
+    "baseline_passed": true,
+    "mutation_score": 1.0,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [],
+    "edge_case_found": false,
+    "tqs": 2.0
+  },
+  {
+    "task_id": 15,
+    "llm": "CodeGemma",
+    "prompt_type": "few_shot",
+    "baseline_passed": true,
+    "mutation_score": 1.0,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertEqual"
+    ],
+    "edge_case_found": true,
+    "tqs": 3.6
+  },
+  {
+    "task_id": 15,
+    "llm": "CodeGemma",
+    "prompt_type": "zero_shot",
+    "baseline_passed": true,
+    "mutation_score": 1.0,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertEqual"
+    ],
+    "edge_case_found": true,
+    "tqs": 3.6
+  },
+  {
+    "task_id": 15,
+    "llm": "CodeLLaMA",
+    "prompt_type": "cot",
+    "baseline_passed": true,
+    "mutation_score": 1.0,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertEqual"
+    ],
+    "edge_case_found": true,
+    "tqs": 3.6
+  },
+  {
+    "task_id": 15,
+    "llm": "CodeLLaMA",
+    "prompt_type": "zero_shot",
+    "baseline_passed": true,
+    "mutation_score": 1.0,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertEqual"
+    ],
+    "edge_case_found": true,
+    "tqs": 3.6
+  },
+  {
+    "task_id": 16,
+    "llm": "CodeGemma",
+    "prompt_type": "cot",
+    "baseline_passed": true,
+    "mutation_score": 0.919,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertEqual"
+    ],
+    "edge_case_found": true,
+    "tqs": 3.6
+  },
+  {
+    "task_id": 16,
+    "llm": "CodeGemma",
+    "prompt_type": "few_shot",
+    "baseline_passed": true,
+    "mutation_score": 0.929,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertEqual"
+    ],
+    "edge_case_found": true,
+    "tqs": 3.6
+  },
+  {
+    "task_id": 17,
+    "llm": "CodeLLaMA",
+    "prompt_type": "cot",
+    "baseline_passed": true,
+    "mutation_score": 0.979,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [
+      "redundant_assertion",
+      "magic_number"
+    ],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertEqual"
+    ],
+    "edge_case_found": true,
+    "tqs": 3.2
+  },
+  {
+    "task_id": 17,
+    "llm": "CodeLLaMA",
+    "prompt_type": "few_shot",
+    "baseline_passed": true,
+    "mutation_score": 0.979,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [],
+    "edge_case_found": false,
+    "tqs": 2.0
+  },
+  {
+    "task_id": 22,
+    "llm": "CodeLLaMA",
+    "prompt_type": "few_shot",
+    "baseline_passed": true,
+    "mutation_score": 1.0,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [
+      "magic_number"
+    ],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertEqual"
+    ],
+    "edge_case_found": true,
+    "tqs": 3.4
+  },
+  {
+    "task_id": 22,
+    "llm": "CodeLLaMA",
+    "prompt_type": "zero_shot",
+    "baseline_passed": true,
+    "mutation_score": 1.0,
+    "mutants_killed": null,
+    "mutants_survived": null,
+    "total_mutants": null,
+    "coverage": 1.0,
+    "test_smells": [
+      "magic_number"
+    ],
+    "functions_tested": 1,
+    "total_functions": 1,
+    "assert_types": [
+      "assertEqual"
+    ],
+    "edge_case_found": true,
+    "tqs": 3.4
+  }
+]
