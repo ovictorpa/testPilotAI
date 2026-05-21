@@ -19,60 +19,6 @@ os.makedirs(RESULTS_DIR, exist_ok=True)
 
 import ast
 
-import ast
-
-def detect_test_smells(test_code: str) -> dict:
-    smells = {}
-
-    try:
-        tree = ast.parse(test_code)
-    except SyntaxError:
-        smells['syntax_error'] = 1
-        return smells
-
-    for node in ast.walk(tree):
-        # Assertion Roulette
-        if isinstance(node, ast.Call):
-            if isinstance(node.func, ast.Attribute) and node.func.attr.startswith('assert'):
-                if len(node.args) == 1:
-                    smells['assertion_roulette'] = smells.get('assertion_roulette', 0) + 1
-
-        # Magic Number
-        if isinstance(node, ast.Constant) and isinstance(node.value, (int, float)):
-            if node.value not in (0, 1):
-                smells['magic_number'] = smells.get('magic_number', 0) + 1
-
-        # Sleepy Test
-        if isinstance(node, ast.Call) and isinstance(node.func, ast.Attribute):
-            if node.func.attr == 'sleep':
-                smells['sleepy_test'] = smells.get('sleepy_test', 0) + 1
-
-        # Print Statement
-        if isinstance(node, ast.Call) and isinstance(node.func, ast.Name):
-            if node.func.id == 'print':
-                smells['print_statement'] = smells.get('print_statement', 0) + 1
-
-        # Redundant Assertion
-        if isinstance(node, ast.Call):
-            if isinstance(node.func, ast.Attribute) and node.func.attr.startswith('assert'):
-                for arg in node.args:
-                    if isinstance(arg, ast.Constant) and arg.value in [True, False]:
-                        smells['redundant_assertion'] = smells.get('redundant_assertion', 0) + 1
-
-        # Empty Test
-        if isinstance(node, ast.FunctionDef) and node.name.startswith("test"):
-            if not node.body or all(isinstance(stmt, ast.Pass) for stmt in node.body):
-                smells['empty_test'] = smells.get('empty_test', 0) + 1
-
-        # Ignored Test
-        if isinstance(node, ast.FunctionDef):
-            for decorator in node.decorator_list:
-                if isinstance(decorator, ast.Attribute) and 'skip' in decorator.attr.lower():
-                    smells['ignored_test'] = smells.get('ignored_test', 0) + 1
-
-    return smells
-
-
 def extract_code_blocks(text):
     matches = re.findall(r"```(?:python)?\s*(.*?)```", text, re.DOTALL)
     return matches
@@ -190,22 +136,17 @@ def run_all_tests():
             elif coverage_value > 75:
                 score += 1.0
             if len(set(assert_types)) >= 4:
-                score += 0.30
+                score += 4.0
             elif len(set(assert_types)) == 3:
-                score += 0.15
+                score += 3.0
             elif len(set(assert_types)) == 2:
-                score += 0.07
+                score += 2.0
             if edge_case_found:
-                score += 0.25
+                score += 1.0
             if prod_functions:
-                score += 0.5 * (tested_funcs / len(prod_functions))
+                score += 1.0 * (tested_funcs / len(prod_functions))
 
-            smells_found = detect_test_smells(code)
 
-            if smells_found and "error" not in smells_found:
-                score -= 0.2 * len(smells_found)
-            elif "error" in smells_found:
-                score -= 1.0
 
             results[model][prompt_type] = {
                 "status": "passed" if passed else "failed",
@@ -216,8 +157,7 @@ def run_all_tests():
                 "total_functions": len(prod_functions),
                 "score": round(score, 2),
                 "stdout": stdout,
-                "stderr": stderr,
-                "test_smells": smells_found
+                "stderr": stderr
             }
             #if any(count > 0 for count in smells_found.values()):
                 #result["test_smells"] = smells_found
