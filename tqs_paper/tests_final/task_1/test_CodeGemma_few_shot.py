@@ -1,6 +1,6 @@
 import unittest
 
-from TQS.tests_final.task_1.intersperse import intersperse
+from intersperse import intersperse
 
 class TestIntersperse(unittest.TestCase):
 

@@ -1,6 +1,6 @@
 import unittest
 
-from TQS.tests_final.task_4.remove_duplicates import remove_duplicates
+from remove_duplicates import remove_duplicates
 
 class TestRemoveDuplicates(unittest.TestCase):
 

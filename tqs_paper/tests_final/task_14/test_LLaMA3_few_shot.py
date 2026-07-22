@@ -1,6 +1,6 @@
 import unittest
 from io import StringIO
-from TQS.tests_final.task_14.filter_by_prefix import filter_by_prefix  # Replace 'your_module' with the actual name of the module containing the function.
+from filter_by_prefix import filter_by_prefix  # Replace 'your_module' with the actual name of the module containing the function.
 
 class TestFilterByPrefix(unittest.TestCase):
 

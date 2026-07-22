@@ -1,4 +1,4 @@
-from TQS.tests_final.task_2.how_many_times import *
+from how_many_times import *
 import unittest
 
 class TestHowManyTimes(unittest.TestCase):

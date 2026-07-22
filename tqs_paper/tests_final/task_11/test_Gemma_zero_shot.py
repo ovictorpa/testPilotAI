@@ -1,6 +1,6 @@
 import unittest
 
-from TQS.tests_final.task_11.all_prefixes import all_prefixes
+from all_prefixes import all_prefixes
 
 
 class TestAllPrefixes(unittest.TestCase):

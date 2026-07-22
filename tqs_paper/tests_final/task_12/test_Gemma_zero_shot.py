@@ -1,6 +1,6 @@
 import unittest
 
-from TQS.tests_final.task_12.longest import longest
+from longest import longest
 
 
 class TestLongestString(unittest.TestCase):

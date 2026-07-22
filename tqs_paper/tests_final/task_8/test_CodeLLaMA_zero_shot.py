@@ -1,4 +1,4 @@
-from TQS.tests_final.task_8.has_close_elements import *
+from has_close_elements import *
 def test_no_close_elements():
     assert not has_close_elements([1.0, 2.0, 3.0], 0.5)
 

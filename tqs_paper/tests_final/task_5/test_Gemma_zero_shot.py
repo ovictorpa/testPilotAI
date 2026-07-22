@@ -1,4 +1,4 @@
-from TQS.tests_final.task_5.greatest_common_divisor import *
+from greatest_common_divisor import *
 import unittest
 
 class TestGreatestCommonDivisor(unittest.TestCase):

@@ -1,6 +1,6 @@
 import unittest
 
-from TQS.tests_final.task_14.filter_by_prefix import filter_by_prefix
+from filter_by_prefix import filter_by_prefix
 
 class TestFilterByPrefix(unittest.TestCase):
 

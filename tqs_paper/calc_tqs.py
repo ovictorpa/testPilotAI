@@ -1,9 +1,13 @@
 import json
 import os
 
-BASE = r"c:\Users\antho\OneDrive\Área de Trabalho\testPilotAI"
-INPUT = os.path.join(BASE, "TQS", "final_dataset_tqs.json")
-OUTPUT = os.path.join(BASE, "TQS", "final_dataset_tqs_final.json")
+# Recomputes the TQS field from the raw per-attribute data already stored in
+# final_dataset_tqs.json, using the same formula described in the paper (Table 1).
+# It writes to a separate file instead of overwriting the canonical dataset that
+# backs the paper's reported numbers.
+BASE = os.path.dirname(os.path.abspath(__file__))
+INPUT = os.path.join(BASE, "final_dataset_tqs.json")
+OUTPUT = os.path.join(BASE, "final_dataset_tqs_recomputed.json")
 
 MAX_ASSERT_TYPES = 3  # max observed in dataset
 

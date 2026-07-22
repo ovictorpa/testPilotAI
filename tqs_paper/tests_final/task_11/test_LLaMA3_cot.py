@@ -1,5 +1,5 @@
 import unittest
-from TQS.tests_final.task_11.all_prefixes import all_prefixes  # replace 'your_module' with actual module name
+from all_prefixes import all_prefixes  # replace 'your_module' with actual module name
 
 class TestAllPrefixes(unittest.TestCase):
 

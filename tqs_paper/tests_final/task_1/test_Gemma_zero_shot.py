@@ -1,4 +1,4 @@
-from TQS.tests_final.task_1.intersperse import *
+from intersperse import *
 import unittest
 
 

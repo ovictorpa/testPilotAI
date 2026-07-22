@@ -1,4 +1,4 @@
-from TQS.tests_final.task_6.string_xor import *
+from string_xor import *
 import unittest
 
 class TestStringXor(unittest.TestCase):

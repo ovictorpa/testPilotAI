@@ -1,6 +1,6 @@
 import unittest
 
-from TQS.tests_final.task_10.sum_product import sum_product
+from sum_product import sum_product
 
 
 class TestSumProduct(unittest.TestCase):

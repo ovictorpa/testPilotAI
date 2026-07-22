@@ -1,5 +1,5 @@
 import unittest
-from TQS.tests_final.task_4.remove_duplicates import remove_duplicates  # Replace 'your_module' with the actual name of the file containing the function
+from remove_duplicates import remove_duplicates  # Replace 'your_module' with the actual name of the file containing the function
 
 class TestRemoveDuplicates(unittest.TestCase):
 

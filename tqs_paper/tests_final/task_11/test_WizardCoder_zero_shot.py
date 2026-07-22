@@ -1,4 +1,4 @@
-from TQS.tests_final.task_11.all_prefixes import *
+from all_prefixes import *
 import pytest
 
 def test_all_prefixes():

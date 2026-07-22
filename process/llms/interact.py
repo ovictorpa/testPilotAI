@@ -8,6 +8,7 @@ import json
 load_dotenv()
 
 api_key = os.getenv("OPENAI_API_KEY")
+fireworks_api_key = os.getenv("FIREWORKS_API_KEY")
 
 client = OpenAI(api_key=api_key)
 
@@ -53,6 +54,6 @@ def query_fireworks(prompt: str):
     headers = {
         "Accept": "application/json",
         "Content-Type": "application/json",
-        "Authorization": "Bearer fw_3ZHSEasNGggmSXfwKYrb28KW"
+        "Authorization": f"Bearer {fireworks_api_key}"
     }
     requests.request("POST", url, headers=headers, data=json.dumps(payload))

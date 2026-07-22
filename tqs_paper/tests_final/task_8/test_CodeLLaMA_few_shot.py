@@ -1,4 +1,4 @@
-from TQS.tests_final.task_8.has_close_elements import *
+from has_close_elements import *
 import unittest
 from typing import List
 

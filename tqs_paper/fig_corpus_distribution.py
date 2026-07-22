@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 import numpy as np
 
-with open("final_dataset_tqs_final.json") as f:
+with open("final_dataset_tqs.json", encoding="utf-8") as f:
     data = json.load(f)
 
 N = len(data)  # 51

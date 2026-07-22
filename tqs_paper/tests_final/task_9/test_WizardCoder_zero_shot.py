@@ -1,4 +1,4 @@
-from TQS.tests_final.task_9.truncate_number import *
+from truncate_number import *
 import unittest
 
 class TestTruncateNumber(unittest.TestCase):

@@ -1,4 +1,4 @@
-from TQS.tests_final.task_10.sum_product import *
+from sum_product import *
 import unittest
 from typing import List, Tuple
 

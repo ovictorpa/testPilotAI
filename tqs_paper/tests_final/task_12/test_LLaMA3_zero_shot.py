@@ -1,5 +1,5 @@
 import unittest
-from TQS.tests_final.task_12.longest import longest  # Import the function to be tested
+from longest import longest  # Import the function to be tested
 
 
 class TestLongestFunction(unittest.TestCase):

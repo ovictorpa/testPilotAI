@@ -1,4 +1,4 @@
-from TQS.tests_final.task_15.filter_by_substring import *
+from filter_by_substring import *
 import unittest
 from typing import List
 

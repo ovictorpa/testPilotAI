@@ -1,4 +1,4 @@
-from TQS.tests_final.task_16.remove_Occ import *
+from remove_Occ import *
 import unittest
 
 class TestRemoveOcc(unittest.TestCase):

@@ -1,4 +1,4 @@
-from TQS.tests_final.task_7.mean_absolute_deviation import *
+from mean_absolute_deviation import *
 from typing import List
 import unittest
 

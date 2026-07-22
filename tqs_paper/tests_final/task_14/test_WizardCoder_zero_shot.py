@@ -1,4 +1,4 @@
-from TQS.tests_final.task_14.filter_by_prefix import *
+from filter_by_prefix import *
 import unittest
 from typing import List
 

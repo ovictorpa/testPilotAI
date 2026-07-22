@@ -1,5 +1,5 @@
 import unittest
-from TQS.tests_final.task_10.sum_product import sum_product  # replace 'your_module' with the actual name of the module containing the function
+from sum_product import sum_product  # replace 'your_module' with the actual name of the module containing the function
 
 
 class TestSumProduct(unittest.TestCase):

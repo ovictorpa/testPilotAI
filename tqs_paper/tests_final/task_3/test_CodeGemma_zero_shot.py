@@ -1,4 +1,4 @@
-from TQS.tests_final.task_3.is_happy import *
+from is_happy import *
 import unittest
 
 class TestIsHappy(unittest.TestCase):

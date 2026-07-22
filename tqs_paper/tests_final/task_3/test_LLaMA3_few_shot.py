@@ -1,5 +1,5 @@
 import unittest
-from TQS.tests_final.task_3.is_happy import is_happy  # replace 'your_module' with the actual name of your module
+from is_happy import is_happy  # replace 'your_module' with the actual name of your module
 
 class TestIsHappy(unittest.TestCase):
 

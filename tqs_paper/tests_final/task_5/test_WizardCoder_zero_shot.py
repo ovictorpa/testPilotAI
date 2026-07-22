@@ -1,5 +1,5 @@
 import unittest
-from TQS.tests_final.task_5.greatest_common_divisor import greatest_common_divisor
+from greatest_common_divisor import greatest_common_divisor
 
 class TestGCD(unittest.TestCase):
     

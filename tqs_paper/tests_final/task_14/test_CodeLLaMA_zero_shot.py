@@ -1,4 +1,4 @@
-from TQS.tests_final.task_14.filter_by_prefix import *
+from filter_by_prefix import *
 class TestFilterByPrefix:
     def test_empty_input(self):
         assert filter_by_prefix([], "a") == []
